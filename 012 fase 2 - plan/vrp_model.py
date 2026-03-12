@@ -29,8 +29,13 @@ def solve_vrptw(data, max_cars=None):
                 travel_time = time_matrix[current_node][loc_id]
                 arrival_time = max(current_time + travel_time, loc['time_window'][0])
                 
+                # Sjekk om vi kan returnere til depotet i tide etter dette besøket
+                departure_time = arrival_time + loc['service_time']
+                return_to_depot_time = departure_time + time_matrix[loc_id][0]
+                
                 if (current_load + loc['demand'] <= capacity and 
-                    arrival_time <= loc['time_window'][1]):
+                    arrival_time <= loc['time_window'][1] and
+                    return_to_depot_time <= depot['time_window'][1]):
                     
                     dist = dist_matrix[current_node][loc_id]
                     if dist < best_dist:
@@ -63,10 +68,28 @@ if __name__ == "__main__":
     with open(r'004 data\data.json', 'r') as f:
         data = json.load(f)
     
-    print("=== SJEKK AV ANKOMSTTID TIL DEPOT (Maks 480 min) ===\n")
+    print("=== OPTIMALISERING AV ANTALL BILER ===\n")
     
-    routes_info, missed = solve_vrptw(data, max_cars=3)
+    num_cars = 1
+    total_locations = len(data['locations'])
     
+    while True:
+        print(f"Prøver med {num_cars} bil(er)...")
+        routes_info, missed = solve_vrptw(data, max_cars=num_cars)
+        
+        visited_count = total_locations - len(missed)
+        print(f"  Lokasjoner besøkt: {visited_count}/{total_locations}")
+        
+        if not missed:
+            print(f"\nSuksess! Alle lokasjoner besøkt med {num_cars} biler.\n")
+            break
+        
+        num_cars += 1
+        if num_cars > total_locations: # Sikkerhetsmekanisme
+            print("\nKunne ikke besøke alle lokasjoner selv med én bil per lokasjon.")
+            break
+
+    print("=== DETALJER FOR ENDELIG LØSNING ===\n")
     for i, info in enumerate(routes_info):
         status = "OK" if info['return_time'] <= 480 else "FOR SENT!"
         print(f"Bil {i+1}: {' -> '.join(map(str, info['route']))}")
