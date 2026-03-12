@@ -68,7 +68,28 @@ Kvalitet i arbeidet sikres gjennom intern gjennomgang av kode og tekst, kontroll
 ---
 
 ## 4. Analyse og resultater
-*(Her vil vi presentere den utviklede modellen, avstandsmatriser, visualisering av ruter og sammenligning med baseline-løsningen.)*
+I dette kapittelet presenteres resultatene fra modelleringen av ruteplanleggingsproblemet. Vi sammenligner en heuristisk løsning basert på en "greedy" algoritme med en enkel referanseløsning (baseline).
+
+### 4.1 Sammenligning av løsninger
+Modellen har analysert transport fra 7 oppdrettslokaliteter til ett slakteri (depot) med en bilkapasitet på 180 enheter.
+
+| Parameter | Referanseløsning (Baseline) | Heuristisk løsning (Greedy) |
+| :--- | :---: | :---: |
+| Antall ruter | 7 | 3 |
+| Total distanse | 839.28 km | 534.00 km |
+| **Forbedring (%)** | - | **36.37%** |
+
+### 4.2 Visualisering av ruter
+Den heuristiske løsningen optimaliserer rutevalget ved å kombinere flere lokaliteter i samme rute, så lenge kapasitets- og tidsvindubegrensninger overholdes.
+
+*   **Rute 1:** 0 -> 6 -> 7 -> 4 -> 0
+*   **Rute 2:** 0 -> 5 -> 2 -> 0
+*   **Rute 3:** 0 -> 1 -> 3 -> 0
+
+*(Visualiseringer er generert og lagret som rute_visualisering.png og baseline_visualisering.png i prosjektmappen.)*
+
+### 4.3 Analyse av tidsvinduer og kapasitet
+Gjennom den heuristiske tilnærmingen ser vi at tidsvinduene er en kritisk begrensning. Selv om bilens kapasitet på 180 tillater flere stopp, begrenses rute 2 og 3 av når lokalitetene er tilgjengelige for henting. Dette illustrerer viktigheten av koordinering mellom slakteri og oppdrettslokaliteter.
 
 ---
 
