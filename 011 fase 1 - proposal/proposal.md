@@ -2,7 +2,7 @@
 
 **Gruppemedlemmer:** 
 Hanne Haugvaldstad 
-Mira Wiem 
+Mira Viem 
 Marte Dolva 
 Kenneth Sandvik
 
