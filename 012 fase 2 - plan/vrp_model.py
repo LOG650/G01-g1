@@ -8,15 +8,14 @@ def solve_vrptw(data, max_cars=None):
     time_matrix = data['time_matrix']
     
     unvisited = {loc['id']: loc for loc in locations}
-    routes = []
+    routes_data = []
     
-    # Continue as long as there are unvisited nodes AND we haven't hit the car limit
     while unvisited:
-        if max_cars is not None and len(routes) >= max_cars:
+        if max_cars is not None and len(routes_data) >= max_cars:
             break
             
         route = []
-        current_node = 0  # Depot
+        current_node = 0
         current_load = 0
         current_time = depot['time_window'][0]
         
@@ -30,7 +29,6 @@ def solve_vrptw(data, max_cars=None):
                 travel_time = time_matrix[current_node][loc_id]
                 arrival_time = max(current_time + travel_time, loc['time_window'][0])
                 
-                # Check constraints (Capacity and Time Window)
                 if (current_load + loc['demand'] <= capacity and 
                     arrival_time <= loc['time_window'][1]):
                     
@@ -40,51 +38,38 @@ def solve_vrptw(data, max_cars=None):
                         best_next = loc_id
             
             if best_next is not None:
-                # Move to best_next
                 travel_time = time_matrix[current_node][best_next]
                 arrival_time = max(current_time + travel_time, unvisited[best_next]['time_window'][0])
-                
                 current_time = arrival_time + unvisited[best_next]['service_time']
                 current_load += unvisited[best_next]['demand']
                 current_node = best_next
-                
                 route.append(best_next)
                 del unvisited[best_next]
             else:
                 # Return to depot
+                travel_back = time_matrix[current_node][0]
+                return_time = current_time + travel_back
                 route.append(0)
-                routes.append(route)
+                routes_data.append({
+                    "route": route,
+                    "return_time": return_time,
+                    "load": current_load
+                })
                 break
                 
-    return routes, list(unvisited.keys())
-
-def calculate_total_cost(routes, dist_matrix):
-    total_cost = 0
-    for route in routes:
-        if len(route) > 2: # Ignore empty routes (0 -> 0)
-            for i in range(len(route) - 1):
-                total_cost += dist_matrix[route[i]][route[i+1]]
-    return total_cost
+    return routes_data, list(unvisited.keys())
 
 if __name__ == "__main__":
     with open(r'004 data\data.json', 'r') as f:
         data = json.load(f)
     
-    print("=== SCENARIOANALYSE: ANTALL BILER ===\n")
+    print("=== SJEKK AV ANKOMSTTID TIL DEPOT (Maks 480 min) ===\n")
     
-    for n in [1, 2, 3]:
-        routes, missed = solve_vrptw(data, max_cars=n)
-        cost = calculate_total_cost(routes, data['distance_matrix'])
-        visited_count = len(data['locations']) - len(missed)
-        
-        print(f"SCENARIO: {n} BIL(ER)")
-        print(f"Status: {'Fullført' if not missed else 'Inkomplett'}")
-        print(f"Besøkte lokasjoner: {visited_count}/{len(data['locations'])}")
-        if missed:
-            print(f"Manglende lokasjoner: {missed}")
-        
-        for i, route in enumerate(routes):
-            print(f"  Bil {i+1}: {' -> '.join(map(str, route))}")
-        
-        print(f"Total distanse: {cost:.2f} km")
-        print("-" * 30)
+    routes_info, missed = solve_vrptw(data, max_cars=3)
+    
+    for i, info in enumerate(routes_info):
+        status = "OK" if info['return_time'] <= 480 else "FOR SENT!"
+        print(f"Bil {i+1}: {' -> '.join(map(str, info['route']))}")
+        print(f"  Ankomst depot: {info['return_time']:.1f} min ({status})")
+        print(f"  Last: {info['load']} tonn")
+        print("-" * 20)

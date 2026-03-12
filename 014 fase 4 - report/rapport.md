@@ -79,12 +79,18 @@ Modellen har analysert transport fra 7 oppdrettslokaliteter til ett slakteri (de
 | Total distanse | 839.28 km | 534.00 km |
 | **Forbedring (%)** | - | **36.37%** |
 
-### 4.2 Visualisering av ruter
-Den heuristiske løsningen optimaliserer rutevalget ved å kombinere flere lokaliteter i samme rute, så lenge kapasitets- og tidsvindubegrensninger overholdes.
+### 4.2 Visualisering og tidsbruk per rute
+Den heuristiske løsningen optimaliserer rutevalget ved å kombinere flere lokaliteter i samme rute, så lenge kapasitets- og tidsvindubegrensninger overholdes. Samtlige ruter returnerer til slakteriet (depot) godt innenfor tidsrammen på 480 minutter (8 timer).
 
 *   **Rute 1:** 0 -> 6 -> 7 -> 4 -> 0
+    *   Last: 134 tonn
+    *   Ankomst slakteri: **422,0 min** (7,0 timer)
 *   **Rute 2:** 0 -> 5 -> 2 -> 0
+    *   Last: 65 tonn
+    *   Ankomst slakteri: **224,0 min** (3,7 timer)
 *   **Rute 3:** 0 -> 1 -> 3 -> 0
+    *   Last: 113 tonn
+    *   Ankomst slakteri: **317,0 min** (5,3 timer)
 
 *(Visualiseringer er generert og lagret som rute_visualisering.png og baseline_visualisering.png i prosjektmappen.)*
 
