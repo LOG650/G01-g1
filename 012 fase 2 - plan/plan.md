@@ -3,7 +3,7 @@
 
 **Prosjekttittel:** Ruteplanlegging av fortransport hos Lerøy
 **Prosjektperiode:** Februar–Juni 2026
-**Prosjektgruppe:** 4 studenter (Hanne Haugvaldstad, Mira Wiem, Marte Dolva, Kenneth Sandvik)
+**Prosjektgruppe:** 4 studenter (Hanne Haugvaldstad, Mira Viem, Marte Dolva, Kenneth Sandvik)
 
 ---
 

@@ -4,7 +4,7 @@
 
 **Dato:** Mars 2026
 **Gruppe:** 4
-**Medlemmer:** Hanne Haugvaldstad, Mira Wiem, Marte Dolva, Kenneth Sandvik
+**Medlemmer:** Hanne Haugvaldstad, Mira Viem, Marte Dolva, Kenneth Sandvik
 
 ---
 
