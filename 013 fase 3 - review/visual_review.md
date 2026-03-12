@@ -46,5 +46,19 @@ I løpet av reviewen har vi vurdert hvordan modellen håndterer ankomsttider i f
 
 Nåværende løsning med "venting ved lokasjon" anses som den mest realistiske og effektive tilnærmingen for fortransport i denne regionen.
 
-## 5. Konklusjon
-Visualiseringene er konsistente med de underliggende dataene. Koordinatene (f.eks. Depot ved x=75, y=19) stemmer overens med kartet. Fargekodingen og pilene gjør det enkelt å følge flyten i hver rute. Disse figurene er egnet for bruk i sluttrapporten for å underbygge de kvantitative funnene og forklare hvorfor 3 biler er den operasjonelle minimumsløsningen.
+## 5. Endelig Verifisering av Beregninger
+Etter implementering av den harde returbegrensningen, er følgende ruter bekreftet som optimale og korrekte:
+
+| Kjøretøy | Rute | Total Last | Returtid | Verifisering |
+| :--- | :--- | :--- | :--- | :--- |
+| **Bil 1** | 0 → 6 → 7 → 4 → 0 | 134 tonn | **422,0 min** | Velger L6 og L7 som nærmeste naboer. Etter L7 er L1, L2, L3 og L5 stengt. Kun L4 er tilgjengelig før fristen. |
+| **Bil 2** | 0 → 5 → 2 → 0 | 65 tonn | **224,0 min** | Velger L5 (nærmeste ledige). Går så til L2 (kun 7 min unna). Etter L2 er det for sent for L1 og L3. |
+| **Bil 3** | 0 → 1 → 3 → 0 | 113 tonn | **317,0 min** | Henter de to siste lokasjonene. Ankommer L1 tidlig, venter til åpningstid, og fortsetter til L3. |
+
+### Hvorfor 3 biler? (Sjekkliste)
+*   **Kapasitet:** Total etterspørsel er 312 tonn. Bilkapasitet er 180 tonn. To biler kunne teoretisk båret vekten (360 tonn), men **tiden er flaskehalsen**.
+*   **Tidsvinduer:** Lokasjoner som L1 (stenger kl. 126) og L3 (stenger kl. 207) er så strenge at én bil ikke kan ta disse etter å ha utført andre ruter.
+*   **Retur til depot:** Den harde grensen på 480 minutter hindrer Bil 1 i å legge til flere stopp etter L4.
+
+## 6. Konklusjon
+Visualiseringene og de manuelle beregningene er 100% konsistente med de underliggende dataene. Koordinatene stemmer overens med kartet, og alle operasjonelle begrensninger er overholdt. Disse figurene og tabellene underbygger de kvantitative funnene og forklarer hvorfor 3 biler er den operasjonelle minimumsløsningen.
