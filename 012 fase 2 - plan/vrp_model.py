@@ -1,6 +1,6 @@
 import json
 
-def solve_vrptw(data):
+def solve_vrptw(data, max_cars=None):
     depot = data['depot']
     locations = data['locations']
     capacity = data['capacity']
@@ -10,7 +10,11 @@ def solve_vrptw(data):
     unvisited = {loc['id']: loc for loc in locations}
     routes = []
     
+    # Continue as long as there are unvisited nodes AND we haven't hit the car limit
     while unvisited:
+        if max_cars is not None and len(routes) >= max_cars:
+            break
+            
         route = []
         current_node = 0  # Depot
         current_load = 0
@@ -26,7 +30,7 @@ def solve_vrptw(data):
                 travel_time = time_matrix[current_node][loc_id]
                 arrival_time = max(current_time + travel_time, loc['time_window'][0])
                 
-                # Check constraints
+                # Check constraints (Capacity and Time Window)
                 if (current_load + loc['demand'] <= capacity and 
                     arrival_time <= loc['time_window'][1]):
                     
@@ -52,43 +56,35 @@ def solve_vrptw(data):
                 routes.append(route)
                 break
                 
-    return routes
+    return routes, list(unvisited.keys())
 
 def calculate_total_cost(routes, dist_matrix):
     total_cost = 0
     for route in routes:
-        for i in range(len(route) - 1):
-            total_cost += dist_matrix[route[i]][route[i+1]]
+        if len(route) > 2: # Ignore empty routes (0 -> 0)
+            for i in range(len(route) - 1):
+                total_cost += dist_matrix[route[i]][route[i+1]]
     return total_cost
-
-def solve_baseline(data):
-    # Simple baseline: Visit each node one by one (Depot -> Node -> Depot)
-    routes = []
-    for loc in data['locations']:
-        routes.append([0, loc['id'], 0])
-    return routes
 
 if __name__ == "__main__":
     with open(r'004 data\data.json', 'r') as f:
         data = json.load(f)
     
-    # Heuristic solution
-    h_routes = solve_vrptw(data)
-    h_cost = calculate_total_cost(h_routes, data['distance_matrix'])
+    print("=== SCENARIOANALYSE: ANTALL BILER ===\n")
     
-    # Baseline solution
-    b_routes = solve_baseline(data)
-    b_cost = calculate_total_cost(b_routes, data['distance_matrix'])
-    
-    print("--- REFERANSELØSNING (BASELINE) ---")
-    print(f"Antall ruter: {len(b_routes)}")
-    print(f"Total distanse: {b_cost:.2f} km")
-    
-    print("\n--- HEURISTISK LØSNING (GREEDY) ---")
-    print(f"Antall ruter: {len(h_routes)}")
-    for i, route in enumerate(h_routes):
-        print(f"Rute {i+1}: {' -> '.join(map(str, route))}")
-    print(f"Total distanse: {h_cost:.2f} km")
-    
-    improvement = (b_cost - h_cost) / b_cost * 100
-    print(f"\nForbedring: {improvement:.2f}%")
+    for n in [1, 2, 3]:
+        routes, missed = solve_vrptw(data, max_cars=n)
+        cost = calculate_total_cost(routes, data['distance_matrix'])
+        visited_count = len(data['locations']) - len(missed)
+        
+        print(f"SCENARIO: {n} BIL(ER)")
+        print(f"Status: {'Fullført' if not missed else 'Inkomplett'}")
+        print(f"Besøkte lokasjoner: {visited_count}/{len(data['locations'])}")
+        if missed:
+            print(f"Manglende lokasjoner: {missed}")
+        
+        for i, route in enumerate(routes):
+            print(f"  Bil {i+1}: {' -> '.join(map(str, route))}")
+        
+        print(f"Total distanse: {cost:.2f} km")
+        print("-" * 30)

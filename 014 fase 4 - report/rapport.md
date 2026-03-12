@@ -91,10 +91,23 @@ Den heuristiske løsningen optimaliserer rutevalget ved å kombinere flere lokal
 ### 4.3 Analyse av tidsvinduer og kapasitet
 Gjennom den heuristiske tilnærmingen ser vi at tidsvinduene er en kritisk begrensning. Selv om bilens kapasitet på 180 tillater flere stopp, begrenses rute 2 og 3 av når lokalitetene er tilgjengelige for henting. Dette illustrerer viktigheten av koordinering mellom slakteri og oppdrettslokaliteter.
 
+### 4.4 Scenarioanalyse: Antall biler
+For å undersøke den operative fleksibiliteten har vi analysert hvor mange biler som er nødvendig for å dekke alle lokasjoner gitt de faste begrensningene for kapasitet og tidsvinduer.
+
+| Scenario | Status | Besøkte lokasjoner | Total distanse |
+| :--- | :---: | :---: | :---: |
+| 1 Bil | Inkomplett | 3 / 7 | 244.28 km |
+| 2 Biler | Inkomplett | 5 / 7 | 374.37 km |
+| **3 Biler** | **Fullført** | **7 / 7** | **534.00 km** |
+
+Analysen viser at 3 biler er minimumskravet for å betjene alle oppdrettslokalitetene i denne regionen. Begrensningen ligger primært i tidsvinduene for når fisken kan hentes, kombinert med kjøretid mellom lokasjonene. Selv om én bil har kapasitet til å frakte mer volum, rekker den ikke over alle geografiske punkter innenfor de gitte tidsrammene.
+
 ---
 
 ## 5. Diskusjon
-*(Her vil vi diskutere resultatene i lys av teorien og de valgte forskningsspørsmålene.)*
+Resultatene viser en betydelig effektivitetsgevinst ved å bruke en heuristisk tilnærming sammenlignet med en enkel referanseløsning. En reduksjon i total kjørelengde på over 36% vil ha direkte innvirkning på både transportkostnader og miljøutslipp.
+
+Scenarioanalysen av antall biler understreker at logistikken i havbruksnæringen er tidsfølsom. Valget av 3 biler fremstår som den mest kostnadseffektive løsningen som samtidig ivaretar alle leveransekrav.
 
 ---
 
