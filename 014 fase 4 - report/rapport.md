@@ -60,15 +60,15 @@ Datagrunnlaget etableres ved bruk av syntetiske, men realistiske data konstruert
 *   Transportvolumer (tonn fisk) ved hver lokalitet.
 
 ### 3.3 Modellering og analyse
-Modellarbeidet innebærer implementering av algoritmer i Python for å finne kostnadseffektive ruter. Vi tester ulike løsninger og gjennomfører en scenarioanalyse for å dokumentere funnene. Resultatene sammenlignes med en definert baseline for å vurdere effektivitetsgevinsten.
+Modellarbeidet innebærer implementering av algoritmer i Python for å finne kostnadseffektive ruter. Vi benytter en "Greedy" (grådig) algoritme for å løse VRP-problemet med tidsvinduer (VRPTW). Modellen inkluderer en **hard retur-til-depot-begrensning**, som sikrer at ingen lokasjon blir inkludert i en rute med mindre kjøretøyet beviselig rekker å returnere til slakteriet (depot) innen den maksimale tidsrammen på 480 minutter. Vi tester ulike løsninger og gjennomfører en scenarioanalyse for å dokumentere funnene. Resultatene sammenlignes med en definert baseline for å vurdere effektivitetsgevinsten.
 
 ### 3.4 Kvalitetssikring
-Kvalitet i arbeidet sikres gjennom intern gjennomgang av kode og tekst, kontroll av kilder og jevn vurdering av framdrift. Det legges vekt på korrekt bruk av referanser etter APA 7. standard.
+Kvalitet i arbeidet sikres gjennom intern gjennomgang av kode og tekst, kontroll av kilder og jevn vurdering av framdrift. Ved å bygge inn logiske sikkerhetsmekanismer direkte i koden (som f.eks. sjekk av returtid før hvert besøk), reduseres risikoen for urealistiske rutevalg. Det legges vekt på korrekt bruk av referanser etter APA 7. standard.
 
 ---
 
 ## 4. Analyse og resultater
-I dette kapittelet presenteres resultatene fra modelleringen av ruteplanleggingsproblemet. Vi sammenligner en heuristisk løsning basert på en "greedy" algoritme med en enkel referanseløsning (baseline).
+I dette kapittelet presenteres resultatene fra modelleringen av ruteplanleggingsproblemet. Vi sammenligner en heuristisk løsning basert på en "greedy" algoritme med en enkel referanseløsning (baseline). Den heuristiske modellen er programmert til å alltid prioritere overholdelse av tidsvinduer og returfrist fremfor maksimal utnyttelse av bilens kapasitet.
 
 ### 4.1 Sammenligning av løsninger
 Modellen har analysert transport fra 7 oppdrettslokaliteter til ett slakteri (depot) med en bilkapasitet på 180 enheter.
@@ -80,7 +80,7 @@ Modellen har analysert transport fra 7 oppdrettslokaliteter til ett slakteri (de
 | **Forbedring (%)** | - | **36.37%** |
 
 ### 4.2 Visualisering og tidsbruk per rute
-Den heuristiske løsningen optimaliserer rutevalget ved å kombinere flere lokaliteter i samme rute, så lenge kapasitets- og tidsvindubegrensninger overholdes. Samtlige ruter returnerer til slakteriet (depot) godt innenfor tidsrammen på 480 minutter (8 timer).
+Den heuristiske løsningen optimaliserer rutevalget ved å kombinere flere lokaliteter i samme rute, så lenge kapasitets- og tidsvindubegrensninger overholdes. Algoritmen garanterer nå at samtlige ruter returnerer til slakteriet (depot) innen tidsrammen på 480 minutter (8 timer).
 
 *   **Rute 1:** 0 -> 6 -> 7 -> 4 -> 0
     *   Last: 134 tonn
