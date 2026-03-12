@@ -37,5 +37,14 @@ Selv om en lastebil har en kapasitet på 180 tonn (som er nok til å bære hele 
 | **2 Biler** | **Ikke mulig** | Rekker 5 av 7 lokasjoner. De to siste lokasjonene ligger geografisk slik til at tidsbruken overskrider 480 min. |
 | **3 Biler** | **Optimalt** | Alle 7 lokasjoner besøkes, og alle biler er tilbake på slakteriet innenfor fristen. |
 
-## 4. Konklusjon
+## 4. Drøfting: Ventetid vs. Just-In-Time (JIT)
+I løpet av reviewen har vi vurdert hvordan modellen håndterer ankomsttider i forhold til tidsvinduenes åpningstid.
+
+*   **Nåværende logikk:** Modellen tillater at en bil ankommer *før* tidsvinduet åpner. I slike tilfeller "venter" bilen ved lokasjonen til åpningstid (f.eks. kl. 08:00) før lasteprosessen starter. Dette maksimerer utnyttelsen av tiden, da bilen allerede er på plass når vinduet åpner.
+*   **Vurdert alternativ (JIT):** Vi har vurdert en strengere begrensning der bilen ikke kan ankomme før åpningstid. Dette ville betydd at bilen måtte vente ved forrige lokasjon eller depotet. 
+*   **Konsekvens:** En JIT-tilnærming ville sannsynligvis ha forskjøvet hele ruteplanen senere på dagen. Dette ville gjort det enda vanskeligere å overholde den harde 480-minutters returfristen til depotet, og kunne potensielt ha krevd enda flere biler. 
+
+Nåværende løsning med "venting ved lokasjon" anses som den mest realistiske og effektive tilnærmingen for fortransport i denne regionen.
+
+## 5. Konklusjon
 Visualiseringene er konsistente med de underliggende dataene. Koordinatene (f.eks. Depot ved x=75, y=19) stemmer overens med kartet. Fargekodingen og pilene gjør det enkelt å følge flyten i hver rute. Disse figurene er egnet for bruk i sluttrapporten for å underbygge de kvantitative funnene og forklare hvorfor 3 biler er den operasjonelle minimumsløsningen.
