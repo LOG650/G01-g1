@@ -1,42 +1,31 @@
 # Milepæler – LOG650 Lerøy
 
 Prosjekttittel: Ruteplanlegging av fortransport hos Lerøy  
-Prosjektperiode: Februar–Juni 2026
+Prosjektperiode: 2026-02-01 til 2026-05-31
 
 ## Milepæloversikt
 
-- **Godkjent proposal**  
-  Dato: **2026-02-15**
+| Milepæl | Dato | Tid |
+|---|---|---|
+| Fase 1 ferdig og godkjent | 2026-02-27 | 17:00 |
+| Fase 2 ferdig og godkjent | 2026-03-18 | 17:00 |
+| Fase 3 ferdig og godkjent | 2026-04-27 | 17:00 |
+| Fase 4 ferdig og godkjent | 2026-05-24 | 17:00 |
 
-- **Godkjent prosjektplan**  
-  Dato: **2026-03-01**
+## Kort forklaring
 
-- **Ferdig modell**  
-  Dato: **2026-04-01**
+Disse milepælene markerer avslutning og godkjenning av de fire hovedfasene i prosjektet:
 
-- **Scenarioanalyse ferdig**  
-  Dato: **2026-04-20**
+- **Fase 1:** Initiering
+- **Fase 2:** Planlegging
+- **Fase 3:** Gjennomføring
+- **Fase 4:** Avslutning
 
-- **Hovedutkast levert**  
-  Dato: **2026-05-01**
+## Statusformat for oppfølging
 
-- **Endelig levering**  
-  Dato: **2026-06-01**
-
-## Kort tolkning
-
-Milepælene markerer de viktigste overgangene i prosjektet:
-- fra initiering til planlegging
-- fra planlegging til modellutvikling
-- fra modellutvikling til analyse
-- fra analyse til rapportskriving
-- fra hovedutkast til endelig levering
-
-## Statusformat dere kan bruke i gruppa
-
-Bruk gjerne dette formatet når dere oppdaterer progresjon:
+Bruk gjerne dette formatet når gruppa følger opp fremdriften:
 
 - **Planlagt dato:** YYYY-MM-DD
 - **Faktisk dato:** YYYY-MM-DD
 - **Status:** Ikke startet / Pågår / Fullført
-- **Kommentar:** Kort kommentar om avvik eller fremdrift
+- **Kommentar:** Kort kommentar om fremdrift eller avvik
