@@ -1,72 +1,58 @@
-# PROSJEKTSTYRINGSPLAN – FASE 2
-**LOG650 – Forskningsprosjekt: Logistikk og kunstig intelligens**
+# LOG650 – Prosjektstyringsplan Fase 2
+**Ruteplanlegging av fortransport hos Lerøy**
 
-**Prosjekttittel:** Ruteplanlegging av fortransport hos Lerøy
-**Prosjektperiode:** Februar–Juni 2026
-**Prosjektgruppe:** 4 studenter (Hanne Haugvaldstad, Mira Viem, Marte Dolva, Kenneth Sandvik)
+## 1. Prosjektbeskrivelse
+Prosjektet omhandler analyse av transportlogistikk i havbruksnæringen med utgangspunkt i fortransport av fisk mellom oppdrettslokaliteter og slakteri. Arbeidet skal resultere i en kvantitativ analyse av hvordan transporten kan organiseres mer effektivt ved hjelp av digitale verktøy og logistiske metoder.
 
----
+Prosjektet gjennomføres over ett semester som et gruppearbeid med fire studenter. Arbeidet omfatter planlegging, datagrunnlag, modellutvikling, analyse, rapportskriving og presentasjon.
 
-## 1. Sammendrag
-Prosjektet etablerer en kvantitativ ruteoptimaliseringsmodell for fortransport av slakteklar fisk. Modellen struktureres som et Vehicle Routing Problem (VRP) og analyserer kostnadsminimering under kapasitetsbegrensninger. Prosjektet kombinerer operasjonsanalyse og KI-støttet utviklingsmetodikk. Studien undersøker hvordan optimaliserte ruter påvirker transportkostnader sammenlignet med en referanseløsning.
+Det legges opp til en gradvis utvikling av prosjektet der hver fase bygger på resultatene fra forrige fase.
 
-## 2. Forskningsdesign og metodisk forankring
-Studien gjennomføres som et kvantitativt modellbasert forskningsprosjekt. Forskningsdesignet er eksplorativt og analytisk, hvor en syntetisk, men realistisk datastruktur benyttes for å teste optimaliseringsalgoritmens ytelse. Metodisk forankres studien i operasjonsanalyse og heuristisk optimalisering.
+## 2. Aktiviteter
+Prosjektet deles inn i flere hovedaktiviteter som gjennomføres i en logisk rekkefølge gjennom semesteret.
 
-## 3. Suksesskriterier (SMART)
-*   **Spesifikt:** Utvikle VRP-modell for 7 lokaliteter og 1 slakteri.
-*   **Målbart:** Dokumentere kostnadsreduksjon sammenlignet med baseline.
-*   **Oppnåelig:** Implementeres i Python innen semesterets rammer.
-*   **Relevant:** Bidrar til logistikkoptimalisering i havbruk.
-*   **Tidsavgrenset:** Fullføres innen 1. juni 2026.
+1.  **Teori og litteratur:** Først gjennomføres litteratursøk og innsamling av relevant teori innen logistikk og transportanalyse.
+2.  **Datagrunnlag:** Deretter etableres datagrunnlaget som skal brukes videre i prosjektet.
+3.  **Modellering og analyse:** Videre gjennomføres modellarbeid, testing av ulike løsninger, analyse av resultater og dokumentasjon av funn.
+4.  **Avslutning:** Avslutningsvis ferdigstilles rapporten og presentasjonen.
 
-## 4. Arbeidsnedbrytningsstruktur (WBS)
-1.  Initiering og proposal
-2.  Datamodellering og parametere
-3.  Avstandsmatrise
-4.  Implementering av heuristisk algoritme
-5.  Scenarioanalyse
-6.  Resultatanalyse
-7.  Rapportskriving
-8.  Kvalitetssikring og peer-review
-9.  Presentasjon
+## 3. Fremdriftsplan
+Prosjektet følger emnets fire faser og organiseres med tydelige milepæler gjennom semesteret.
 
-## 5. Kritisk linje-analyse
-Kritisk linje består av følgende sekvens: Datamodellering → Implementering → Scenarioanalyse → Resultatanalyse → Rapportskriving. Forsinkelser i disse aktivitetene vil direkte påvirke prosjektets sluttdato.
+*   **Fase 1:** Ferdigstillelse av proposal og prosjektplan.
+*   **Fase 2 (Nå):** Modellarbeid og analyse.
+*   **Fase 3:** Hovedutkast til rapport ferdigstilles før fristen i mai.
+*   **Fase 4:** Endelig levering.
 
-## 6. Milepæler
-| Milepæl | Dato |
+Fremdriftsplanen er detaljert videre i vedlagt Microsoft Project-fil, hvor aktivitetene oppdateres fortløpende med status og fullføringsgrad.
+
+## 4. Arbeidsfordeling
+Prosjektet gjennomføres av fire studenter.
+
+| Rolle | Ansvar |
 | :--- | :--- |
-| Godkjent proposal | 2026-02-15 |
-| Godkjent prosjektplan | 2026-03-01 |
-| Ferdig modell | 2026-04-01 |
-| Scenarioanalyse ferdig | 2026-04-20 |
-| Hovedutkast levert | 2026-05-01 |
-| Endelig levering | 2026-06-01 |
+| **Student 1** | Prosjektoppfølging og framdrift |
+| **Student 2** | Datagrunnlag og strukturering |
+| **Student 3** | Modellarbeid og analyse |
+| **Student 4** | Rapport og kvalitetssikring |
 
-## 7. Risikoanalyse (kvantitativ)
-| Risiko | Sannsynlighet | Konsekvens | Risikoscore |
-| :--- | :---: | :---: | :---: |
-| Begrenset Python-kompetanse | 3 | 4 | 12 |
-| Tidsmangel | 4 | 5 | 20 |
-| Modellforenkling | 2 | 3 | 6 |
-| Datavaliditet | 3 | 3 | 9 |
+## 5. Risikoanalyse
+Prosjektet inneholder enkelte risikofaktorer som kan påvirke framdrift og kvalitet. Den største risikoen er begrenset tid, siden gruppemedlemmene kombinerer prosjektet med fulltidsarbeid. Det er også en risiko knyttet til tekniske utfordringer i modellarbeidet.
 
-*(Risikoscore = Sannsynlighet × Konsekvens)*
+Gruppen vurderer prosjektet som gjennomførbart innen semesterets rammer dersom aktivitetene følges opp jevnlig og avgrensningen opprettholdes gjennom hele prosjektperioden.
 
-## 8. Kvalitet og vurderingskriterier
-For å møte vurderingskriteriene i LOG650 vektlegges: (1) tydelig avgrensning, (2) metodisk konsistens mellom forskningsspørsmål og modell, (3) reproduserbarhet, (4) analytisk dybde i scenarioanalyse, (5) korrekt og konsistent bruk av APA 7.
+## 6. Ressurser
+Prosjektet gjennomføres med bruk av tilgjengelige digitale verktøy og programvare:
+*   Python
+*   Excel
+*   Microsoft Project
+*   Word
 
-| Krav-ID | Beskrivelse |
-| :--- | :--- |
-| KR1 | Alle oppdrettslokaliteter skal besøkes én gang i ruten |
-| KR2 | Transporten skal starte og avsluttes ved slakteriet |
-| KR3 | Kjøretøyets kapasitetsbegrensning skal ikke overskrides |
-| KR4 | Modellen skal kunne beregne totale transportkostnader |
-| KR5 | Resultatene skal være reproduserbare ved bruk av samme datasett |
+## 7. Kommunikasjon
+Det legges opp til regelmessig kommunikasjon mellom gruppemedlemmene gjennom hele prosjektperioden. Gruppen gjennomfører ukentlige møter for å følge opp framdrift og avklare oppgaver.
 
-## Referanser
-*   Laporte, G. (2009). Fifty years of vehicle routing. *Transportation Science*, 43(4), 408–416.
-*   Toth, P., & Vigo, D. (2014). *Vehicle routing: Problems, methods, and applications*. SIAM.
-*   Russell, S., & Norvig, P. (2021). *Artificial intelligence: A modern approach* (4th ed.). Pearson.
-*   Christopher, M. (2016). *Logistics and supply chain management* (5th ed.). Pearson.
+## 8. Kvalitetssikring
+Kvalitet sikres gjennom intern gjennomgang av tekst, kontroll av kilder og jevn vurdering av framdrift. Det legges vekt på korrekt bruk av referanser etter APA 7.
+
+## 9. Vedlegg
+Prosjektplanen suppleres med Microsoft Project-fil, aktivitetsplan og Gantt-oversikt.
