@@ -54,13 +54,46 @@ KI benyttes i dette prosjektet som et støtteverktøy for å løse komplekse rut
 Studien gjennomføres som en kvantitativ modellerings- og analyseoppgave. Arbeidet følger en gradvis utvikling der hver fase bygger på resultatene fra den forrige. Forskningsdesignet er eksplorativt og analytisk, med fokus på å teste hvordan ulike parametere påvirker den optimale ruten.
 
 ### 3.2 Datainnsamling og datagrunnlag
-Datagrunnlaget etableres ved bruk av syntetiske, men realistiske data konstruert ved hjelp av faktiske geografiske lokasjoner i den valgte regionen. 
-*   Geografiske koordinater for 7 oppdrettslokaliteter og 1 slakteri.
-*   Avstandsmatrise mellom alle lokasjoner.
-*   Transportvolumer (tonn fisk) ved hver lokalitet.
+Datagrunnlaget i prosjektet er basert på et syntetisk, men konsistent datasett generert av faglærer. Datasettet representerer ett depot (slakteri) og sju oppdrettslokaliteter, og er utviklet for å gi et realistisk grunnlag for modellering av ruteplanlegging med kapasitets- og tidsbegrensninger.
+
+Datasettet består av følgende elementer:
+- koordinater for 1 slakteri og 7 lokaliteter
+- etterspørsel per lokalitet
+- lastetid per lokalitet
+- tidsvinduer for henting
+- avstandsmatrise mellom alle noder
+- tidsmatrise mellom alle noder
+- kapasitet på kjøretøy
+
+Koordinatene er oppgitt i et todimensjonalt koordinatsystem. Avstandene mellom lokasjonene er beregnet som euklidske luftlinjeavstander. Tidsmatrisen er generert ved å runde ned avstandene til hele minutter. Dette er en forenkling, men vurderes som hensiktsmessig i en avgrenset modellstudie.
+
+Etterspørsel og lastetid brukes for å representere hvor mye som skal hentes ved hver lokalitet og hvor lang tid hvert stopp tar. Tidsvinduene angir når en lokalitet kan betjenes. Disse variablene er sentrale fordi modellen er formulert som et ruteplanleggingsproblem med tidsvinduer (VRPTW).
+
+Kjøretøykapasiteten er satt til 180 enheter. Samlet etterspørsel i datasettet er 312 enheter, noe som innebærer at alle lokaliteter ikke kan betjenes i én enkelt rute. Dette gjør det nødvendig å analysere flere ruter og scenarioer for antall biler.
+
+#### 3.2.1 Oversikt over inputdata
+
+| Node | Rolle | x | y | Etterspørsel | Lastetid (min) | Tidsvindu start | Tidsvindu slutt |
+|---|---|---:|---:|---:|---:|---:|---:|
+| 0 | Slakteri    | 75 | 19 | - | - | 0 | 480 |
+| 1 | Lokalitet 1 | 54 | 81 | 28 | 43 | 80 | 126 |
+| 2 | Lokalitet 2 | 11 | 14 | 39 | 54 | 19 | 271 |
+| 3 | Lokalitet 3 | 70 | 93 | 85 | 100 | 94 | 207 |
+| 4 | Lokalitet 4 | 16 | 8 | 44 | 59 | 62 | 435 |
+| 5 | Lokalitet 5 | 17 | 10 | 26 | 41 | 32 | 275 |
+| 6 | Lokalitet 6 | 87 | 42 | 15 | 30 | 21 | 178 |
+| 7 | Lokalitet 7 | 96 | 87 | 75 | 90 | 83 | 423 |
+
+#### 3.2.2 Avstands- og tidsmatriser
+
+Avstandsmatrisen er brukt som grunnlag for beregning av transportkostnad, mens tidsmatrisen er brukt for å kontrollere gjennomførbarhet opp mot tidsvinduer og maksimal rutevarighet. Avstandene er symmetriske, og diagonalen i matrisen er lik 0. Tidsmatrisen er avledet fra avstandsmatrisen ved å runde ned avstandene til hele minutter.
+
+Full avstandsmatrise er vist i vedlegg A, og full tidsmatrise er vist i vedlegg B.
 
 ### 3.3 Modellering og analyse
-Modellarbeidet innebærer implementering av algoritmer i Python for å finne kostnadseffektive ruter. Vi benytter en "Greedy" (grådig) algoritme for å løse VRP-problemet med tidsvinduer (VRPTW). Modellen inkluderer en **hard retur-til-depot-begrensning**, som sikrer at ingen lokasjon blir inkludert i en rute med mindre kjøretøyet beviselig rekker å returnere til slakteriet (depot) innen den maksimale tidsrammen på 480 minutter. Vi tester ulike løsninger og gjennomfører en scenarioanalyse for å dokumentere funnene. Resultatene sammenlignes med en definert baseline for å vurdere effektivitetsgevinsten.
+Modellarbeidet innebærer implementering av algoritmer i Python for å finne kostnadseffektive ruter. Vi benytter en "Greedy" (grådig) heuristikk for å løse et Vehicle Routing Problem with Time Windows (VRPTW). Modellen bruker avstandsmatrise, tidsmatrise, etterspørsel, lastetid, tidsvinduer og kjøretøykapasitet som input.
+
+Modellen inkluderer en hard retur-til-depot-begrensning, som sikrer at ingen lokasjon blir inkludert i en rute med mindre kjøretøyet beviselig rekker å returnere til slakteriet innen den maksimale tidsrammen på 480 minutter. Vi tester ulike løsninger og gjennomfører scenarioanalyse for å dokumentere funnene. Resultatene sammenlignes med en definert baseline for å vurdere effektivitetsgevinsten.
 
 ### 3.4 Kvalitetssikring
 Kvalitet i arbeidet sikres gjennom intern gjennomgang av kode og tekst, kontroll av kilder og jevn vurdering av framdrift. Ved å bygge inn logiske sikkerhetsmekanismer direkte i koden (som f.eks. sjekk av returtid før hvert besøk), reduseres risikoen for urealistiske rutevalg. Det legges vekt på korrekt bruk av referanser etter APA 7. standard.
@@ -123,7 +156,41 @@ Scenarioanalysen av antall biler understreker at logistikken i havbruksnæringen
 ---
 
 ## Referanser
-- Laporte, G. (2009). Fifty years of vehicle routing. *Transportation Science*, 43(4), 408–416.
-- Toth, P., & Vigo, D. (2014). *Vehicle routing: Problems, methods, and applications*. SIAM.
+- Christopher, M. (2016). *Logistics & supply chain management* (5th ed.). Pearson.
+- Laporte, G. (2009). Fifty years of vehicle routing. *Transportation Science, 43*(4), 408–416. https://doi.org/10.1287/trsc.1090.0301
+- Osvald, A., & Zadnik Stirn, L. (2008). A vehicle routing algorithm for the distribution of fresh vegetables and similar perishable food. *Journal of Food Engineering, 85*(2), 285–295. https://doi.org/10.1016/j.jfoodeng.2007.07.008
+- Oyola, J., Arntzen, H., & Woodruff, D. L. (2018). The stochastic vehicle routing problem, a literature review, part I: Models. *EURO Journal on Transportation and Logistics, 7*(3), 193–221. https://doi.org/10.1007/s13676-016-0100-5
 - Russell, S., & Norvig, P. (2021). *Artificial intelligence: A modern approach* (4th ed.). Pearson.
-- Christopher, M. (2016). *Logistics and supply chain management* (5th ed.). Pearson.
+- Solomon, M. M. (1987). Algorithms for the vehicle routing and scheduling problems with time window constraints. *Operations Research, 35*(2), 254–265. https://doi.org/10.1287/opre.35.2.254
+- Toth, P., & Vigo, D. (2014). *Vehicle routing: Problems, methods, and applications* (2nd ed.). SIAM.
+- Utama, D. M., Dewi, S. K., Wahid, A., & Santoso, I. (2020). The vehicle routing problem for perishable goods: A systematic review. *Cogent Engineering, 7*(1), Article 1816148. https://doi.org/10.1080/23311916.2020.1816148
+
+---
+
+## Vedlegg
+
+### Vedlegg A – Avstandsmatrise (km)
+
+| Fra / til | Slakteri | Lok. 1 | Lok. 2 | Lok. 3 | Lok. 4 | Lok. 5 | Lok. 6 | Lok. 7 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| **Slakteri** | 0.0 | 65.5 | 64.2 | 74.2 | 60.0 | 58.7 | 25.9 | 71.2 |
+| **Lokalitet 1** | 65.5 | 0.0 | 79.6 | 20.0 | 82.3 | 80.1 | 51.1 | 42.4 |
+| **Lokalitet 2** | 64.2 | 79.6 | 0.0 | 98.6 | 7.8 | 7.2 | 81.0 | 112.0 |
+| **Lokalitet 3** | 74.2 | 20.0 | 98.6 | 0.0 | 100.7 | 98.5 | 53.8 | 26.7 |
+| **Lokalitet 4** | 60.0 | 82.3 | 7.8 | 100.7 | 0.0 | 2.2 | 78.7 | 112.4 |
+| **Lokalitet 5** | 58.7 | 80.1 | 7.2 | 98.5 | 2.2 | 0.0 | 77.0 | 110.3 |
+| **Lokalitet 6** | 25.9 | 51.1 | 81.0 | 53.8 | 78.7 | 77.0 | 0.0 | 45.9 |
+| **Lokalitet 7** | 71.2 | 42.4 | 112.0 | 26.7 | 112.4 | 110.3 | 45.9 | 0.0 |
+
+### Vedlegg B – Tidsmatrise (minutter)
+
+| Fra / til | Slakteri | Lok. 1 | Lok. 2 | Lok. 3 | Lok. 4 | Lok. 5 | Lok. 6 | Lok. 7 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| **Slakteri** | 0 | 65 | 64 | 74 | 60 | 58 | 25 | 71 |
+| **Lokalitet 1** | 65 | 0 | 79 | 20 | 82 | 80 | 51 | 42 |
+| **Lokalitet 2** | 64 | 79 | 0 | 98 | 7 | 7 | 80 | 112 |
+| **Lokalitet 3** | 74 | 20 | 98 | 0 | 100 | 98 | 53 | 26 |
+| **Lokalitet 4** | 60 | 82 | 7 | 100 | 0 | 2 | 78 | 112 |
+| **Lokalitet 5** | 58 | 80 | 7 | 98 | 2 | 0 | 76 | 110 |
+| **Lokalitet 6** | 25 | 51 | 80 | 53 | 78 | 76 | 0 | 45 |
+| **Lokalitet 7** | 71 | 42 | 112 | 26 | 112 | 110 | 45 | 0 |
