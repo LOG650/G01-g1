@@ -57,7 +57,7 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 - [x] Koblet til oppgavens problemstilling og metodevalg
 - [ ] **Sjekk kildehenvisninger** – står "Archetti et al." uten årstall/sidetall flere steder i teksten
 - [ ] **Fjern veiledningsteksten** ("Diskuter de viktigste bidragene de 5 siste årene...", kulepunktene om synsing)
-- [ ] Vurder om kap. 2 og 3 kan slås sammen – skriveveilederen anbefaler ett samlet teori-/litteraturkapittel
+- [ ] ~~Vurder om kap. 2 og 3 kan slås sammen~~ – utsatt til etter tilbakemelding fra faglærerne (2026-04-20)
 
 ---
 
@@ -71,7 +71,7 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 - [x] 3.6 Oppsummering og kobling til problemstilling
 - [ ] **Fjern veiledningsteksten** på slutten ("Når du skal skrive en bacheloroppgave...")
 - [ ] Sjekk at Cormen et al. 2009 faktisk er brukt i bibliografien (mangler nå)
-- [ ] Vurder å integrere med kap. 2 (skriveveileder anbefaler det)
+- [ ] ~~Vurder å integrere med kap. 2~~ – utsatt til etter tilbakemelding fra faglærerne (2026-04-20)
 
 ---
 
