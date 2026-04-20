@@ -50,14 +50,15 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 
 ---
 
-## 2. Litteratur *(Alle)*
+## 2. Litteratur *(Alle)* ✅ FERDIG (2026-04-20)
 
 - [x] Substansielt kapittel – 5-års utviklingstrekk beskrevet
 - [x] Relevant forskning presentert (Archetti, Adamo, Liu, Bogyrbayeva)
 - [x] Koblet til oppgavens problemstilling og metodevalg
-- [ ] **Sjekk kildehenvisninger** – står "Archetti et al." uten årstall/sidetall flere steder i teksten
-- [ ] **Fjern veiledningsteksten** ("Diskuter de viktigste bidragene de 5 siste årene...", kulepunktene om synsing)
-- [ ] ~~Vurder om kap. 2 og 3 kan slås sammen~~ – utsatt til etter tilbakemelding fra faglærerne (2026-04-20)
+- [x] Kildehenvisninger rettet til APA-format (Archetti et al. (2026), Adamo et al. (2024), Liu et al. (2023), Bogyrbayeva et al. (2024))
+- [x] Veiledningstekst pakket inn i HTML-kommentar
+- [x] KI-merknad flyttet til kap. 5.5 Bruk av KI i forskningsprosessen
+- [ ] ~~Vurder om kap. 2 og 3 kan slås sammen~~ – utsatt til etter tilbakemelding fra faglærerne
 
 ---
 
