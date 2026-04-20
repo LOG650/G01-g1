@@ -1,18 +1,24 @@
 # Sjekkliste for videre arbeid – LOG650 G01
 
-Oppdatert 2026-04-20 etter gjennomgang av [Mal prosjekt LOG650 v2.md](Mal prosjekt LOG650 v2.md) (gruppens utkast, 34 sider) sammenholdt med skriveveilederen **main_SKRIVING (9. des. 2025)**.
+Oppdatert 2026-04-20 etter gjennomgang av gruppens utkast (34 sider) sammenholdt med skriveveilederen **main_SKRIVING (9. des. 2025)**.
+
+**Kildefiler:**
+- [rapport.md](rapport.md) – **ekte Markdown-versjon** konvertert fra PDF 2026-04-20 (895 linjer). Bruk denne til videre redigering.
+- [Mal prosjekt LOG650 v2.md](Mal prosjekt LOG650 v2.md) – originalen (PDF med feil .md-endelse).
+- [kap4_casebeskrivelse.md](kap4_casebeskrivelse.md) – casebeskrivelsen som falt ut av PDF-eksport.
 
 Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 
 ## Hovedfunn fra sammenligningen
 
 - **Kap. 1–3 og 5–6 har substansielt innhold** (innledning, litteratur, teori, metode, modellering).
-- **Kap. 4 Casebeskrivelse har tekst** (falt ut av PDF-eksport, sikret i [kap4_casebeskrivelse.md](kap4_casebeskrivelse.md) 2026-04-20).
+- **Kap. 4 Casebeskrivelse** – tekst finnes i [kap4_casebeskrivelse.md](kap4_casebeskrivelse.md), men er ikke lagt inn i rapporten.
 - **Kap. 7 Analyse, 8 Resultat, 9 Diskusjon, 10 Konklusjon er tomme** – kun veiledningstekst fra malen.
-- **Sammendrag og Abstract mangler helt** (s. 6–7).
-- **Malens veiledningstekst ligger fortsatt inne** i flere kapitler (f.eks. 1.0, 1.3, 1.4, 2.0, 3.0 siste avsnitt, 4.0, 7.0, 8.0, 9.0, 10.0) – må fjernes før innlevering.
+- **Sammendrag og Abstract mangler helt**.
+- **Malens veiledningstekst ligger fortsatt inne** i flere kapitler (1.0, 1.3, 1.4, 2.0, 3.0 siste avsnitt, 4.0, 7.0, 8.0, 9.0, 10.0) – må fjernes før innlevering.
 - **Vedlegg A og B er begge "Avstandsmatrise"** – B skal være tidsmatrise.
 - **Bibliografi er delvis** og ikke konsekvent APA 7 (nakne URL-er, manglende info).
+- **Forside-elementer** (egenerklæring, publiseringsavtale) ble eksportert som bilder i PDF og ligger nå som transkriberte tekstblokker i [rapport.md](rapport.md) – kan ryddes bort.
 
 ---
 
