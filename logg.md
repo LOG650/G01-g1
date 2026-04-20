@@ -55,4 +55,19 @@ For å sikre full åpenhet rundt verktøybruken, har vi transkribert visuelle re
 
 ---
 
+## 2026-04-20 – Datavisualisering og strukturert sjekkliste (Claude Code)
+
+**martedolva-ctrl** benyttet Claude Code (Sonnet 4.6) som faglig sparringspartner gjennom dagen. Arbeidet er dokumentert her for sporbarhet på KI-bruk:
+
+**Datavisualisering:**
+Claude genererte et Python-script ([006 analysis/visualiser_nettverk.py](006 analysis/visualiser_nettverk.py)) som leser [004 data/data.json](004 data/data.json) og produserer et tosidig plott ([004 data/nettverk_visualisering.png](004 data/nettverk_visualisering.png)): nodekart med depot + 7 lokaliteter (størrelse skalert etter etterspørsel), og horisontalt tidsvindu-diagram. Script og output er kontrollert og godkjent manuelt.
+
+**Sammenligning mot skriveveileder:**
+Claude ekstraherte struktur og kravpunkter fra `main_SKRIVING, (9. des, 2025).md` (124-siders skriveveileder for LOG650, levert som PDF) og fra rapportutkastet `Mal prosjekt LOG650 v2.md` (34-siders PDF). Basert på dette ble [014 fase 4 - report/sjekkliste.md](014 fase 4 - report/sjekkliste.md) generert – en strukturert gjennomgang kapittel for kapittel med markering av hva som er ferdig, påbegynt eller gjenstår. KI-en identifiserte blant annet at veiledningstekst fra malen fortsatt ligger inne i flere kapitler, at sammendrag/abstract mangler, og at Vedlegg B har feil overskrift.
+
+**Versjonskontroll:**
+Claude bistod også med `git pull`, `git push` og statussjekker underveis for å holde lokal og remote branch i synk.
+
+---
+
 *Loggen er generert og vedlikeholdt med støtte fra Gemini CLI og Claude Code, basert på faktiske hendelser og git-historikk.*

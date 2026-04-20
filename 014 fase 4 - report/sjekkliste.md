@@ -1,168 +1,211 @@
 # Sjekkliste for videre arbeid – LOG650 G01
 
-Sammenstilt 2026-04-20 fra **Mal prosjekt LOG650 v2** og skriveveilederen **main_SKRIVING (9. des. 2025)**.
-Tilpasset oppgavetypen **Modellering** (VRPTWTD – Vehicle Routing Problem with Time Windows and Time Dependency).
+Oppdatert 2026-04-20 etter gjennomgang av [Mal prosjekt LOG650 v2.md](Mal prosjekt LOG650 v2.md) (gruppens utkast, 34 sider) sammenholdt med skriveveilederen **main_SKRIVING (9. des. 2025)**.
 
 Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
+
+## Hovedfunn fra sammenligningen
+
+- **Kap. 1–3 og 5–6 har substansielt innhold** (innledning, litteratur, teori, metode, modellering).
+- **Kap. 4 Casebeskrivelse, 7 Analyse, 8 Resultat, 9 Diskusjon, 10 Konklusjon er tomme** – kun veiledningstekst fra malen.
+- **Sammendrag og Abstract mangler helt** (s. 6–7).
+- **Malens veiledningstekst ligger fortsatt inne** i flere kapitler (f.eks. 1.0, 1.3, 1.4, 2.0, 3.0 siste avsnitt, 4.0, 7.0, 8.0, 9.0, 10.0) – må fjernes før innlevering.
+- **Vedlegg A og B er begge "Avstandsmatrise"** – B skal være tidsmatrise.
+- **Bibliografi er delvis** og ikke konsekvent APA 7 (nakne URL-er, manglende info).
 
 ---
 
 ## 0. Pre-elementer (før hoveddel)
 
-- [ ] **Forside/tittelside** – bruk malens forside uendret (tittel, forfattere, institusjon, studieprogram, dato)
-- [ ] **Sammendrag** (norsk) – kort og presis sammenfatning av problem, metode, hovedfunn
-- [ ] **Abstract** (engelsk) – speiler sammendraget
-- [ ] **Forord/takk** (valgfritt) – ikke faglig innhold, ikke unnskyld svakheter
-- [ ] **Innholdsfortegnelse** – generert automatisk fra overskriftsnivåer
-- [ ] **Figurliste og tabelliste** (hvis nødvendig)
+- [ ] **Forside** – fyll inn tittel (norsk + engelsk), forfattere, antall sider, dato
+- [ ] **Egenerklæring** – huk av alle 6 punkter, signer
+- [ ] **Personvern/NSD** – krysse av (trolig "nei", prosjektet er ikke-personopplysninger)
+- [ ] **Publiseringsavtale** – veileder, studiepoeng, fullmakt
+- [ ] **Sammendrag** (s. 6) – helt tomt, må skrives (norsk, 200–300 ord)
+- [ ] **Abstract** (s. 7) – helt tomt, må skrives (engelsk, speiler sammendraget)
+- [ ] **Antall ord / forfattererklæring** (s. 5) – fjern malteksten eller fyll inn
+- [x] Innholdsfortegnelse – genereres automatisk
 
 ---
 
-## 1. Introduksjon *(Alle)*
+## 1. Innledning *(Alle)*
 
-- [ ] Kort motivasjon for tema og faglig relevans
-- [ ] **Presis problemstilling** formulert som spørsmål
-- [ ] Forskningsmål og ev. forskningsspørsmål
-- [ ] Tydelige, faglig begrunnede avgrensninger (én region, ett slakteri, syntetiske data)
-- [ ] Kort om rapportens oppbygging (hvis det hjelper leseren)
-
-**Unngå:** teorigjennomgang, casedetaljer, metode, resultater, konklusjoner, historikk om Lerøy, lengde over 2–3 sider, flere varianter av problemstillingen.
-
----
-
-## 2. Teori og litteratur *(Alle)*
-
-- [ ] Definisjon av sentrale begreper (VRP, VRPTW, VRPTWTD, ferskvare-perishability)
-- [ ] Presentasjon av relevant forskning (Dantzig & Ramser 1959, Solomon 1987, Osvald & Stirn 2008)
-- [ ] Syntese: hvordan kobler teorien til problemstillingen?
-- [ ] Kildekritikk – styrker/svakheter ved tidligere studier
-- [ ] Faglig begrunnelse for valg av VRPTWTD som rammeverk
-
-**Unngå:** datainnsamlingsdetaljer, bedriftsbeskrivelse, matematisk modellformulering, egne resultater, lange litteraturreferater uten kobling til problemstillingen.
+- [x] Motivasjon og faglig relevans skrevet
+- [x] Problemstilling formulert som "hvordan"-spørsmål
+- [x] 3 forskningsspørsmål definert
+- [x] Avgrensinger begrunnet faglig (1.3)
+- [x] Antagelser listet og begrunnet (1.4)
+- [ ] **Fjern veiledningsteksten** fra malen (s. 10–13): "Introduksjonen bør ikke være for lang...", "Svar på følgende spørsmål...", spørsmålslistene, eksemplene om Maritech/lakseprisen
+- [ ] 1.2 Delproblemer – enten skriv noe, eller slett overskriften (markert "valgfri")
+- [ ] Vurder: skal delproblemer stå, eller dekkes det av forskningsspørsmålene i 1.1?
 
 ---
 
-## 3. Casebeskrivelse *(Case/modell)*
+## 2. Litteratur *(Alle)*
 
-- [ ] Kort beskrivelse av Lerøy Seafood Group og fortransport av slakteklar fisk
+- [x] Substansielt kapittel – 5-års utviklingstrekk beskrevet
+- [x] Relevant forskning presentert (Archetti, Adamo, Liu, Bogyrbayeva)
+- [x] Koblet til oppgavens problemstilling og metodevalg
+- [ ] **Sjekk kildehenvisninger** – står "Archetti et al." uten årstall/sidetall flere steder i teksten
+- [ ] **Fjern veiledningsteksten** ("Diskuter de viktigste bidragene de 5 siste årene...", kulepunktene om synsing)
+- [ ] Vurder om kap. 2 og 3 kan slås sammen – skriveveilederen anbefaler ett samlet teori-/litteraturkapittel
+
+---
+
+## 3. Teori *(Alle)*
+
+- [x] 3.1 VRP – definert og referert (Toth & Vigo 2014, Laporte 2009, Archetti 2026)
+- [x] 3.2 VRPTW – Solomon 1987, Adamo 2024
+- [x] 3.3 Eksakte metoder vs heuristikker
+- [x] 3.4 Greedy/nearest neighbor (Cormen 2009)
+- [x] 3.5 KI i ruteplanlegging
+- [x] 3.6 Oppsummering og kobling til problemstilling
+- [ ] **Fjern veiledningsteksten** på slutten ("Når du skal skrive en bacheloroppgave...")
+- [ ] Sjekk at Cormen et al. 2009 faktisk er brukt i bibliografien (mangler nå)
+- [ ] Vurder å integrere med kap. 2 (skriveveileder anbefaler det)
+
+---
+
+## 4. Casebeskrivelse *(Case/modell)* ⚠️ TOMT
+
+- [ ] Beskriv Lerøy Seafood Group og fortransport av slakteklar fisk
 - [ ] Prosessflyt: fra oppdrettslokalitet til slakteri
-- [ ] Nøkkeltall (syntetiske): 7 lokaliteter, 1 slakteri, kapasitet 180 tonn, etterspørsel 15–85 tonn
-- [ ] Rammebetingelser: tidsvinduer, servicetid, arbeidstid (0–480 min)
-- [ ] Aktuell utfordring koblet til problemstillingen
-- [ ] Relevans: hvorfor egner caset seg for VRPTWTD?
-
-**Unngå:** teoretisk rammeverk, modellformler, resultater.
+- [ ] Kontekst: havbruksnæringen i Norge
+- [ ] Rammebetingelser: hvorfor er transport tidskritisk?
+- [ ] Hvorfor er caset egnet for VRPTWTD-modellering?
+- [ ] **Fjern veiledningsteksten** ("Har skal problemstillingen utbroderes...", eksempelet om gjennomløpstid)
 
 ---
 
-## 4. Data og metode *(Alle)*
+## 5. Metode og data *(Alle)*
 
-- [ ] Beskrivelse av datagrunnlaget – syntetisk, type, struktur, omfang
-- [ ] Forskningsdesign (simulering/modellering, scenarioanalyse)
-- [ ] Generering av posisjonsdata, avstander (euklidisk), tidsmatrise
-- [ ] Datakvalitet – hvordan er syntetiske data utformet som realistiske?
-- [ ] Analysemetoder: VRP-løser (f.eks. OR-Tools), sammenligning mot referanseløsning
-- [ ] Faglig begrunnelse for design, data og metode
-- [ ] **Reproduserbarhet**: verktøy (Python, VSCode, GitHub), kode tilgjengelig, prosedyre dokumentert
-- [ ] Beskrivelse av KI-bruk i prosessen (jf. APA 7 for KI-verktøy)
-
-**Unngå:** resultater, tolkning, modellformler, teoridiskusjon.
-
----
-
-## 5. Modellering *(Modell – kjernekapittel for dere)*
-
-- [ ] **Formål** med modellen (minimere transporttid/avstand)
-- [ ] **Mengder**: N (noder), K (kjøretøy), depot 0
-- [ ] **Parametre** eksplisitt definert: dᵢⱼ, tᵢⱼ, qᵢ, sᵢ, [eᵢ, lᵢ], Q (kapasitet)
-- [ ] **Beslutningsvariabler**: xᵢⱼₖ, Tᵢ, ev. lastvariabler
-- [ ] **Antakelser** listet og begrunnet (euklidisk distanse, konstant hastighet, ingen returlast)
-- [ ] **Målfunksjon** – matematisk uttrykt
-- [ ] **Restriksjoner** – kapasitet, tidsvinduer, flytbalans, retur til depot, subtour-eliminering
-- [ ] **Symboltabell** (anbefalt)
-- [ ] Modellvarianter/scenarioer (f.eks. antall biler, endret kapasitet)
-- [ ] Kobling tilbake til problemstillingen
-
-**Unngå:** numeriske verdier i formlene, resultater, kode/skjermbilder, teorihistorikk.
+- [x] 5.1.1 Datagrunnlag beskrevet (syntetisk datasett fra faglærer)
+- [x] 5.1.2 Lokasjoner og koordinater – tabell inkludert
+- [x] 5.1.3 Avstandsmetode (euklidsk) begrunnet
+- [x] 5.1.4 Avstandsmatrise referert til vedlegg
+- [x] 5.1.5 Tidsmatrise referert til vedlegg
+- [x] 5.1.6 Validering av avstander
+- [x] 5.1.7 Øvrige inputdata (kapasitet 180, samlet etterspørsel 312)
+- [x] 5.2 Data – identifisering av lokasjoner/region/slakteri
+- [x] 5.3 Geografiske data
+- [x] 5.4 Transportdata (volum + kostnadsparametere)
+- [ ] **Beskriv KI-bruk i metodeprosessen** (kreves eksplisitt av skriveveilederen)
+- [ ] Vurder om 5.2 og 5.3 overlapper – 5.2.2 "Velge region" og 5.3 "Samle geografiske data" sier delvis det samme
+- [ ] Reproduserbarhet: henvis til kode på GitHub
 
 ---
 
-## 6. Analyse og resultater *(Fleste)*
+## 6. Modellering *(Modell)* – kjernekapittel ✅ GODT UTKAST
 
-- [ ] Resultater fra modellkjøring (ruter, total avstand, tidsbruk, bilutnyttelse)
-- [ ] Sammenligning mot referanseløsning
-- [ ] Scenario-/sensitivitetsanalyse
-- [ ] Tabeller med tittel **over**, forklaring i tekst
-- [ ] Figurer med figurtekst og kilde **under**
-- [ ] Akser merket med enheter (km, min, tonn)
-- [ ] Resultater koblet eksplisitt til problemstillingen
-
-**Unngå:** tolkning ("dette betyr at..."), nye teorielementer, løsningsforslag, anbefalinger.
-
----
-
-## 7. Diskusjon *(Alle)*
-
-- [ ] Tolkning av hovedfunn i lys av problemstillingen
-- [ ] Sammenligning med Solomon / Osvald & Stirn / annen litteratur
-- [ ] Styrker og svakheter ved data, metode og modell
-- [ ] Generaliserbarhet – overføring til reelle Lerøy-data
-- [ ] Praktiske implikasjoner for oppdrettsnæringen
-- [ ] **Refleksjon over KI-bruk** – muligheter og begrensninger (faglig gevinst)
-
-**Unngå:** nye resultater/analyser, repetisjon av tall uten tolkning, konklusjoner.
+- [x] 6.1.1 Beslutningsvariabler definert (xᵢⱼ binær)
+- [x] 6.1.2 Målfunksjon (min Σ dᵢⱼ·xᵢⱼ)
+- [x] 6.1.3 Begrensninger: kapasitet, tidsvinduer, besøk, flyt, retur til depot
+- [x] 6.2 Python-implementering dokumentert
+- [x] 6.3 Testing og validering
+- [ ] **Legg til eksplisitt mengdedefinisjon** (N, K, V₀) og parametertabell (dᵢⱼ, tᵢⱼ, qᵢ, sᵢ, eᵢ, lᵢ, Q)
+- [ ] **Skriv restriksjoner som formler**, ikke bare tekstlig
+- [ ] Subtour-eliminering – nevnes den? (anbefalt for formell VRP-formulering)
+- [ ] Modellvarianter/scenarier eksplisitt nevnt
+- [ ] Flytt kodedetaljer til vedlegg hvis det blir for teknisk
 
 ---
 
-## 8. Konklusjon *(Alle)*
+## 7. Analyse *(Fleste)* ⚠️ TOMT
 
-- [ ] **Eksplisitt svar på problemstillingen**
+- [ ] Kjør modellen og hent resultater
+- [ ] Presenter valgte ruter (med figur)
+- [ ] Sammenlign med referanseløsning (baseline – f.eks. én rute per lokalitet)
+- [ ] Scenarioanalyse (endre etterspørsel, kapasitet eller antall biler)
+- [ ] Sensitivitetsanalyse
+- [ ] **Fjern veiledningsteksten** ("Hvordan skrive bacheloroppgave...")
+- [ ] Merk: ifølge skriveveileder skal 7 og 8 være objektive – ingen tolkning her
+
+---
+
+## 8. Resultat ⚠️ TOMT
+
+- [ ] Presenter hovedfunn i tabeller og figurer
+- [ ] Total avstand, tid per rute, antall biler, kapasitetsutnyttelse
+- [ ] Kart/rutediagram som viser valgt løsning
+- [ ] Forklarende tekst for **hver** figur og tabell
+- [ ] Koble hvert resultat eksplisitt til forskningsspørsmålene (FS1, FS2, FS3)
+- [ ] **Fjern veiledningsteksten**
+- [ ] Vurder: bør 7 og 8 slås sammen til "Analyse og resultater" (jf. skriveveileder kap. 4.6)?
+
+---
+
+## 9. Diskusjon *(Alle)* ⚠️ TOMT
+
+- [ ] Tolk hovedfunn i lys av problemstillingen og de 3 forskningsspørsmålene
+- [ ] Sammenlign med Solomon, Adamo, Liu et al.
+- [ ] Styrker og svakheter ved syntetisk data, euklidsk avstand, nearest-neighbor
+- [ ] Generaliserbarhet – kan modellen overføres til reelle Lerøy-data?
+- [ ] Praktiske implikasjoner for havbruksnæringen
+- [ ] **Kritisk refleksjon om KI-bruk** – muligheter og begrensninger (faglig gevinst-diskusjon)
+- [ ] **Fjern veiledningsteksten**
+
+---
+
+## 10. Konklusjon *(Alle)* ⚠️ TOMT
+
+- [ ] Eksplisitt svar på problemstillingen (gjenta den)
+- [ ] Svar på FS1, FS2, FS3
 - [ ] Kort oppsummering av hovedfunn
 - [ ] Praktiske/teoretiske implikasjoner
-- [ ] Forslag til videre arbeid (f.eks. reelle data, flere slakterier, stokastiske elementer)
-- [ ] Kort refleksjon om prosjektets bidrag
-
-**Unngå:** nye data/analyser, metode- eller teoridiskusjon, gjennomgang av hele rapporten.
-
----
-
-## 9. Post-elementer (etter hoveddel)
-
-- [ ] **Referanseliste** – APA 7, manuelt ført, alle kilder i teksten står i listen (og omvendt)
-- [ ] **Referering til KI-verktøy** – i tekst + referanseliste + beskrivelse av KI-bruk i metodekapitlet
-- [ ] **Vedlegg** – full kode, datasett, detaljerte tabeller, tekniske beregninger
-- [ ] Sjekk at hvert vedlegg er eksplisitt referert i hovedteksten
+- [ ] Forslag til videre arbeid
+- [ ] Refleksjon om KI-prosjektets bidrag
+- [ ] **Fjern veiledningsteksten** ("Hva er det viktigste dere har funnet?...")
 
 ---
 
-## 10. Tverrgående kvalitet (A-nivå-sjekkliste)
+## 11. Bibliografi ⚠️ UFULLSTENDIG
 
-- [ ] Problemstilling presis, avgrenset og undersøkelbar
+- [ ] Konverter alle kilder til **APA 7**, ikke nakne URL-er
+- [ ] Første 3 referanser mangler forfatter og år
+- [ ] Legg inn **Toth & Vigo (2014)** – brukt i 3.1
+- [ ] Legg inn **Laporte (2009)** – brukt i 3.1
+- [ ] Legg inn **Solomon (1987)** – brukt i 3.2
+- [ ] Legg inn **Cormen et al. (2009)** – brukt i 3.4
+- [ ] Legg inn **Dantzig & Ramser (1959)** – brukt i 3.1
+- [ ] **Referer KI-verktøy** (ChatGPT/Claude/Gemini) – versjon, dato, prompt-beskrivelse i metodekap.
+- [ ] Sjekk DOI og URL for alle APA-oppføringer
+- [ ] Alfabetisk rekkefølge
+
+---
+
+## 12. Vedlegg
+
+- [x] 12.1 Vedlegg A – Avstandsmatrise (km)
+- [ ] **12.2 Vedlegg B – rett overskrift** – skal være **Tidsmatrise (minutter)**, ikke duplikat av avstandsmatrisen
+- [ ] Legg til tidsmatrise-dataene (fra [data.json](../004 data/data.json))
+- [ ] Vurder flere vedlegg: Python-kode, full noderegistrering, scenarioresultater
+
+---
+
+## Tverrgående kvalitet (A-nivå)
+
+- [ ] Problemstillingen besvares eksplisitt i konklusjonen
 - [ ] Tydelig kobling teori → metode → data → analyse → konklusjon
-- [ ] Modell, data og antakelser er etterprøvbare
-- [ ] Drøfting viser kritisk refleksjon
-- [ ] Figurer og tabeller korrekt merket
-- [ ] Språk klart, presist og logisk (unngå "mye", "mange", "viktig", "kanskje")
-- [ ] Konsekvent personlig pronomen (vi-form akseptert)
-- [ ] Konsekvent referansestil gjennom hele rapporten
+- [ ] Alle antakelser er etterprøvbare
+- [ ] Drøfting viser kritisk refleksjon (kommer i kap. 9)
+- [ ] Figurer har figurtekst og kilde **under**; tabeller har tittel **over**
+- [ ] Akser merket med enheter (km, min, tonn)
+- [ ] Konsekvent språk og referansestil
+- [ ] Ingen "veldig", "mye", "kanskje" – unngå upresise ord
+- [ ] **Kjør hele rapporten gjennom stavekontroll** – sett noen feil: "Innlefveringsdato" (s. 1), "oppgaven gjennomfres", "heurisktisk" (s. 12), "tilbærning" (s. 12), "overskrives" (s. 13 – skal være overskrides)
 
 ---
 
-## 11. Formelle krav (HiMolde)
+## Prioritert rekkefølge fremover
 
-- [ ] Bruk av offisiell mal (Word v2 eller Markdown-konvertert)
-- [ ] Dokumentoppsett uendret fra malen
-- [ ] Språkvalg konsekvent (norsk eller engelsk)
-- [ ] Sidenummerering fra kapittel 1
-- [ ] Innlevering innen **2026-05-24 kl. 17:00** (Fase 4 deadline)
-
----
-
-## Prioritert rekkefølge for G01 fremover
-
-1. Fullføre **Modellering (kap. 5)** – matematisk formulering
-2. Kjøre modellen og bygge **Analyse og resultater (kap. 6)**
-3. Skrive **Diskusjon (kap. 7)** og **Konklusjon (kap. 8)**
-4. Ferdigstille **Introduksjon (kap. 1)** – skrives best til slutt
-5. Sammendrag og abstract – helt til slutt
-6. Referanseliste, vedlegg, finpuss
+1. **Fjern all veiledningstekst** fra malen i kap. 1–10 (rask fix, stor effekt)
+2. **Kjør modellen** → resultater for kap. 7–8
+3. Skriv **Casebeskrivelse (kap. 4)** – relativt kort, men nødvendig
+4. Skriv **Analyse + Resultat (kap. 7–8)**
+5. Skriv **Diskusjon (kap. 9)** og **Konklusjon (kap. 10)**
+6. Ryd opp i **Modellering (kap. 6)** – mer formell notasjon
+7. Komplett **Bibliografi** i APA 7
+8. **Sammendrag + Abstract** helt til slutt
+9. Fyll inn forside, erklæringer, publiseringsavtale
+10. Rett **Vedlegg B** (tidsmatrise)
+11. Finpuss: korrektur, stavefeil, figurnummerering
