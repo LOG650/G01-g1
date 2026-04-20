@@ -47,4 +47,12 @@ For å sikre full åpenhet rundt verktøybruken, har vi transkribert visuelle re
 
 ---
 
-*Loggen er generert og vedlikeholdt med støtte fra Gemini CLI, basert på faktiske hendelser og git-historikk.*
+---
+
+## 2026-04-19 – Sammenligning og sjekkliste for videre arbeid
+
+**martedolva-ctrl** sammenliknet gjeldende rapportutkast med `main_SKRIVING` for å kartlegge hva som gjenstår. Gjennomgangen resulterte i en sjekkliste for videre arbeid frem mot innlevering.
+
+---
+
+*Loggen er generert og vedlikeholdt med støtte fra Gemini CLI og Claude Code, basert på faktiske hendelser og git-historikk.*
