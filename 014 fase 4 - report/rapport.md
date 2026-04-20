@@ -87,9 +87,8 @@ _Du/dere fyller ut erklæringen ved å klikke i ruten til høyre for den enkelte
 |**1.0**|**Innledning .................................................................................................................1**|
 |---|---|
 |1.1|Problemstilling ...................................................................................................... 2|
-|1.2|Delproblemer (valgfri) .......................................................................................... 2|
-|1.3|Avgrensinger ......................................................................................................... 2|
-|1.4|Antagelser ............................................................................................................. 3|
+|1.2|Avgrensinger ......................................................................................................... 2|
+|1.3|Antagelser ............................................................................................................. 3|
 |**2.0**|**Litteratur ..................................................................................................................3**|
 |**3.0**|**Teori ..........................................................................................................................3**|
 |**4.0**|**Casebeskrivelse .........................................................................................................4**|
@@ -154,9 +153,7 @@ Viktig:
 -->
 
 
-## **1.2 Delproblemer (valgfri)** 
-
-## **1.3 Avgrensinger (Marte)** 
+## **1.2 Avgrensinger (Marte)** 
 
 For å gjøre problemstillingen håndterbar er oppgaven avgrenset på flere områder. For det første er analysen begrenset til én region og ett slakteri (depot), med tilhørende syv oppdrettslokaliteter. Dette innebærer at problemstillingen ikke tar hensyn til samspill mellom flere depoter eller større geografiske nettverk. Avgrensningen er gjort for å isolere effekten av rutevalg og gjøre modellen håndterbar. 
 
@@ -164,7 +161,7 @@ For det andre fokuserer oppgaven på et statisk ruteplanleggingsproblem. Det inn
 
 Oppgaven er også avgrenset til én type kjøretøy med fast kapasitet. Variasjoner i kjøretøystyper, kostnadsstrukturer eller bemanning er ikke inkludert. Dette forenkler modelleringen og gjør det mulig å fokusere på selve rutestrukturen. 
 
-Når det gjelder løsningsmedote er analysen avgrenset til bruk av enkel heurisktisk tilbærning basert på nearest-neighbor prinsippet. Oppgaven søker dermed ikke å finne en global optimal løsning ved hjelp av eksakte metoder eller metaheurestikker. Dette er gjort fordi vi rett og slett ikke er matematikere eller programmerere, og vi skal kunne etterprøve løsningen og trenger dermed en transparent modell innenfor prosjektets omfang. 
+Når det gjelder løsningsmetode er analysen avgrenset til bruk av enkel heuristisk tilnærming basert på nearest-neighbor-prinsippet. Oppgaven søker dermed ikke å finne en global optimal løsning ved hjelp av eksakte metoder eller metaheuristikker. Valget er gjort for å sikre transparens og etterprøvbarhet innenfor prosjektets omfang. 
 
 <!-- VEILEDNING FRA MAL (slett før innlevering):
 Avgrensing er en svært viktig måte å snevre inn en problemstilling. Forklar hvorfor noe ikke er tatt med. Ikke skriv at du ikke har nok tid – det er et tegn på for vidt formulert problemstilling.
@@ -176,7 +173,7 @@ Eksempler:
 -->
 
 
-## **1.4 Antagelser (Marte)** 
+## **1.3 Antagelser (Marte)** 
 
 For å gjøre ruteplanleggingsproblemet håndterbart er det gjort flere forenklede antakelser. Vi erkjenner at dette påvirker hvor realistiske resultatene blir. 
 
