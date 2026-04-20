@@ -7,7 +7,8 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 ## Hovedfunn fra sammenligningen
 
 - **Kap. 1–3 og 5–6 har substansielt innhold** (innledning, litteratur, teori, metode, modellering).
-- **Kap. 4 Casebeskrivelse, 7 Analyse, 8 Resultat, 9 Diskusjon, 10 Konklusjon er tomme** – kun veiledningstekst fra malen.
+- **Kap. 4 Casebeskrivelse har tekst** (falt ut av PDF-eksport, sikret i [kap4_casebeskrivelse.md](kap4_casebeskrivelse.md) 2026-04-20).
+- **Kap. 7 Analyse, 8 Resultat, 9 Diskusjon, 10 Konklusjon er tomme** – kun veiledningstekst fra malen.
 - **Sammendrag og Abstract mangler helt** (s. 6–7).
 - **Malens veiledningstekst ligger fortsatt inne** i flere kapitler (f.eks. 1.0, 1.3, 1.4, 2.0, 3.0 siste avsnitt, 4.0, 7.0, 8.0, 9.0, 10.0) – må fjernes før innlevering.
 - **Vedlegg A og B er begge "Avstandsmatrise"** – B skal være tidsmatrise.
@@ -66,14 +67,18 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 
 ---
 
-## 4. Casebeskrivelse *(Case/modell)* ⚠️ TOMT
+## 4. Casebeskrivelse *(Case/modell)* ✅ TEKST PÅ PLASS (sikret 2026-04-20)
 
-- [ ] Beskriv Lerøy Seafood Group og fortransport av slakteklar fisk
-- [ ] Prosessflyt: fra oppdrettslokalitet til slakteri
-- [ ] Kontekst: havbruksnæringen i Norge
-- [ ] Rammebetingelser: hvorfor er transport tidskritisk?
-- [ ] Hvorfor er caset egnet for VRPTWTD-modellering?
-- [ ] **Fjern veiledningsteksten** ("Har skal problemstillingen utbroderes...", eksempelet om gjennomløpstid)
+Teksten falt ut av PDF-eksporten – sikret i [kap4_casebeskrivelse.md](kap4_casebeskrivelse.md). Må legges tilbake i kildedokumentet (Word) før ny eksport.
+
+- [x] Beskriv Lerøy Seafood Group og fortransport av slakteklar fisk
+- [x] Prosessflyt: fra oppdrettslokalitet til slakteri
+- [x] Kontekst: havbruksnæringen i Norge
+- [x] Rammebetingelser: geografisk spredning, kapasitet, tidskrav
+- [x] Hvorfor er caset egnet for kvantitativ ruteplanlegging
+- [ ] **Legg teksten tilbake i Word-dokumentet** som eksporteres til PDF
+- [ ] **Fjern veiledningsteksten** fra malen ("Har skal problemstillingen utbroderes...", eksempelet om gjennomløpstid)
+- [ ] Vurder utvidelse: nøkkeltall (syntetiske) – 7 lokaliteter, 1 slakteri, kapasitet 180 t
 
 ---
 
