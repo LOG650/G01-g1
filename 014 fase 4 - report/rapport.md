@@ -398,23 +398,26 @@ Teoridelen din skal rett og slett beskrive grunnlaget for studiet ditt, og danne
 
 ## **4.0 Casebeskrivelse ( Kenneth )** 
 
-Har skal problemstillingen utbroderes for den bedriften du samarbeidet med eller det . Ta med all relevant informasjon som er nødvendig for å få en full forståelse av problemet, men ikke mer.  Husk å holde den røde tråden til problemstillingen, unødvendig informasjon trekker ned. Man kan gjerne beskrive om en bransje eller en teori hvis problemstillingen ikke omhandler en spesifikk bedrift. 
+Denne oppgaven tar utgangspunkt i en case knyttet til transportoptimalisering hos Lerøy Seafood. Lerøy er en sentral aktør innen norsk havbruksnæring og har omfattende logistikk knyttet til transport av fisk mellom produksjonslokaliteter og videre til mottak eller slakteri.
 
-10 
+Caset setter søkelys på fortransport av fisk fra oppdrettslokaliteter til slakteri, hvor effektiv ruteplanlegging er viktig for å redusere transportkostnader, sikre god ressursutnyttelse og opprettholde stabile leveranser.
 
-Anta vi f.eks. har som problemstilling og forbedre gjennomløpstiden for en vare i en produksjonsbedrift: 
+Transporten kjennetegnes av geografisk spredte lokasjoner, kapasitetsbegrensninger og tidsmessige krav, noe som gjør problemstillingen egnet for analyse ved bruk av kvantitative ruteplanleggingsmodeller.
 
-- Type bedrift og hvorfor produktet har lav gjennomløpstid. 
+I oppgaven benyttes et syntetisk datasett utviklet for analyseformål, mens Lerøy Seafood Group fungerer som casegrunnlag for problemstillingen.
 
-- Beskrivelse av produktets oppbygning i komponenter. 
+<!-- VEILEDNING FRA MAL (behold til resten er ferdig, slett før innlevering):
+Har skal problemstillingen utbroderes for den bedriften du samarbeidet med eller det. Ta med all relevant informasjon som er nødvendig for å få en full forståelse av problemet, men ikke mer. Husk å holde den røde tråden til problemstillingen, unødvendig informasjon trekker ned. Man kan gjerne beskrive om en bransje eller en teori hvis problemstillingen ikke omhandler en spesifikk bedrift.
 
-- Hvordan bedriften gjennomfører produksjonen av produktet i dag? 
+Anta vi f.eks. har som problemstilling og forbedre gjennomløpstiden for en vare i en produksjonsbedrift:
+- Type bedrift og hvorfor produktet har lav gjennomløpstid.
+- Beskrivelse av produktets oppbygning i komponenter.
+- Hvordan bedriften gjennomfører produksjonen av produktet i dag?
+- Hvilke faktorer som påvirker gjennomløpstiden.
+- Hvilke data som bedriften har for prosessen.
+- Hva bedriften tror som forårsaker lav gjennomløpstid.
+-->
 
-- Hvilke faktorer som påvirker gjennomløpstiden. 
-
-- Hvilke data som bedriften har for prosessen. 
-
-- Hva bedriften tror som forårsaker lav gjennomløpstid. 
 
 ## **5.0 Metode og data (kan splittes i to)** 
 
