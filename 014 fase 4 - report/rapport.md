@@ -229,8 +229,6 @@ Diskuter de viktigste bidragene de 5 siste årene innen temaet. Trekk tråder ti
 
 ## **3.0 Teori (Marte)** 
 
-Teorikapittelet er generert av KI. Vi har søkt oss frem til relevante kilder i forkant, og deretter latt KI få kunstnerisk frihet basert på de kildene, i tillegg til kilder den selv har foreslått. Alle henvisninger som KI har foreslått er sjekket av et menneske. 
-
 ## **3.1 Vehicle Routing Problem (VRP)** 
 
 Vehicle Routing Problem (VRP) er et sentralt optimaliseringsproblem innen logistikk og transportplanlegging, først formulert av George B. Dantzig og John H. Ramser. Problemet omhandler hvordan en flåte av kjøretøy kan planlegges slik at et sett av lokasjoner betjenes med lavest mulig kostnad, ofte uttrykt som total kjørelengde eller transporttid (Toth & Vigo, 2014). 
@@ -786,7 +784,7 @@ Liu, X., mfl. (2023). _A systematic literature review of vehicle routing problem
 
 ## **12.1 Vedlegg A – Avstandsmatrise (km)** 
 
-|**Fra / tl**|**Slakteri**|**Lok. 1**|**Lok. 2**|**Lok. 3**|**Lok. 4**|**Lok. 5**|**Lok. 6**|**Lok. 7**|
+|**Fra / til**|**Slakteri**|**Lok. 1**|**Lok. 2**|**Lok. 3**|**Lok. 4**|**Lok. 5**|**Lok. 6**|**Lok. 7**|
 |---|---|---|---|---|---|---|---|---|
 |**Slakteri**|0.0|65.5|64.2|74.2|60.0|58.7|25.9|71.2|
 |**Lokalitet 1**|65.5|0.0|79.6|20.0|82.3|80.1|51.1|42.4|
@@ -801,18 +799,22 @@ Liu, X., mfl. (2023). _A systematic literature review of vehicle routing problem
 
 24 
 
-## **12.2 Vedlegg B – Avstandsmatrise (km)** 
+## **12.2 Vedlegg B – Tidsmatrise (minutter)** 
 
-|**Fra / tl**|**Slakteri**|**Lok. 1**|**Lok. 2**|**Lok. 3**|**Lok. 4**|**Lok. 5**|**Lok. 6**|**Lok. 7**|
+|**Fra / til**|**Slakteri**|**Lok. 1**|**Lok. 2**|**Lok. 3**|**Lok. 4**|**Lok. 5**|**Lok. 6**|**Lok. 7**|
 |---|---|---|---|---|---|---|---|---|
-|**Slakteri**|0.0|65.5|64.2|74.2|60.0|58.7|25.9|71.2|
-|**Lokalitet 1**|65.5|0.0|79.6|20.0|82.3|80.1|51.1|42.4|
-|**Lokalitet 2**|64.2|79.6|0.0|98.6|7.8|7.2|81.0|112.0|
-|**Lokalitet 3**|74.2|20.0|98.6|0.0|100.7|98.5|53.8|26.7|
-|**Lokalitet 4**|60.0|82.3|7.8|100.7|0.0|2.2|78.7|112.4|
-|**Lokalitet 5**|58.7|80.1|7.2|98.5|2.2|0.0|77.0|110.3|
-|**Lokalitet 6**|25.9|51.1|81.0|53.8|78.7|77.0|0.0|45.9|
-|**Lokalitet 7**|71.2|42.4|112.0|26.7|112.4|110.3|45.9|0.0|
+|**Slakteri**|0|65|64|74|60|58|25|71|
+|**Lokalitet 1**|65|0|79|20|82|80|51|42|
+|**Lokalitet 2**|64|79|0|98|7|7|80|112|
+|**Lokalitet 3**|74|20|98|0|100|98|53|26|
+|**Lokalitet 4**|60|82|7|100|0|2|78|112|
+|**Lokalitet 5**|58|80|7|98|2|0|76|110|
+|**Lokalitet 6**|25|51|80|53|78|76|0|45|
+|**Lokalitet 7**|71|42|112|26|112|110|45|0|
+
+## **12.3 Vedlegg C – Prosjektlogg og dokumentasjon av KI-bruk**
+
+Prosjektloggen [logg.md](../logg.md) dokumenterer prosjektets utvikling kronologisk, inkludert hvilke KI-verktøy som har vært brukt, til hvilke formål, og hvordan resultatene er kvalitetssikret. Loggen oppdateres fortløpende gjennom prosjektperioden og er lagt ved i sin helhet.
 
 
 

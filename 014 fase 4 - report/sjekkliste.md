@@ -17,7 +17,7 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 - **Kap. 7 Analyse, 8 Resultat, 9 Diskusjon, 10 Konklusjon er tomme** – kun veiledningstekst fra malen.
 - **Sammendrag og Abstract mangler helt**.
 - **Malens veiledningstekst ligger fortsatt inne** i flere kapitler (1.0, 1.3, 1.4, 2.0, 3.0 siste avsnitt, 4.0, 7.0, 8.0, 9.0, 10.0) – må fjernes før innlevering.
-- **Vedlegg A og B er begge "Avstandsmatrise"** – B skal være tidsmatrise.
+- **Vedlegg B korrigert til tidsmatrise** (2026-04-20). **Vedlegg C – Prosjektlogg/KI-bruk** lagt til.
 - **Bibliografi er delvis** og ikke konsekvent APA 7 (nakne URL-er, manglende info).
 - **Forside-elementer** (egenerklæring, publiseringsavtale) ble eksportert som bilder i PDF og ligger nå som transkriberte tekstblokker i [rapport.md](rapport.md) – kan ryddes bort.
 
@@ -189,9 +189,9 @@ Teksten falt ut av PDF-eksporten – sikret i [kap4_casebeskrivelse.md](kap4_cas
 ## 12. Vedlegg
 
 - [x] 12.1 Vedlegg A – Avstandsmatrise (km)
-- [ ] **12.2 Vedlegg B – rett overskrift** – skal være **Tidsmatrise (minutter)**, ikke duplikat av avstandsmatrisen
-- [ ] Legg til tidsmatrise-dataene (fra [data.json](../004 data/data.json))
-- [ ] Vurder flere vedlegg: Python-kode, full noderegistrering, scenarioresultater
+- [x] 12.2 Vedlegg B – Tidsmatrise (minutter) – korrigert 2026-04-20
+- [x] 12.3 Vedlegg C – Prosjektlogg og dokumentasjon av KI-bruk – lagt til 2026-04-20
+- [ ] Vurder flere vedlegg: Python-kode, scenarioresultater
 
 ---
 
