@@ -11,8 +11,8 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 
 ## Hovedfunn fra sammenligningen
 
-- **Kap. 1 er ferdigstilt** (2026-04-20): veiledningstekst skjult, delproblemer fjernet, språk rettet.
-- **Kap. 2, 3, 5, 6 har substansielt innhold** (litteratur, teori, metode, modellering).
+- **Kap. 1 og 2 er ferdigstilt** (2026-04-20).
+- **Kap. 3, 5, 6 har substansielt innhold** (teori, metode, modellering) – må ryddes.
 - **Kap. 4 Casebeskrivelse** – tekst finnes i [kap4_casebeskrivelse.md](kap4_casebeskrivelse.md), men er ikke lagt inn i rapporten.
 - **Kap. 7 Analyse, 8 Resultat, 9 Diskusjon, 10 Konklusjon er tomme** – kun veiledningstekst fra malen.
 - **Sammendrag og Abstract mangler helt**.
