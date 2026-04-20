@@ -112,49 +112,22 @@ Fortransport av slakteklar fisk fra oppdrettslokaliteter til slakteri er en sent
 
 Denne oppgaven tar utgangspunkt i fortransport i én region hos Lerøy og undersøker hvordan ruteplanlegging kan modelleres og analyseres ved hjelp av kvantitative metoder. Studien er avgrenset til transport fra 7 oppdrettslokaliteter til ett slakteri og fokuserer på kostnadsminimering som beslutningskriterium. 
 
-Introduksjonen bør ikke være for lang, mellom 1-4 sider, helst kun 1-2. For mye skrift her kan være et tegn på at man sliter med å være presis. Ta utgangspunkt i et generelt tema og deretter beskriv den aktuelle problemstillingen. 
+<!-- VEILEDNING FRA MAL (slett før innlevering):
+Introduksjonen bør ikke være for lang, mellom 1-4 sider, helst kun 1-2. For mye skrift her kan være et tegn på at man sliter med å være presis. Ta utgangspunkt i et generelt tema og deretter beskriv den aktuelle problemstillingen.
 
-## Svar på følgende spørsmål: 
+Svar på følgende spørsmål:
+- Hvilket tema handler oppgaven om?
+- Hvorfor er tema aktuelt?
+- Hva har blitt gjort tidligere (de mest vesentlige referansene)?
+- Hva er rapportens problemstilling (eget underavsnitt)?
+- Hvilke avgrensinger gjøres (eget underavsnitt)?
 
-- Hvilket tema handler oppgaven om? 
+Viktige momenter:
+- Skap nysgjerrighet slik at leseren ønsker å lese videre. Aktualiser temaet og pek på konsekvenser resultatet kan gi. Men unngå å brodere ut hvordan resultatet oppnås.
+- Prøv å gi leseren innblikk i strukturen til rapporten gjennom hele introduksjonen (eksempler: «Lakseprisens volatilitet påvirker svært mange aktører som…», «Ref 1 har vist at lakseprisen er avhengig av…», «Litteraturstudiet vårt viser at ingen har inkludert faktorer som …», osv.)
+- Henvis tilbake til introduksjonen indirekte for å skape en rød tråd.
+-->
 
-- Hvorfor er tema aktuelt? 
-
-- Hva har blitt gjort tidligere (de mest vesentlige referansene)? 
-
-- Hva er rapportens problemstilling (eget underavsnitt)? 
-
-- Hvilke avgrensinger gjøres (eget underavsnitt)? 
-
-## Viktige momenter: 
-
-- Skap nysgjerrighet slik at leseren ønsker å lese videre. Kunsten er ofte å aktualisere temaet for deretter o peke på konsekvenser som resultatet kan gi. Men unngå å brodere ut hvordan resultatet oppnås – for da må leseren lese videre. 
-
-- Prøv å gi leseren innblikk i strukturen til rapporten gjennom hele introduksjonen. 
-
-   - «Lakseprisens volatilitet påvirker svært mange aktører som…» 
-
-   - «Ref 1 har vist at lakseprisen er avhengig av…» 
-
-   - «Derimot argumenter Ref 2 at volatiliteten også påvirkes av» 
-
-   - «Litteraturstudiet vårt viser at ingen har inkludert faktorer som …» 
-
-   - «For Maritech skaper volatiliteten utfordringer for kundene fordi…» 
-
-   - «Med bedre modeller kan Maritech gi fordel til sine kunder ved at…» 
-
-   - «Vi har brukt bedriftens salgsdata for å kartlegge hvilke faktorer som…» 
-
-1 
-
-`o` «Basert på statistisk regresjonsteori har vi beskrevet en ny modell som…» 
-
-`o` «I analysen har vi indentifisert interessante funn som bl.a…» 
-
-`o` «Konklusjonen er derfor at…» 
-
-- Det er lurt å henvise tilbake til introduksjonen _indirekte_ ved å f.eks. bruke setninger som gjentar litt det som ble sagt i introduksjonen. På den måten skapes det en rød tråd hos leseren gjennom hele rapporten hvor hen minnes på hvorfor rapporten er interessant. 
 
 ## **1.1 Problemstilling** 
 
@@ -166,29 +139,20 @@ Hvordan kan kvantitative ruteplanleggingsmodeller, støttet av kunstig intellige
 
 2. Hvilke ruter gir lavest samlet transportkostnad sammenlignet med en enkel referanseløsning (baseline)? 
 
-3. Hvordan påvirkes den optimale ruten av endringer i transportvolum og antall 
+3. Hvordan påvirkes den optimale ruten av endringer i transportvolum og antall oppdrettslokaliteter innenfor gitte rammebetingelser?
 
-oppdrettslokaliteter innenfor gitte rammebetingelser? 
+<!-- VEILEDNING FRA MAL (slett før innlevering):
+Problemstillingen din er avgjørende for et godt resultat. Dette skal ikke være et «hva»- eller «hvilket»-spørsmål. Bruk «hvordan»- eller «hvorfor»-spørsmål, det gjør problemstillingen mer omfattende.
 
-Problemstillingen din er avgjørende for et godt resultat. Dette skal ikke være et «hva»eller «hvilket»-spørsmål. 
+En god problemstilling danner grunnlaget for hele oppgaven – tenk nøye gjennom. Kan gjenta noe fra innledningen.
 
-Sørg for at du har en «hvordan»- eller «hvorfor»-spørsmål, noe som vil gjøre problemstillingen din mye mer omfattende. 
+Viktig:
+- Vær så spesifikk som mulig
+- Vær nøye med formuleringene
+- Ikke skriv noe du ikke svarer på (dangerzone)
+- Ikke svar på mer enn det som står i problemstillingen (dangerzone)
+-->
 
-En god problemstilling danner grunnlaget for hele oppgaven din, så her er det verdt å tenke seg nøye om. 
-
-Kan godt gjenta noe av det som ble sagt i innledningen. 
-
-Her er det viktig at du 
-
-• er så spesifikk som mulig 
-
-• er svært nøye med formuleringene 
-
-2 
-
-- ikke skriver noe du ikke svarer på (dangerzone) 
-
-- ikke svarer på noe _mer_ enn det som står i problemstillingen (da burde det enten vært tatt ut eller vært inkludert i problemstillingen (dangerzone) 
 
 ## **1.2 Delproblemer (valgfri)** 
 
@@ -202,15 +166,15 @@ Oppgaven er også avgrenset til én type kjøretøy med fast kapasitet. Variasjo
 
 Når det gjelder løsningsmedote er analysen avgrenset til bruk av enkel heurisktisk tilbærning basert på nearest-neighbor prinsippet. Oppgaven søker dermed ikke å finne en global optimal løsning ved hjelp av eksakte metoder eller metaheurestikker. Dette er gjort fordi vi rett og slett ikke er matematikere eller programmerere, og vi skal kunne etterprøve løsningen og trenger dermed en transparent modell innenfor prosjektets omfang. 
 
-Avgrensing er en svært viktig måte å _snevre inn_ en problemstilling. Her forklarer du hvorfor du ikke har tatt med det og det. Pass på at du ikke avgrenser noe uten å forklare hvorfor, og husk aldri skriv at du ikke har nok tid e.l. det er et stort tegn på en for vidt formulert problemstilling. 
+<!-- VEILEDNING FRA MAL (slett før innlevering):
+Avgrensing er en svært viktig måte å snevre inn en problemstilling. Forklar hvorfor noe ikke er tatt med. Ikke skriv at du ikke har nok tid – det er et tegn på for vidt formulert problemstilling.
 
-- «Vi avgrenser oppgaven til kun ett produkt siden…» 
+Eksempler:
+- «Vi avgrenser oppgaven til kun ett produkt siden…»
+- «Vi analyserer 80% av kundene da de resterende ikke…»
+- «Oppgaven omfatter kun Norge, da det utenlandske markedet ikke…»
+-->
 
-- «Vi analyserer 80% av kundene da de resterende ikke…» 
-
-- «Oppgaven omfatter kun Norge, da det utenlandske markedet ikke…» 
-
-3 
 
 ## **1.4 Antagelser (Marte)** 
 
@@ -230,11 +194,14 @@ virkeligheten, men det gjør det mulig for oss å analysere strukturen i
 
 ruteplanleggingsproblemet. Resultatet av denne analysen kan dermed ikke overføres til reelle operasjoner. 
 
-Antagelser er en måte å _presisere_ en problemstilling på. En antagelser er ikke det samme som avgrensing. En avgrensing snevrer inn omfanget, mens en antagelse presiserer situasjonen som analyseres. Man må forklare hvorfor man har tatt antagelsen, og hvilke konsekvenser den får på aktualiteten til analysen. 
+<!-- VEILEDNING FRA MAL (slett før innlevering):
+Antagelser er en måte å presisere en problemstilling på. En antagelse er ikke det samme som avgrensning. En avgrensning snevrer inn omfanget, mens en antagelse presiserer situasjonen som analyseres. Forklar hvorfor antagelsen er tatt og hvilke konsekvenser den får.
 
-- «Vi antar at antall innkommende ordrer er Poissonfordelt fordi…dette gjør at…» 
+Eksempler:
+- «Vi antar at antall innkommende ordrer er Poissonfordelt fordi…dette gjør at…»
+- «Vi antar at vi kan se vekk fra effekten av prisene i Sverige fordi…dette gjør at…»
+-->
 
-- «Vi antar at vi kan se vekk fra effekten av prisene i Sverige fordi…dette gjør at…» 
 
 ## **2.0 Litteratur (Marte)** 
 
