@@ -11,8 +11,9 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 
 ## Hovedfunn fra sammenligningen
 
-- **Kap. 1 og 2 er ferdigstilt** (2026-04-20).
-- **Kap. 3, 5, 6 har substansielt innhold** (teori, metode, modellering) – må ryddes.
+- **Kap. 1, 2 og 3 er ferdigstilt** (2026-04-20).
+- **Bibliografi er ryddet og komplettert** med alle siterte kilder (2026-04-20).
+- **Kap. 5 og 6 har substansielt innhold** (metode, modellering) – må ryddes.
 - **Kap. 4 Casebeskrivelse** – tekst finnes i [kap4_casebeskrivelse.md](kap4_casebeskrivelse.md), men er ikke lagt inn i rapporten.
 - **Kap. 7 Analyse, 8 Resultat, 9 Diskusjon, 10 Konklusjon er tomme** – kun veiledningstekst fra malen.
 - **Sammendrag og Abstract mangler helt**.
@@ -62,17 +63,18 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 
 ---
 
-## 3. Teori *(Alle)*
+## 3. Teori *(Alle)* ✅ FERDIG (2026-04-20)
 
-- [x] 3.1 VRP – definert og referert (Toth & Vigo 2014, Laporte 2009, Archetti 2026)
+- [x] 3.1 VRP – definert og referert (Dantzig & Ramser 1959, Toth & Vigo 2014, Laporte 2009, Archetti 2026)
 - [x] 3.2 VRPTW – Solomon 1987, Adamo 2024
 - [x] 3.3 Eksakte metoder vs heuristikker
-- [x] 3.4 Greedy/nearest neighbor (Cormen 2009)
-- [x] 3.5 KI i ruteplanlegging
+- [x] 3.4 Greedy/nearest neighbor (Cormen 2009, Liu 2023)
+- [x] 3.5 KI i ruteplanlegging (Bogyrbayeva 2024)
 - [x] 3.6 Oppsummering og kobling til problemstilling
-- [ ] **Fjern veiledningsteksten** på slutten ("Når du skal skrive en bacheloroppgave...")
-- [ ] Sjekk at Cormen et al. 2009 faktisk er brukt i bibliografien (mangler nå)
-- [ ] ~~Vurder å integrere med kap. 2~~ – utsatt til etter tilbakemelding fra faglærerne (2026-04-20)
+- [x] Veiledningstekst pakket inn i HTML-kommentar
+- [x] KI-merknad flyttet til kap. 5.5
+- [x] Dantzig & Ramser (1959) lagt til som eksplisitt sitering i 3.1
+- [x] ~~Vurder å integrere med kap. 2~~ – utsatt til etter tilbakemelding fra faglærerne
 
 ---
 
@@ -172,18 +174,19 @@ Teksten falt ut av PDF-eksporten – sikret i [kap4_casebeskrivelse.md](kap4_cas
 
 ---
 
-## 11. Bibliografi ⚠️ UFULLSTENDIG
+## 11. Bibliografi ✅ RYDDET (2026-04-20)
 
-- [ ] Konverter alle kilder til **APA 7**, ikke nakne URL-er
-- [ ] Første 3 referanser mangler forfatter og år
-- [ ] Legg inn **Toth & Vigo (2014)** – brukt i 3.1
-- [ ] Legg inn **Laporte (2009)** – brukt i 3.1
-- [ ] Legg inn **Solomon (1987)** – brukt i 3.2
-- [ ] Legg inn **Cormen et al. (2009)** – brukt i 3.4
-- [ ] Legg inn **Dantzig & Ramser (1959)** – brukt i 3.1
-- [ ] **Referer KI-verktøy** (ChatGPT/Claude/Gemini) – versjon, dato, prompt-beskrivelse i metodekap.
-- [ ] Sjekk DOI og URL for alle APA-oppføringer
-- [ ] Alfabetisk rekkefølge
+- [x] Alle kilder i APA 7-format
+- [x] Tre nakne URL-er fjernet (ikke sitert i teksten)
+- [x] **Toth & Vigo (2014)** lagt inn
+- [x] **Laporte (2009)** lagt inn
+- [x] **Solomon (1987)** lagt inn
+- [x] **Cormen et al. (2009)** lagt inn
+- [x] **Dantzig & Ramser (1959)** lagt inn
+- [x] "Liu, X., mfl." rettet til "Liu, X., et al."
+- [x] Alfabetisk rekkefølge
+- [ ] **Referer KI-verktøy** (ChatGPT/Claude/Gemini) – versjon, dato, prompt-beskrivelse (kan legges i kap. 5.5 eller som egen oppføring)
+- [ ] Sjekk DOI-lenker fungerer før innlevering
 
 ---
 

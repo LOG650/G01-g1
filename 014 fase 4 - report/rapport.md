@@ -231,7 +231,7 @@ Diskuter de viktigste bidragene de 5 siste årene innen temaet. Trekk tråder ti
 
 ## **3.1 Vehicle Routing Problem (VRP)** 
 
-Vehicle Routing Problem (VRP) er et sentralt optimaliseringsproblem innen logistikk og transportplanlegging, først formulert av George B. Dantzig og John H. Ramser. Problemet omhandler hvordan en flåte av kjøretøy kan planlegges slik at et sett av lokasjoner betjenes med lavest mulig kostnad, ofte uttrykt som total kjørelengde eller transporttid (Toth & Vigo, 2014). 
+Vehicle Routing Problem (VRP) er et sentralt optimaliseringsproblem innen logistikk og transportplanlegging, først formulert av Dantzig og Ramser (1959). Problemet omhandler hvordan en flåte av kjøretøy kan planlegges slik at et sett av lokasjoner betjenes med lavest mulig kostnad, ofte uttrykt som total kjørelengde eller transporttid (Toth & Vigo, 2014). 
 
 VRP er klassifisert som et NP-hard problem, noe som innebærer at beregningskompleksiteten øker raskt med antall lokasjoner (Laporte, 2009). Dette gjør at eksakte løsninger ofte er upraktiske i realistiske anvendelser. 
 
@@ -764,21 +764,23 @@ Hva er det viktigste dere har funnet?
 
 ## **11.0 Bibliografi** 
 
-The Vehicle Routing Problem: State-of-the-Art Classification and Review https://www.mdpi.com/2076-3417/11/21/10295 
+Adamo, T., Gendreau, M., Ghiani, G., & Guerriero, E. (2024). A review of recent advances in time-dependent vehicle routing. *European Journal of Operational Research, 319*(1), 1–15. https://doi.org/10.1016/j.ejor.2024.06.016
 
-Literature Review on Vehicle Routing Problem: Approaches, Algorithms and Current Challenges https://www.newinera.com/index.php/JournalLaMultiapp/article/view/2382 
+Archetti, C., Coelho, L. C., Speranza, M. G., & Vansteenwegen, P. (2026). Beyond fifty years of vehicle routing: Insights into the history and the future. *European Journal of Operational Research, 330*(2), 355–372. https://doi.org/10.1016/j.ejor.2025.06.014
 
-Scheduling of Vehicle Routing Problem from a Central Depot to a Number of Delivery Points 
+Bogyrbayeva, A., Meraliyev, M., Mustakhov, T., & Dauletbayev, B. (2024). Machine learning to solve vehicle routing problems. *IEEE Transactions on Intelligent Transportation Systems, 25*. https://arxiv.org/pdf/2205.02453
 
-Adamo, T., Gendreau, M., Ghiani, G., & Guerriero, E. (2024). _A review of recent advances in time-dependent vehicle routing_ . _European Journal of Operational Research, 319_ (1), 1– 15. https://doi.org/10.1016/j.ejor.2024.06.016 
+Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). *Introduction to algorithms* (3rd ed.). MIT Press.
 
-23 
+Dantzig, G. B., & Ramser, J. H. (1959). The truck dispatching problem. *Management Science, 6*(1), 80–91. https://doi.org/10.1287/mnsc.6.1.80
 
-Archetti, C., Coelho, L. C., Speranza, M. G., & Vansteenwegen, P. (2026). _Beyond fifty years of vehicle routing: Insights into the history and the future_ . _European Journal of Operational Research, 330_ (2), 355–372. https://doi.org/10.1016/j.ejor.2025.06.014 
+Laporte, G. (2009). Fifty years of vehicle routing. *Transportation Science, 43*(4), 408–416. https://doi.org/10.1287/trsc.1090.0301
 
-Bogyrbayeva, A., Meraliyev, M., Mustakhov, T., & Dauletbayev, B. (2024). _Machine learning to solve vehicle routing problems_ . _IEEE Transactions on Intelligent Transportation Systems, 25_ . https://arxiv.org/pdf/2205.02453 
+Liu, X., et al. (2023). A systematic literature review of vehicle routing problems. *Sustainability, 15*(15), 12004. https://www.mdpi.com/2071-1050/15/15/12004
 
-Liu, X., mfl. (2023). _A systematic literature review of vehicle routing problem... Sustainability, 15_ (15), 12004. https://www.mdpi.com/2071-1050/15/15/12004 
+Solomon, M. M. (1987). Algorithms for the vehicle routing and scheduling problems with time window constraints. *Operations Research, 35*(2), 254–265. https://doi.org/10.1287/opre.35.2.254
+
+Toth, P., & Vigo, D. (Eds.). (2014). *Vehicle routing: Problems, methods, and applications* (2nd ed.). Society for Industrial and Applied Mathematics. https://doi.org/10.1137/1.9781611973594
 
 ## **12.0 Vedlegg** 
 
