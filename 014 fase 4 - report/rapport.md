@@ -225,21 +225,14 @@ En tredje utvikling i nyere VRP-litteratur er koblingen til bærekraft og breder
 
 Samlet viser litteraturen de siste fem årene at VRP-forskningen beveger seg mot mer realistiske, sammensatte og anvendte problemstillinger. Denne rapporten forholder seg til denne utviklingen ved å modellere et kapasitets- og tidsbegrenset ruteproblem inspirert av fortransport i havbruksnæringen. Samtidig avgrenser oppgaven seg bevisst fra de mest avanserte metodene i nyere forskning, som dype læringsmodeller og komplekse metaheuristikker, og velger i stedet en enklere heuristisk tilnærming. Dette gjør analysen mindre avansert metodisk, men til gjengjeld mer transparent, etterprøvbar og godt tilpasset prosjektets omfang og formål. 
 
-Diskuter de viktigste bidragene de 5 siste årene innen temaet du har valgt. Prøv å trekk tråder til din problemstilling og beskriv hvor og hvordan din rapport forholder seg til disse. Pass på at referanser blir korrekte. 
+<!-- VEILEDNING FRA MAL (slett før innlevering):
+Diskuter de viktigste bidragene de 5 siste årene innen temaet. Trekk tråder til din problemstilling og beskriv hvor og hvordan din rapport forholder seg til disse. Pass på at referanser blir korrekte.
 
-- Det er ikke alltid nødvendig å ha et eget kapittel for litteratur, det viktigste av alt er at man aldri, _aldri_ siterer noen eller kommer med fakta eller påstander, uten at det refereres til hvor du har denne påstanden ifra.  Dette kaller vi synsing, og synsing trekker ned karakteren kraftig. 
+- Det er ikke alltid nødvendig å ha et eget kapittel for litteratur. Det viktigste er at man aldri siterer noen eller kommer med fakta/påstander uten referanse. Dette kalles synsing og trekker ned karakteren kraftig.
+- Ved flere henvisninger til samme rapport – ikke repeter funnene, bruk bare referansen.
+- En referanse har to hensikter: kreditere de som fant resultatet, og gi leseren mulighet til å sjekke påstanden.
+-->
 
-6 
-
-- Det kan ofte skje at man henviser til samme rapport flere ganger i teksten. Unngå 
-
-da å repetere funnene i rapporten, men ha med selve referansen. 
-
-- Husk en referanse har to hensikter: 
-
-   - Kreditere resultatet til de som fant det. 
-
-   - Gi leseren en mulighet til å sjekke opp en påstand eller fakta som du bygger rapporten din på. 
 
 ## **3.0 Teori (Marte)** 
 
@@ -357,11 +350,10 @@ Litteraturen viser at moderne VRP-forskning beveger seg mot mer realistiske og a
 
 Samtidig understrekes det at heuristiske metoder fortsatt er avgjørende for å løse slike problemer i praksis, særlig når beregningstid og implementerbarhet er viktige faktorer. Denne oppgaven bygger på disse prinsippene ved å modellere fortransport som et kapasitets- og tidsbegrenset ruteproblem, løst ved hjelp av en greedy heuristikk. Valget av metode er i tråd med både klassisk teori og nyere forskning, og reflekterer en bevisst avveining mellom modellens realisme, kompleksitet og anvendbarhet. 
 
-Når du skal skrive en bacheloroppgave, er det også viktig å inkludere en teoridel. Her skal du beskrive teoretisk perspektiv, tidligere litteratur som beskriver samme tema og hva forskere eventuelt er uenige om. 
+<!-- VEILEDNING FRA MAL (slett før innlevering):
+Når du skal skrive en bacheloroppgave, er det viktig å inkludere en teoridel. Beskriv teoretisk perspektiv, tidligere litteratur som beskriver samme tema og hva forskere eventuelt er uenige om. Nevn hvorvidt tidligere forskning kan ha oversett noen faktorer, og plasser egen problemstilling i lys av tidligere litteratur. Pass på at du får frem hva problemstillingen din belyser, som ikke tidligere forskning allerede har gjennomgått. Teoridelen skal beskrive grunnlaget for studiet og danner utgangspunktet for videre metodevalg.
+-->
 
-Du kan også nevne hvorvidt tidligere forskning kan ha oversett noen faktorer, og plassere egen problemstilling i lys av tidligere litteratur på fagfeltet. Pass på at du får frem hva problemstillingen din belyser, som ikke tidligere forskning allerede har gjennomgått. 
-
-Teoridelen din skal rett og slett beskrive grunnlaget for studiet ditt, og danner utgangspunktet for videre metodevalg. 
 
 ## **4.0 Casebeskrivelse ( Kenneth )** 
 
@@ -388,7 +380,10 @@ Anta vi f.eks. har som problemstilling og forbedre gjennomløpstiden for en vare
 
 ## **5.0 Metode og data (kan splittes i to)** 
 
-Litt avhengig av omfanget, kan det være lurt å vurdere om du skal splitte kapittelet i to eller ikke. 
+<!-- VEILEDNING FRA MAL (slett før innlevering):
+Litt avhengig av omfanget, kan det være lurt å vurdere om du skal splitte kapittelet i to eller ikke.
+-->
+
 
 ## **5.1 Metode** 
 
@@ -713,101 +708,60 @@ Denne iterative prosessen bidrar til å forbedre både kvaliteten og realismen i
 
 ## **7.0 Analyse** 
 
-Hvordan skrive bacheloroppgave etter at metodedelen er laget? Jo, du lager en analyse! Dette er siste bit før du kan presentere selve resultatene av studiene. Du kan velge mellom forskjellige metoder, nemlig: 
+<!-- VEILEDNING FRA MAL (slett før innlevering):
+Hvordan skrive bacheloroppgave etter at metodedelen er laget? Jo, du lager en analyse! Dette er siste bit før du kan presentere selve resultatene av studiene. Du kan velge mellom forskjellige metoder:
+- Kvalitativ metode (intervju eller lignende)
+- Kvantitativ metode
+- Dokumentanalyse
 
-- Kvalitativ metode (intervju eller lignende) 
+Prat gjerne med veilederen din om du er usikker på hvilken metode som er best for problemstillingen.
+-->
 
-- Kvantitativ metode 
-
-- Dokumentanalyse 
-
-Prat gjerne med veilederen din om du er usikker på hvilken metode som er best for akkurat din problemstilling. 
-
-20 
 
 ## **8.0 Resultat** 
 
-Den kanskje viktigste delen når du skal skrive en bacheloroppgave, er resultatdelen. Her beskriver du alle funnene som er gjort i analyser og studier. 
+<!-- VEILEDNING FRA MAL (slett før innlevering):
+Resultatdelen er kanskje den viktigste delen av rapporten. Her beskriver du alle funnene som er gjort. Presenter resultatene klart og tydelig, gjerne ved hjelp av tabeller og figurer.
 
-Det er viktig at du presenterer resultatene på en klar og tydelig måte – gjerne ved bruk av tabeller og figurer. 
+Viktige punkter:
+- Dersom dette er et eget kapittel: presenter kun resultater i form av tabeller og/eller figurer.
+- Tabeller: oppsummerte resultater.
+- Resultatene skal være direkte linket til forskningsspørsmålet.
+   - Hvis ikke: enten kjør analysen på nytt, eller endre forskningsspørsmålet slik at det er samsvar.
+- NB: Forklarende tekst for hver tabell og hver figur! Som regel kommer teksten før, men kan komme etter eller både før og etter. Skal være en objektiv presentasjon.
+-->
 
-Noen viktige punkter: 
-
-- Dersom dette er et eget kapittel så skal dere her kun presentere resultatene i form av tabeller og/eller figurer. 
-
-- Tabeller: Oppsummerte resultater 
-
-- Resultatene er direkte linket til forskningsspørsmålet! 
-
-   - Dersom det ikke er det så er det to alternativer: 
-
-      - Kjør analysene på nytt i henhold til forskningsspørsmålet 
-
-      - Endre forskningsspørsmålet slik at det er samsvar med analysene 
-
-- NB: En forklarende tekst for hver tabell og hver figur! 
-
-   - Som regel kommer teksten før tabellen/figuren, men noen ganger etter og noen ganger litt tekst først og litt etter tabellen/figuren. 
-
-   - Dere vil synes at det er overflødig med forklarende tekst, men det må gjøres og kun det som dere ser: en objektiv presentasjon. 
-
-21 
 
 ## **9.0 Diskusjon** 
 
-I diskusjonsdelen skal du diskutere de forskjellige funnene du har gjort. Her skal du blant annet inkludere en kritisk metodediskusjon, der du vurderer om metoden din var riktig. Diskuter hvor pålitelige funnene dine er, om de er generaliserbare og eventuelle svakheter. Forklar også hvorvidt studiet har gitt ny teoretisk innsikt, og om hypoteser kan avkreftes. 
+<!-- VEILEDNING FRA MAL (slett før innlevering):
+I diskusjonsdelen skal du diskutere funnene. Inkluder en kritisk metodediskusjon der du vurderer om metoden var riktig. Diskuter pålitelighet, generaliserbarhet, svakheter, og hvorvidt studiet har gitt ny teoretisk innsikt.
 
-Noen viktige punkter: 
+Viktige punkter:
+- Her skal resultatene diskuteres (studenter blander ofte diskusjon og resultater).
+- Kommenter resultatene: er de som forventet? Uventede funn – hvordan forklare?
+- Stemmer resultatene med forskningslitteraturen? Hvis ikke, hvorfor? Hvis ja, henvis.
+- Diskuter opp mot problemstillingen. Har dere fått svar på forskningsspørsmålet?
+- Betydning for næringslivet/bedriften – eget punkt anbefales.
+- Hvilke endringer bør bedriften/næringslivet gjøre?
+- Mulig å generalisere?
+- Ta med begrensinger/svakheter – men ikke overfokuser, vær ærlige.
+-->
 
-- Her skal resultatene diskuteres 
-
-   - Studenter blander ofte sammen diskusjon og resultater... 
-
-- Her skal dere kommentere de resultatene som dere har funnet 
-
-   - Er dette som forventet? 
-
-   - Uventede funn? Hvis ja hvordan kan dere forklare dette 
-
-- Stemmer deres resultater med forskningslitteraturen? 
-
-   - Hvis ikke, hvorfor ikke? Og det kan være bra! 
-
-   - Hvis ja, kan dere henvise til forskningslitteraturen for å understøtte deres resultater 
-
-- Resultatene diskuteres opp mot problemstillingen!•Har dere fått svar på forskningsspørsmålet? 
-
-- Hvilken betydning for næringslivet? 
-
-- Anbefales som eget punkt i diskusjonen (dette er et viktig punkt i oppgaven) 
-
-- Hva medfører deres resultater for næringslivet/bedriften? 
-
-- Hvilke endringer bør bedriften/næringslivet gjøre? 
-
-- Mulig å generalisere? 
-
-- Ta med begrensinger/svakheter i oppgaven 
-
-- Ikke overfokuser på dette punktet men vær ærlige 
-
-22 
 
 ## **10.0 Konklusjon** 
 
-I oppgavens konklusjon oppsummerer du hovedfunn sett i forhold til problemstilling. Avslutt gjerne med spørsmål til videre forskning, og del personlige refleksjoner du eventuelt måtte ha. 
+<!-- VEILEDNING FRA MAL (slett før innlevering):
+I konklusjonen oppsummerer du hovedfunn sett i forhold til problemstillingen. Avslutt gjerne med spørsmål til videre forskning og personlige refleksjoner.
 
-Hva er det viktigste dere har funnet? 
+Hva er det viktigste dere har funnet?
+- Konkluder i henhold til oppgavens problemstilling. Ofte begynner en konklusjon med å gjenta forskningsspørsmålet:
+   - «I denne oppgaven har vi analysert/redegjort for...»
+   - «Hovedfunnene i oppgaven viser at ...»
+   - «På tross av svakhetene i oppgaven er det indikasjoner om at ...»
+- Litt gjentagelse fra diskusjon/resultat er greit. Dra frem de viktigste funnene og betydningen for caset.
+-->
 
-- Konkludere i henhold til oppgavens problemstilling. Ofte begynner en konklusjon med å gjenta forskningsspørsmålet: 
-
-   - «I denne oppgaven har analysert/redegjort for...». 
-
-   - «Hovedfunnene i oppgaven viser at ....» 
-
-   - «På tross av de svakhetene som oppgaven har er det indikasjoner om at ...» 
-
-- I konklusjonen blir det ofte litt gjentagelse fra diskusjon/resultat men det er helt greit. Her skal dere dra frem de viktigste funnene og hvilken betydning det har for deres case. 
 
 ## **11.0 Bibliografi** 
 
