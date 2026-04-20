@@ -177,13 +177,13 @@ Eksempler:
 
 For å gjøre ruteplanleggingsproblemet håndterbart er det gjort flere forenklede antakelser. Vi erkjenner at dette påvirker hvor realistiske resultatene blir. 
 
-1. Det antas at avstanden mellom lokasjoner er oppgitt euklidisk basert på koordinater, som i praksis betyr at transporten går gjennom en rett linje i terrenget mellom to punkter, og ikke et faktisk veinett. Konsekvensen av dette er at modellen ikke representerer reels kjørelengde og reisetid 
+1. Det antas at avstanden mellom lokasjoner er oppgitt euklidisk basert på koordinater, som i praksis betyr at transporten går gjennom en rett linje i terrenget mellom to punkter, og ikke et faktisk veinett. Konsekvensen av dette er at modellen ikke representerer reell kjørelengde og reisetid. 
 
-2. Det antas at kjørehastigheten mellom to lokasjoner er konstant, slik at reisetid er direkte proposjonal med avstand. Det innebærer at variasjoner i trafikkforhold, vær eller infrastruktur ikke tas hensyn til, som vil påvirke modellens realisme. 
+2. Det antas at kjørehastigheten mellom to lokasjoner er konstant, slik at reisetid er direkte proporsjonal med avstand. Det innebærer at variasjoner i trafikkforhold, vær eller infrastruktur ikke tas hensyn til, som vil påvirke modellens realisme. 
 
 3. Det forutsettes at alle data er deterministiske og kjente på forhånd. Etterspørsel, tidsvinduer og lastetider er dermed faste vinduer uten usikkerhet. I en virkelig verden endrer slike parameter seg kontinuerlig, noe som betyr at modellen ikke kommer til å vise operasjonell usikkerhet. 
 
-4. Det antas at kjøretøyets kapasitet er fast og kjent, og at denne ikke kan overskrives. Det betyr at de konstruerte rutene må forholde seg til denne begrensningen. 
+4. Det antas at kjøretøyets kapasitet er fast og kjent, og at denne ikke kan overskrides. Det betyr at de konstruerte rutene må forholde seg til denne begrensningen. 
 
 Disse antakelsene innebærer at modellen representerer en forenklet versjon av 
 

@@ -11,7 +11,8 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 
 ## Hovedfunn fra sammenligningen
 
-- **Kap. 1–3 og 5–6 har substansielt innhold** (innledning, litteratur, teori, metode, modellering).
+- **Kap. 1 er ferdigstilt** (2026-04-20): veiledningstekst skjult, delproblemer fjernet, språk rettet.
+- **Kap. 2, 3, 5, 6 har substansielt innhold** (litteratur, teori, metode, modellering).
 - **Kap. 4 Casebeskrivelse** – tekst finnes i [kap4_casebeskrivelse.md](kap4_casebeskrivelse.md), men er ikke lagt inn i rapporten.
 - **Kap. 7 Analyse, 8 Resultat, 9 Diskusjon, 10 Konklusjon er tomme** – kun veiledningstekst fra malen.
 - **Sammendrag og Abstract mangler helt**.
@@ -35,16 +36,17 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 
 ---
 
-## 1. Innledning *(Alle)*
+## 1. Innledning *(Alle)* ✅ FERDIG (2026-04-20)
 
 - [x] Motivasjon og faglig relevans skrevet
 - [x] Problemstilling formulert som "hvordan"-spørsmål
 - [x] 3 forskningsspørsmål definert
-- [x] Avgrensinger begrunnet faglig (1.3)
-- [x] Antagelser listet og begrunnet (1.4)
-- [ ] **Fjern veiledningsteksten** fra malen (s. 10–13): "Introduksjonen bør ikke være for lang...", "Svar på følgende spørsmål...", spørsmålslistene, eksemplene om Maritech/lakseprisen
-- [ ] 1.2 Delproblemer – enten skriv noe, eller slett overskriften (markert "valgfri")
-- [ ] Vurder: skal delproblemer stå, eller dekkes det av forskningsspørsmålene i 1.1?
+- [x] Avgrensinger begrunnet faglig (nå 1.2)
+- [x] Antagelser listet og begrunnet (nå 1.3)
+- [x] Veiledningstekst pakket inn i HTML-kommentar (slettes før innlevering)
+- [x] 1.2 Delproblemer fjernet i sin helhet; renummerert 1.3→1.2, 1.4→1.3
+- [x] Stavefeil rettet (løsningsmetode, heuristisk tilnærming, metaheuristikker, reell, proporsjonal, overskrides)
+- [x] Begrunnelse "ikke matematikere/programmerere" erstattet med faglig formulering om transparens og etterprøvbarhet
 
 ---
 
