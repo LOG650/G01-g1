@@ -13,6 +13,7 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 
 - **Kap. 1, 2 og 3 er ferdigstilt** (2026-04-20).
 - **Bibliografi er ryddet og komplettert** med alle siterte kilder (2026-04-20).
+- **Løsningsmetode utvidet til MILP + NN-heuristikk** (2026-04-22): kap. 1.2 mykere avgrensning, nytt kap. 6.2.4 om MILP (PuLP/CBC), kap. 6.3.2 utvidet til å dekke optimalitetsgap.
 - **Kap. 5 og 6 har substansielt innhold** (metode, modellering) – må ryddes.
 - **Kap. 4 Casebeskrivelse** – tekst finnes i [kap4_casebeskrivelse.md](kap4_casebeskrivelse.md), men er ikke lagt inn i rapporten.
 - **Kap. 7 Analyse, 8 Resultat, 9 Diskusjon, 10 Konklusjon er tomme** – kun veiledningstekst fra malen.

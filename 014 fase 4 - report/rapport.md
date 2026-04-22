@@ -139,7 +139,7 @@ For det andre fokuserer oppgaven på et statisk ruteplanleggingsproblem. Det inn
 
 Oppgaven er også avgrenset til én type kjøretøy med fast kapasitet. Variasjoner i kjøretøystyper, kostnadsstrukturer eller bemanning er ikke inkludert. Dette forenkler modelleringen og gjør det mulig å fokusere på selve rutestrukturen. 
 
-Når det gjelder løsningsmetode er analysen avgrenset til bruk av en enkel heuristisk tilnærming basert på nearest-neighbor-prinsippet. Oppgaven søker dermed ikke å finne en global optimal løsning ved hjelp av eksakte metoder eller metaheuristikker. Valget er gjort for å sikre transparens og etterprøvbarhet innenfor prosjektets omfang. 
+Når det gjelder løsningsmetode benytter oppgaven to komplementære tilnærminger: en eksakt MILP-formulering som gir en referanseoptimal løsning, og en greedy nearest-neighbor-heuristikk som representerer en operasjonelt enkel og transparent metode. Sammenligningen mellom de to gjør det mulig å kvantifisere heuristikkens kvalitet opp mot det matematiske optimum. Mer avanserte metaheuristikker (f.eks. tabu search, genetiske algoritmer eller læringsbaserte metoder) er utenfor prosjektets omfang. 
 
 
 ## **1.3 Antagelser (Marte)** 
@@ -606,6 +606,16 @@ I tillegg beregnes:
 
 Dette gjør det mulig å evaluere både effektivitet og gjennomførbarhet. 
 
+## **6.2.4 Eksakt løsning (MILP)**
+
+Parallelt med heuristikken implementeres modellen som formulert i kap. 6.1 som et blandet heltallsproblem (MILP) i Python ved hjelp av biblioteket **PuLP** med den åpne løseren **CBC** (Coin-or Branch and Cut). Alle restriksjoner fra kap. 6.1.3 – inkludert besøksbegrensning, flytkonservering, kapasitet, tidsvinduer, retur til depot og MTZ-subtour-eliminering – implementeres direkte som lineære uttrykk.
+
+Den eksakte løsningen fungerer som referanseoptimum og gir et øvre tak på heuristikkens kvalitet. Forskjellen mellom MILP-løsningen og nearest-neighbor-løsningen uttrykkes som et optimalitetsgap:
+
+gap = (z_NN − z_MILP) / z_MILP
+
+der z betegner målfunksjonsverdien (total kjørelengde). Siden problemstørrelsen er liten (8 noder), kan CBC løse MILP-instansene eksakt innenfor sekunder, noe som gjør det realistisk å bruke løsningen som referanseverdi i analysen.
+
 ## **6.3 Testing og validering** 
 
 ## **6.3.1 Kjøring av testscenario** 
@@ -616,7 +626,7 @@ Modellen testes på et datasett bestående av 7 oppdrettslokaliteter og ett depo
 
 ## **6.3.2 Validering av ruter** 
 
-For hver generert rute kontrolleres følgende: 
+For hver generert rute – fra både heuristikken og den eksakte MILP-løsningen – kontrolleres følgende: 
 
 - Alle lokaliteter er besøkt nøyaktig én gang 
 
@@ -626,7 +636,7 @@ For hver generert rute kontrolleres følgende:
 
 - Retur til depot skjer innen maksimal tidsramme 
 
-Denne valideringen sikrer at løsningene er både logisk gyldige og praktisk gjennomførbare. 
+I tillegg sammenlignes de to metodene opp mot hverandre: heuristikkens totale kjørelengde måles relativt til MILP-optimum (optimalitetsgap), og antall kjøretøy brukt i begge løsninger dokumenteres. Denne doble valideringen sikrer at løsningene er logisk gyldige, praktisk gjennomførbare og faglig etterprøvbare. 
 
 ## **6.3.3 Justering av modell** 
 
