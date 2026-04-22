@@ -112,4 +112,25 @@ Av prioritert rekkefølge fremover er nå punkt 1, 3, 6, 7 og 10 ferdig. Punkten
 
 ---
 
+## Referanse: MILP vs. Nearest Neighbor (NN)
+
+Denne seksjonen er ren lesestoff for gruppen, ment som bakgrunn for å forstå hva de to metodene er, hvor de ligner, og hvor de skiller seg. Den er ikke en logg-hendelse, men en forklarende notat knyttet til sammenligningsplottene i mappen 004 data (sammenligning_NN_vs_MILP.png og total_distanse_sammenligning.png).
+
+Hva MILP er:
+MILP står for Mixed Integer Linear Programming, på norsk blandet heltalls-lineær programmering. Det er en matematisk optimeringsmetode der man minimerer eller maksimerer en lineær målfunksjon, for eksempel total kjørelengde eller total kostnad, underlagt et sett med lineære begrensninger, for eksempel kapasitet, tidsvinduer og at hver kunde skal besøkes én gang. Det som gjør metoden "mixed integer" er at enkelte beslutningsvariabler må være heltall. I VRP-sammenheng er dette typisk binære variabler som tar verdien 1 hvis et kjøretøy kjører fra node A til node B, og 0 ellers. Andre variabler, som ankomsttider eller akkumulert last, kan være kontinuerlige. En MILP-løser, for eksempel CBC, Gurobi eller CPLEX, søker systematisk gjennom løsningsrommet og finner den beviselig beste løsningen gitt modellens forutsetninger.
+
+Hva Nearest Neighbor er:
+Nearest Neighbor, ofte forkortet NN, er en grådig heuristikk. Algoritmen starter i depotet og velger i hvert steg den nærmeste ubesøkte kunden som fortsatt kan betjenes uten å bryte kapasitet eller tidsvinduer. Når kjøretøyet er fullt eller ingen flere kunder kan betjenes, returnerer det til depotet, og et nytt kjøretøy starter. Algoritmen tar altså lokale valg uten å vurdere hvilke konsekvenser valget får lenger frem i ruten.
+
+Hvor de ligner:
+Begge metodene løser det samme underliggende problemet, nemlig å planlegge ruter for en flåte kjøretøy som skal betjene et sett kunder fra et depot. Begge respekterer de samme typene begrensninger, som kjøretøyskapasitet, tidsvinduer og at hver kunde besøkes én gang. Begge produserer konkrete ruter som kan sammenlignes direkte på total distanse, antall kjøretøy og betjent etterspørsel.
+
+Hvor de skiller seg:
+Den viktigste forskjellen ligger i optimalitet mot hastighet. MILP gir en matematisk optimal løsning, altså den beste mulige gitt modellen, men metoden er NP-hard og skalerer dårlig. For små instanser som vårt tilfelle med syv kunder løses problemet på sekunder eller minutter, men for hundrevis eller tusenvis av kunder blir beregningstiden upraktisk lang. NN er derimot svært rask og kjører på millisekunder selv for store problemer, men løsningen er vanligvis 10 til 30 prosent dårligere enn optimal, og kan i uheldige tilfeller være mye verre. En annen forskjell er fleksibilitet: MILP krever at alle regler kan uttrykkes som lineære begrensninger, mens NN lett kan utvides med ad hoc-regler, men mister da all garanti om kvalitet.
+
+Hvorfor sammenligningen er nyttig for prosjektet:
+Ved å kjøre begge metodene på samme datasett får vi to referanser. MILP gir det teoretiske taket, altså hva som er mulig å oppnå. NN gir et realistisk bilde av hva en enkel, raskt implementert løsning ville produsert i praksis. Gapet mellom dem, ofte kalt optimality gap, er et mål på hvor mye det er å tjene på å investere i en sofistikert optimeringsmodell kontra en tommelfingerregel. For Lerøy-casen gir dette et konkret beslutningsgrunnlag: dersom gapet er lite, er en enkel heuristikk god nok. Dersom gapet er stort, rettferdiggjør det kompleksiteten i MILP-tilnærmingen.
+
+---
+
 *Loggen er generert og vedlikeholdt med støtte fra Gemini CLI og Claude Code, basert på faktiske hendelser og git-historikk.*
