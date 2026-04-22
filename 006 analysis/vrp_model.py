@@ -177,6 +177,130 @@ def print_nn_result(K: int, result: dict) -> None:
     print(f"  Total kjørelengde = {result['total_distance']:.2f} km")
 
 
+def milp_solve(data: dict, K_max: int = 4) -> dict:
+    """
+    Eksakt MILP-løsning av CVRPTW (kap. 6.1).
+    Bruker PuLP med CBC-løseren.
+    Implementerer alle restriksjoner fra kap. 6.1.3:
+      - besøk én gang (inn/ut-grad = 1 for alle kunder)
+      - flyt i depot (antall biler ut = antall biler inn)
+      - tidsvindu (eᵢ ≤ aᵢ ≤ lᵢ)
+      - tids-propagering (big-M, hindrer subtours i tid)
+      - retur til depot innen T_max
+      - kapasitets-propagering (big-M, hindrer subtours i last)
+    """
+    from pulp import LpProblem, LpMinimize, LpVariable, lpSum, LpBinary, PULP_CBC_CMD
+
+    lok = data["locations"]
+    D = data["distance_matrix"]
+    T = data["time_matrix"]
+    Q = data["capacity"]
+    T_max = data["depot"]["time_window"][1]
+
+    N = list(range(len(lok) + 1))
+    V = list(range(1, len(lok) + 1))
+    loc = {n["id"]: n for n in lok}
+
+    prob = LpProblem("CVRPTW", LpMinimize)
+
+    x = {(i, j): LpVariable(f"x_{i}_{j}", cat=LpBinary)
+         for i in N for j in N if i != j}
+    a = {i: LpVariable(f"a_{i}", lowBound=0, upBound=T_max) for i in N}
+    L = {i: LpVariable(f"L_{i}", lowBound=0, upBound=Q) for i in N}
+
+    prob += lpSum(D[i][j] * x[(i, j)] for (i, j) in x)
+
+    for i in V:
+        prob += lpSum(x[(i, j)] for j in N if j != i) == 1
+        prob += lpSum(x[(j, i)] for j in N if j != i) == 1
+
+    prob += lpSum(x[(0, j)] for j in V) <= K_max
+    prob += lpSum(x[(0, j)] for j in V) == lpSum(x[(i, 0)] for i in V)
+
+    for i in V:
+        prob += a[i] >= loc[i]["time_window"][0]
+        prob += a[i] <= loc[i]["time_window"][1]
+    prob += a[0] == 0
+
+    M_time = T_max + max(n["service_time"] for n in lok) + 500
+    for i in N:
+        si = loc[i]["service_time"] if i != 0 else 0
+        for j in V:
+            if i != j:
+                prob += a[i] + si + T[i][j] - M_time * (1 - x[(i, j)]) <= a[j]
+
+    for i in V:
+        si = loc[i]["service_time"]
+        prob += a[i] + si + T[i][0] <= T_max + M_time * (1 - x[(i, 0)])
+
+    prob += L[0] == 0
+    M_load = Q + 500
+    for i in N:
+        for j in V:
+            if i != j:
+                prob += L[i] + loc[j]["demand"] - M_load * (1 - x[(i, j)]) <= L[j]
+    for j in V:
+        prob += L[j] >= loc[j]["demand"]
+
+    prob.solve(PULP_CBC_CMD(msg=0))
+
+    if prob.status != 1:
+        return {"feasible": False, "status": prob.status}
+
+    used = [(i, j) for (i, j), v in x.items() if v.varValue and v.varValue > 0.5]
+    starts = sorted(j for (i, j) in used if i == 0)
+    routes = []
+    for s in starts:
+        route = [0, s]
+        current = s
+        while current != 0:
+            nxt_list = [j for (i, j) in used if i == current]
+            if not nxt_list:
+                break
+            nxt = nxt_list[0]
+            route.append(nxt)
+            current = nxt
+        dist = sum(D[route[k]][route[k + 1]] for k in range(len(route) - 1))
+        load = sum(loc[n]["demand"] for n in route if n != 0)
+        last = route[-2]
+        ret = a[last].varValue + loc[last]["service_time"] + T[last][0]
+        routes.append({
+            "vehicle": len(routes) + 1,
+            "nodes": route,
+            "distance": dist,
+            "load": load,
+            "return_time": ret,
+        })
+
+    return {
+        "feasible": True,
+        "routes": routes,
+        "total_distance": prob.objective.value(),
+        "n_vehicles": len(routes),
+    }
+
+
+def steg3_milp(data: dict) -> dict:
+    print("\n" + "=" * 60)
+    print("STEG 3 – Eksakt MILP-løsning (PuLP + CBC)")
+    print("=" * 60)
+
+    result = milp_solve(data, K_max=4)
+    if not result["feasible"]:
+        print(f"  ⚠ Ingen løsning funnet (status {result.get('status')})")
+        return result
+
+    print(f"\nOptimal løsning funnet med {result['n_vehicles']} kjøretøy")
+    for r in result["routes"]:
+        seq = " → ".join(f"L{n}" if n else "D" for n in r["nodes"])
+        print(f"  Bil {r['vehicle']}: {seq}")
+        print(f"    kjørelengde = {r['distance']:.2f} km"
+              f" | last = {r['load']}/{180}"
+              f" | retur kl. {r['return_time']:.0f} min")
+    print(f"\n  ✓ Total kjørelengde (OPTIMUM) = {result['total_distance']:.2f} km")
+    return result
+
+
 def steg2_nn_iterativt(data: dict) -> None:
     """Steg 2: kjør NN med K=1, 2, 3, ... til feasible og stabil."""
     print("\n" + "=" * 60)
@@ -206,3 +330,4 @@ if __name__ == "__main__":
     data = last_data()
     sanity_check(data)
     steg2_nn_iterativt(data)
+    steg3_milp(data)
