@@ -666,9 +666,96 @@ For å undersøke hvordan løsningen responderer på endringer i forutsetninger,
 
 Scenariene analyseres i kap. 7 og danner grunnlag for sensitivitetsanalysen i kap. 9. 
 
-## **7.0 Analyse** 
+## **7.0 Analyse**
 
-## **8.0 Resultat** 
+Analysen gjennomføres ved å løse ruteplanleggingsproblemet med begge metodene beskrevet i kap. 6 (NN-heuristikk og MILP) på baselinedatasettet, og deretter på de fem scenariene fra kap. 6.4. Alle kjøringer er utført i Python med data fra [004 data/data.json](../004 data/data.json). MILP er løst eksakt med PuLP/CBC, og NN-heuristikken er implementert iterativt med 1, 2, 3 … kjøretøy til alle lokaliteter kan betjenes innenfor gitte restriksjoner.
+
+## **7.1 Baseline – NN-heuristikk iterativt**
+
+NN-heuristikken kjøres først med K = 1 og økes med ett kjøretøy av gangen. For hver iterasjon registreres antall betjente lokaliteter, samlet kjørelengde og kapasitetsutnyttelse.
+
+| K | Feasible | Total kjørelengde | Kommentar |
+|---|----------|-------------------|-----------|
+| 1 | Nei | 244,3 km | L1, L2, L3, L5 ubesøkt |
+| 2 | Nei | 374,4 km | L1, L3 ubesøkt |
+| 3 | Ja | 534,0 km | Alle betjent |
+| 4 | Ja | 534,0 km | Ingen forbedring |
+
+Første feasible NN-løsning finnes ved K = 3, og ytterligere kjøretøy reduserer ikke total kjørelengde.
+
+## **7.2 Baseline – MILP-optimum**
+
+Samme datasett løses eksakt med K_max = 4 som øvre grense. Løseren finner en feasible løsning med to kjøretøy og total kjørelengde 392,09 km. Ruter og utnyttelse er vist i tabell 7.1.
+
+**Tabell 7.1 – MILP-løsning for baseline**
+
+| Bil | Rute | Kjørelengde | Last | Kapasitetsutnyttelse | Retur (min) |
+|-----|------|-------------|------|----------------------|-------------|
+| 1 | D → L1 → L2 → L5 → L4 → D | 214,54 km | 137/180 | 76 % | 480 |
+| 2 | D → L6 → L3 → L7 → D | 177,55 km | 175/180 | 97 % | 480 |
+| **Total** | | **392,09 km** | **312/360** | **87 %** | |
+
+## **7.3 Scenarioanalyse**
+
+Hvert scenario fra kap. 6.4 kjøres separat med begge metoder. Parameterendringene er:
+
+| Scenario | Endring |
+|----------|---------|
+| Økt etterspørsel | qᵢ multipliseres med 1,20 |
+| Redusert kapasitet | Q = 120 (fra 180) |
+| Flere kjøretøy | K_max = 5 |
+| Strammere tidsvinduer | Bredden av hvert tidsvindu halveres (senteret beholdes) |
+
+## **8.0 Resultat**
+
+Dette kapittelet presenterer samlet resultater fra alle kjøringer, uten tolkning. Vurdering og implikasjoner behandles i kap. 9.
+
+## **8.1 Sammenligning mellom NN og MILP (baseline)**
+
+Tabell 8.1 sammenstiller de to metodene for baselinedatasettet. MILP gir referanseoptimum, og NN evalueres mot dette via optimalitetsgap.
+
+**Tabell 8.1 – NN-heuristikk og MILP-optimum på baseline**
+
+| Metode | Antall biler | Total kjørelengde | Kapasitetsutnyttelse (snitt) | Optimalitetsgap |
+|--------|--------------|-------------------|------------------------------|-----------------|
+| MILP (optimum) | 2 | 392,09 km | 156/180 (87 %) | 0,0 % |
+| NN-heuristikk | 3 | 534,00 km | 104/180 (58 %) | 36,2 % |
+
+Figur 8.1 viser de to løsningene som rutekart, og figur 8.2 viser samlet kjørelengde som stolpediagram.
+
+**Figur 8.1 – Rutekart: NN-heuristikk (venstre) og MILP-optimum (høyre)**
+
+![NN vs MILP baseline](../004 data/sammenligning_NN_vs_MILP.png)
+
+**Figur 8.2 – Total kjørelengde per metode (baseline)**
+
+![Total kjørelengde sammenligning](../004 data/total_distanse_sammenligning.png)
+
+## **8.2 Scenarioanalyse**
+
+Tabell 8.2 sammenstiller resultater for alle fem scenarier. For hvert scenario rapporteres total kjørelengde og antall kjøretøy for begge metoder, samt optimalitetsgap.
+
+**Tabell 8.2 – Resultater fra scenarioanalysen**
+
+| Scenario | MILP km | MILP biler | NN km | NN biler | Optimalitetsgap |
+|----------|---------|------------|-------|----------|-----------------|
+| Baseline | 392,09 | 2 | 534,00 | 3 | 36,2 % |
+| Økt etterspørsel (+20 %) | 435,60 | 3 | 534,00 | 3 | 22,6 % |
+| Redusert kapasitet (Q=120) | 435,60 | 3 | 435,60 | 3 | 0,0 % |
+| Flere kjøretøy (K_max=5) | 392,09 | 2 | 534,00 | 3 | 36,2 % |
+| Strammere tidsvinduer (50 %) | 436,32 | 3 | 552,03 | 4 | 26,5 % |
+
+**Figur 8.3 – Total kjørelengde per scenario og metode**
+
+![Scenarioanalyse](../004 data/scenarioanalyse.png)
+
+## **8.3 Nøkkeltall**
+
+Samlet viser kjøringene følgende verdier som besvarer forskningsspørsmålene:
+
+- **FS1 (modellering):** Problemet kan representeres som et CVRPTW med 8 noder, Q = 180, T_max = 480 og oppgitte tidsvinduer. Modellen er implementert i to varianter (NN og MILP) og løser baselinedatasettet innenfor sekunder for MILP.
+- **FS2 (baseline-sammenligning):** MILP gir 392,09 km mot NN sin 534,00 km. Optimalitetsgap = 36,2 %. Antall kjøretøy reduseres fra 3 (NN) til 2 (MILP).
+- **FS3 (sensitivitet):** Endring i etterspørsel og kapasitet påvirker både antall kjøretøy og total kjørelengde. Strammere tidsvinduer øker både antall ruter og samlet distanse, særlig for NN. Økt kjøretøytilgjengelighet (K_max) endrer ikke løsningen, siden tid og kapasitet er de reelle bindende begrensningene.
 
 ## **9.0 Diskusjon** 
 

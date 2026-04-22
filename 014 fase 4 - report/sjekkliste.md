@@ -14,6 +14,7 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 - **Kap. 1, 2 og 3 er ferdigstilt** (2026-04-20).
 - **Bibliografi er ryddet og komplettert** med alle siterte kilder (2026-04-20).
 - **Løsningsmetode utvidet til MILP + NN-heuristikk** (2026-04-22): kap. 1.2 mykere avgrensning, nytt kap. 6.2.4 om MILP (PuLP/CBC), kap. 6.3.2 utvidet til å dekke optimalitetsgap.
+- **Kap. 7 Analyse og 8 Resultat er fylt ut** (2026-04-22): baseline-sammenligning NN vs MILP (gap 36,2 %), scenarioanalyse for alle 5 scenarier, 3 figurer generert.
 - **Kap. 5 og 6 har substansielt innhold** (metode, modellering) – må ryddes.
 - **Kap. 4 Casebeskrivelse** – tekst finnes i [kap4_casebeskrivelse.md](kap4_casebeskrivelse.md), men er ikke lagt inn i rapporten.
 - **Kap. 7 Analyse, 8 Resultat, 9 Diskusjon, 10 Konklusjon er tomme** – kun veiledningstekst fra malen.
@@ -130,23 +131,23 @@ Teksten er integrert i [rapport.md](rapport.md) og utvidet med prosessflyt, ramm
 
 ---
 
-## 7. Analyse *(Fleste)* ⚠️ TOMT
+## 7. Analyse *(Fleste)* ✅ FERDIG (2026-04-22)
 
-- [ ] Kjør modellen og hent resultater
-- [ ] Presenter valgte ruter (med figur)
-- [ ] Sammenlign med referanseløsning (baseline – f.eks. én rute per lokalitet)
-- [ ] Scenarioanalyse (endre etterspørsel, kapasitet eller antall biler)
-- [ ] Sensitivitetsanalyse
-- [x] **Fjern veiledningsteksten** (fjernet 2026-04-22)
-- [ ] Merk: ifølge skriveveileder skal 7 og 8 være objektive – ingen tolkning her
+- [x] Kjør modellen og hent resultater (vrp_model.py, 5 scenarier + baseline)
+- [x] 7.1 NN-heuristikk iterativt (K=1 → 4)
+- [x] 7.2 MILP-optimum baseline
+- [x] 7.3 Scenarioanalyse – parametertabell
+- [x] Veiledningstekst fjernet
 
 ---
 
-## 8. Resultat ⚠️ TOMT
+## 8. Resultat ✅ FERDIG (2026-04-22)
 
-- [ ] Presenter hovedfunn i tabeller og figurer
-- [ ] Total avstand, tid per rute, antall biler, kapasitetsutnyttelse
-- [ ] Kart/rutediagram som viser valgt løsning
+- [x] 8.1 Sammenligning NN vs MILP (tabell + 2 figurer)
+- [x] 8.2 Scenarioanalyse (tabell + figur)
+- [x] 8.3 Nøkkeltall knyttet til FS1, FS2, FS3
+- [x] Figurer lagret: sammenligning_NN_vs_MILP.png, total_distanse_sammenligning.png, scenarioanalyse.png
+- [x] Kart/rutediagram inkludert
 - [ ] Forklarende tekst for **hver** figur og tabell
 - [ ] Koble hvert resultat eksplisitt til forskningsspørsmålene (FS1, FS2, FS3)
 - [x] **Fjern veiledningsteksten** (fjernet 2026-04-22)
