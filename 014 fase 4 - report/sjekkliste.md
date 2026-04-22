@@ -15,6 +15,7 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 - **Bibliografi er ryddet og komplettert** med alle siterte kilder (2026-04-20).
 - **Løsningsmetode utvidet til MILP + NN-heuristikk** (2026-04-22): kap. 1.2 mykere avgrensning, nytt kap. 6.2.4 om MILP (PuLP/CBC), kap. 6.3.2 utvidet til å dekke optimalitetsgap.
 - **Kap. 7 Analyse og 8 Resultat er fylt ut** (2026-04-22): baseline-sammenligning NN vs MILP (gap 36,2 %), scenarioanalyse for alle 5 scenarier, 3 figurer generert.
+- **Kap. 9 Diskusjon er fylt ut** (2026-04-22): tolkning, kobling til Solomon/Adamo/Liu/Archetti/Bogyrbayeva, styrker/svakheter, generaliserbarhet, praktiske implikasjoner, KI-refleksjon.
 - **Kap. 5 og 6 har substansielt innhold** (metode, modellering) – må ryddes.
 - **Kap. 4 Casebeskrivelse** – tekst finnes i [kap4_casebeskrivelse.md](kap4_casebeskrivelse.md), men er ikke lagt inn i rapporten.
 - **Kap. 7 Analyse, 8 Resultat, 9 Diskusjon, 10 Konklusjon er tomme** – kun veiledningstekst fra malen.
@@ -155,15 +156,15 @@ Teksten er integrert i [rapport.md](rapport.md) og utvidet med prosessflyt, ramm
 
 ---
 
-## 9. Diskusjon *(Alle)* ⚠️ TOMT
+## 9. Diskusjon *(Alle)* ✅ FERDIG (2026-04-22)
 
-- [ ] Tolk hovedfunn i lys av problemstillingen og de 3 forskningsspørsmålene
-- [ ] Sammenlign med Solomon, Adamo, Liu et al.
-- [ ] Styrker og svakheter ved syntetisk data, euklidsk avstand, nearest-neighbor
-- [ ] Generaliserbarhet – kan modellen overføres til reelle Lerøy-data?
-- [ ] Praktiske implikasjoner for havbruksnæringen
-- [ ] **Kritisk refleksjon om KI-bruk** – muligheter og begrensninger (faglig gevinst-diskusjon)
-- [x] **Fjern veiledningsteksten** (fjernet 2026-04-22)
+- [x] 9.1 Tolkning av hovedfunn (gap 36,2 %, kapasitetsutnyttelse, tidsvinduer)
+- [x] 9.2 Kobling til tidligere forskning (Solomon, Adamo, Archetti, Liu, Bogyrbayeva)
+- [x] 9.3 Styrker og svakheter ved data, metode, modell
+- [x] 9.4 Generaliserbarhet
+- [x] 9.5 Praktiske implikasjoner (km-besparelse, tidsvinduer, kjøretøyskalering)
+- [x] 9.6 Refleksjon om KI-bruk i prosjektet
+- [x] Veiledningstekst fjernet
 
 ---
 
