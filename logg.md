@@ -112,6 +112,46 @@ Av prioritert rekkefølge fremover er nå punkt 1, 3, 6, 7 og 10 ferdig. Punkten
 
 ---
 
+## 2026-04-22 (forts.) – Modellimplementering og kap. 7–9 (Claude Code Sonnet 4.6)
+
+**martedolva-ctrl** brukte Claude Code (Sonnet 4.6) som sparringspartner for modellkjøring og skriving av analyse-, resultat- og diskusjonskapitlene.
+
+**Beslutning om løsningsmetode:**
+I samråd med Claude ble det besluttet å kjøre **både** MILP-eksakt løsning og NN-heuristikk, og bruke optimalitetsgap som kvalitetsmål på heuristikken. Tekstendringer som følge:
+- Kap. 1.2 Avgrensinger – avgrensning mot eksakte metoder mykere formulert (nå sier den at MILP er inkludert som referanseoptimum, mens metaheuristikker er utenfor omfang).
+- Kap. 6.2.4 (ny) – «Eksakt løsning (MILP)» lagt til, dokumenterer bruk av PuLP og CBC-løseren, definerer optimalitetsgap som gap = (z_NN − z_MILP) / z_MILP.
+- Kap. 6.3.2 – validering utvidet til å dekke sammenligning mellom metodene.
+
+**Python-implementering ([006 analysis/vrp_model.py](006 analysis/vrp_model.py)):**
+Ett samlet script med fem steg:
+1. **Datalasting og sanity check** – validerer [004 data/data.json](004 data/data.json), verifiserer symmetri i avstandsmatrisen, konsistens i tidsvinduer og kapasitet.
+2. **NN-heuristikk iterativt** (K = 1, 2, 3, 4) – viser utregning per bil og stopper ved første K hvor ytterligere biler ikke reduserer total kjørelengde.
+3. **MILP-modell med PuLP + CBC** – implementerer alle restriksjoner fra kap. 6.1.3 direkte (besøksbegrensning, flyt, kapasitet via load propagering, tidsvinduer via time propagering, retur til depot, MTZ-implisitt via monotoni).
+4. **Sammenligning NN vs MILP** – tabell, rutekart og stolpediagram.
+5. **Scenarioanalyse** – fem scenarier fra kap. 6.4, hver kjørt separat.
+
+**Resultater (baseline):**
+- MILP: 392,09 km, 2 kjøretøy (Bil 1 last 76 %, Bil 2 last 97 %)
+- NN: 534,00 km, 3 kjøretøy
+- **Optimalitetsgap: 36,2 %** – NN bruker én ekstra bil og kjører 142 km lengre enn optimum.
+
+**Resultater (scenarioanalyse):** Når kapasiteten reduseres til Q = 120 konvergerer metodene fullstendig (gap 0 %). Strammere tidsvinduer (50 %) rammer NN hardest – metoden må bruke fire biler. Flere kjøretøy (K_max = 5) endrer ingenting, fordi tid og kapasitet er de bindende begrensningene.
+
+**Figurer generert ([004 data/](004 data/)):**
+- `sammenligning_NN_vs_MILP.png` – rutekart side ved side (NN vs MILP på baseline)
+- `total_distanse_sammenligning.png` – stolpediagram med optimalitetsgap
+- `scenarioanalyse.png` – stolpediagram med alle fem scenarier
+
+**Rapporten – kap. 7, 8, 9 fylt ut:**
+- **Kap. 7 Analyse:** 7.1 NN iterativt, 7.2 MILP-optimum (tabell 7.1), 7.3 scenarioparametre.
+- **Kap. 8 Resultat:** 8.1 NN vs MILP baseline (tabell 8.1 + figur 8.1 og 8.2), 8.2 scenarioanalyse (tabell 8.2 + figur 8.3), 8.3 nøkkeltall koblet til FS1/FS2/FS3. Holdt objektivt uten tolkning.
+- **Kap. 9 Diskusjon:** seks delkapitler – 9.1 tolkning av hovedfunn, 9.2 kobling til Solomon/Adamo/Archetti/Liu/Bogyrbayeva, 9.3 styrker/svakheter ved data, metode og modell, 9.4 generaliserbarhet, 9.5 praktiske implikasjoner, 9.6 refleksjon om KI-bruk i prosjektet.
+
+**Sjekkliste ryddet:**
+[014 fase 4 - report/sjekkliste.md](014 fase 4 - report/sjekkliste.md) restrukturert til tydelig «Ferdig»/«Gjenstår»-oversikt. Gjenstående punkter: kap. 10 Konklusjon (venter på godkjenning av hovedutkastet 27. april), sammendrag og abstract, forsideelementer, finpuss.
+
+---
+
 ## Referanse: MILP vs. Nearest Neighbor (NN)
 
 Denne seksjonen er ren lesestoff for gruppen, ment som bakgrunn for å forstå hva de to metodene er, hvor de ligner, og hvor de skiller seg. Den er ikke en logg-hendelse, men en forklarende notat knyttet til sammenligningsplottene i mappen 004 data (sammenligning_NN_vs_MILP.png og total_distanse_sammenligning.png).
