@@ -5,7 +5,7 @@ Oppdatert 2026-04-20 etter gjennomgang av gruppens utkast (34 sider) sammenholdt
 **Kildefiler:**
 - [rapport.md](rapport.md) – **ekte Markdown-versjon** konvertert fra PDF 2026-04-20 (895 linjer). Bruk denne til videre redigering.
 - [Mal prosjekt LOG650 v2.md](Mal prosjekt LOG650 v2.md) – originalen (PDF med feil .md-endelse).
-- [kap4_casebeskrivelse.md](kap4_casebeskrivelse.md) – casebeskrivelsen som falt ut av PDF-eksport.
+- ~~kap4_casebeskrivelse.md~~ – innholdet ble integrert i [rapport.md](rapport.md) og filen slettet i commit `5026980`.
 
 Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 
@@ -42,7 +42,7 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 - [x] 3 forskningsspørsmål definert
 - [x] Avgrensinger begrunnet faglig (1.3)
 - [x] Antagelser listet og begrunnet (1.4)
-- [ ] **Fjern veiledningsteksten** fra malen (s. 10–13): "Introduksjonen bør ikke være for lang...", "Svar på følgende spørsmål...", spørsmålslistene, eksemplene om Maritech/lakseprisen
+- [x] **Fjern veiledningsteksten** fra malen (fjernet 2026-04-22: 4 blokker i kap. 1 – introduksjon, problemstilling, avgrensninger, antagelser)
 - [ ] 1.2 Delproblemer – enten skriv noe, eller slett overskriften (markert "valgfri")
 - [ ] Vurder: skal delproblemer stå, eller dekkes det av forskningsspørsmålene i 1.1?
 
@@ -54,7 +54,7 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 - [x] Relevant forskning presentert (Archetti, Adamo, Liu, Bogyrbayeva)
 - [x] Koblet til oppgavens problemstilling og metodevalg
 - [ ] **Sjekk kildehenvisninger** – står "Archetti et al." uten årstall/sidetall flere steder i teksten
-- [ ] **Fjern veiledningsteksten** ("Diskuter de viktigste bidragene de 5 siste årene...", kulepunktene om synsing)
+- [x] **Fjern veiledningsteksten** (fjernet 2026-04-22)
 - [ ] Vurder om kap. 2 og 3 kan slås sammen – skriveveilederen anbefaler ett samlet teori-/litteraturkapittel
 
 ---
@@ -67,28 +67,28 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 - [x] 3.4 Greedy/nearest neighbor (Cormen 2009)
 - [x] 3.5 KI i ruteplanlegging
 - [x] 3.6 Oppsummering og kobling til problemstilling
-- [ ] **Fjern veiledningsteksten** på slutten ("Når du skal skrive en bacheloroppgave...")
+- [x] **Fjern veiledningsteksten** på slutten (fjernet 2026-04-22)
 - [ ] Sjekk at Cormen et al. 2009 faktisk er brukt i bibliografien (mangler nå)
 - [ ] Vurder å integrere med kap. 2 (skriveveileder anbefaler det)
 
 ---
 
-## 4. Casebeskrivelse *(Case/modell)* ✅ TEKST PÅ PLASS (sikret 2026-04-20)
+## 4. Casebeskrivelse *(Case/modell)* ✅ UTVIDET 2026-04-22
 
-Teksten falt ut av PDF-eksporten – sikret i [kap4_casebeskrivelse.md](kap4_casebeskrivelse.md). Må legges tilbake i kildedokumentet (Word) før ny eksport.
+Teksten er integrert i [rapport.md](rapport.md) og utvidet med prosessflyt, rammebetingelser med nøkkeltall og eksplisitt kobling til VRPTW.
 
 - [x] Beskriv Lerøy Seafood Group og fortransport av slakteklar fisk
-- [x] Prosessflyt: fra oppdrettslokalitet til slakteri
+- [x] Prosessflyt: fra oppdrettslokalitet til slakteri (utvidet – henting, tidsvinduer, kvalitet/dyrevelferd)
 - [x] Kontekst: havbruksnæringen i Norge
 - [x] Rammebetingelser: geografisk spredning, kapasitet, tidskrav
-- [x] Hvorfor er caset egnet for kvantitativ ruteplanlegging
-- [ ] **Legg teksten tilbake i Word-dokumentet** som eksporteres til PDF
-- [ ] **Fjern veiledningsteksten** fra malen ("Har skal problemstillingen utbroderes...", eksempelet om gjennomløpstid)
-- [ ] Vurder utvidelse: nøkkeltall (syntetiske) – 7 lokaliteter, 1 slakteri, kapasitet 180 t
+- [x] Hvorfor er caset egnet for kvantitativ ruteplanlegging (kobling til VRPTW fra kap. 3)
+- [x] ~~Legg teksten tilbake i Word-dokumentet~~ – foreldet, rapport.md er nå kilden
+- [x] **Fjern veiledningsteksten** fra malen (fjernet 2026-04-22)
+- [x] Utvidelse med nøkkeltall: 7 lokaliteter, 1 slakteri, kapasitet 180 t, etterspørsel 312 t (lagt til 2026-04-22)
 
 ---
 
-## 5. Metode og data *(Alle)*
+## 5. Metode og data *(Alle)* 
 
 - [x] 5.1.1 Datagrunnlag beskrevet (syntetisk datasett fra faglærer)
 - [x] 5.1.2 Lokasjoner og koordinater – tabell inkludert
@@ -99,25 +99,26 @@ Teksten falt ut av PDF-eksporten – sikret i [kap4_casebeskrivelse.md](kap4_cas
 - [x] 5.1.7 Øvrige inputdata (kapasitet 180, samlet etterspørsel 312)
 - [x] 5.2 Data – identifisering av lokasjoner/region/slakteri
 - [x] 5.3 Geografiske data
-- [x] 5.4 Transportdata (volum + kostnadsparametere)
-- [ ] **Beskriv KI-bruk i metodeprosessen** (kreves eksplisitt av skriveveilederen)
-- [ ] Vurder om 5.2 og 5.3 overlapper – 5.2.2 "Velge region" og 5.3 "Samle geografiske data" sier delvis det samme
-- [ ] Reproduserbarhet: henvis til kode på GitHub
+- [x] 5.4 Transportdata (volum + kostnadsparametere) *(nå 5.3 etter restrukturering 2026-04-22)*
+- [x] **Beskriv KI-bruk i metodeprosessen** – lagt til som nytt kap. 5.4
+- [x] 5.2 og 5.3 overlapp løst – 5.3 slått inn i 5.2 (5.2.5–5.2.7), tidligere 5.4 er nå 5.3
+- [x] Reproduserbarhet: henvist til GitHub-repositorium (github.com/LOG650/G01-g1) i kap. 5.4
 
 ---
 
-## 6. Modellering *(Modell)* – kjernekapittel ✅ GODT UTKAST
+## 6. Modellering *(Modell)* – kjernekapittel ✅ FORMALISERT 2026-04-22
 
-- [x] 6.1.1 Beslutningsvariabler definert (xᵢⱼ binær)
+- [x] 6.1.1 Beslutningsvariabler definert (xᵢⱼ binær + hjelpevariabler aᵢ, uᵢ)
 - [x] 6.1.2 Målfunksjon (min Σ dᵢⱼ·xᵢⱼ)
-- [x] 6.1.3 Begrensninger: kapasitet, tidsvinduer, besøk, flyt, retur til depot
+- [x] 6.1.3 Begrensninger: besøk, flyt, kapasitet, tidsvinduer, retur til depot, MTZ, binær
 - [x] 6.2 Python-implementering dokumentert
 - [x] 6.3 Testing og validering
-- [ ] **Legg til eksplisitt mengdedefinisjon** (N, K, V₀) og parametertabell (dᵢⱼ, tᵢⱼ, qᵢ, sᵢ, eᵢ, lᵢ, Q)
-- [ ] **Skriv restriksjoner som formler**, ikke bare tekstlig
-- [ ] Subtour-eliminering – nevnes den? (anbefalt for formell VRP-formulering)
-- [ ] Modellvarianter/scenarier eksplisitt nevnt
-- [ ] Flytt kodedetaljer til vedlegg hvis det blir for teknisk
+- [x] **Mengdedefinisjon** (N, V, K) og **parametertabell** (dᵢⱼ, tᵢⱼ, qᵢ, sᵢ, eᵢ, lᵢ, Q, T_max) lagt til i 6.1
+- [x] **Restriksjoner som formler** – alle 7 begrensninger skrevet matematisk i 6.1.3
+- [x] Subtour-eliminering – lagt til som MTZ (Miller, Tucker og Zemlin, 1960) i 6.1.3
+- [x] Modellvarianter/scenarier eksplisitt nevnt – nytt kap. 6.4 med 5 scenarier
+- [ ] Flytt kodedetaljer til vedlegg hvis det blir for teknisk *(vurdert OK som-er)*
+- [x] **Miller, Tucker & Zemlin (1960)** lagt til i bibliografi 2026-04-22
 
 ---
 
@@ -128,7 +129,7 @@ Teksten falt ut av PDF-eksporten – sikret i [kap4_casebeskrivelse.md](kap4_cas
 - [ ] Sammenlign med referanseløsning (baseline – f.eks. én rute per lokalitet)
 - [ ] Scenarioanalyse (endre etterspørsel, kapasitet eller antall biler)
 - [ ] Sensitivitetsanalyse
-- [ ] **Fjern veiledningsteksten** ("Hvordan skrive bacheloroppgave...")
+- [x] **Fjern veiledningsteksten** (fjernet 2026-04-22)
 - [ ] Merk: ifølge skriveveileder skal 7 og 8 være objektive – ingen tolkning her
 
 ---
@@ -140,7 +141,7 @@ Teksten falt ut av PDF-eksporten – sikret i [kap4_casebeskrivelse.md](kap4_cas
 - [ ] Kart/rutediagram som viser valgt løsning
 - [ ] Forklarende tekst for **hver** figur og tabell
 - [ ] Koble hvert resultat eksplisitt til forskningsspørsmålene (FS1, FS2, FS3)
-- [ ] **Fjern veiledningsteksten**
+- [x] **Fjern veiledningsteksten** (fjernet 2026-04-22)
 - [ ] Vurder: bør 7 og 8 slås sammen til "Analyse og resultater" (jf. skriveveileder kap. 4.6)?
 
 ---
@@ -153,7 +154,7 @@ Teksten falt ut av PDF-eksporten – sikret i [kap4_casebeskrivelse.md](kap4_cas
 - [ ] Generaliserbarhet – kan modellen overføres til reelle Lerøy-data?
 - [ ] Praktiske implikasjoner for havbruksnæringen
 - [ ] **Kritisk refleksjon om KI-bruk** – muligheter og begrensninger (faglig gevinst-diskusjon)
-- [ ] **Fjern veiledningsteksten**
+- [x] **Fjern veiledningsteksten** (fjernet 2026-04-22)
 
 ---
 
@@ -165,30 +166,34 @@ Teksten falt ut av PDF-eksporten – sikret i [kap4_casebeskrivelse.md](kap4_cas
 - [ ] Praktiske/teoretiske implikasjoner
 - [ ] Forslag til videre arbeid
 - [ ] Refleksjon om KI-prosjektets bidrag
-- [ ] **Fjern veiledningsteksten** ("Hva er det viktigste dere har funnet?...")
+- [x] **Fjern veiledningsteksten** (fjernet 2026-04-22)
 
 ---
 
-## 11. Bibliografi ⚠️ UFULLSTENDIG
+## 11. Bibliografi ✅ KOMPLETTERT 2026-04-22
 
-- [ ] Konverter alle kilder til **APA 7**, ikke nakne URL-er
-- [ ] Første 3 referanser mangler forfatter og år
-- [ ] Legg inn **Toth & Vigo (2014)** – brukt i 3.1
-- [ ] Legg inn **Laporte (2009)** – brukt i 3.1
-- [ ] Legg inn **Solomon (1987)** – brukt i 3.2
-- [ ] Legg inn **Cormen et al. (2009)** – brukt i 3.4
-- [ ] Legg inn **Dantzig & Ramser (1959)** – brukt i 3.1
-- [ ] **Referer KI-verktøy** (ChatGPT/Claude/Gemini) – versjon, dato, prompt-beskrivelse i metodekap.
-- [ ] Sjekk DOI og URL for alle APA-oppføringer
-- [ ] Alfabetisk rekkefølge
+- [x] Konverter alle kilder til **APA 7** – 16 oppføringer i konsistent format
+- [x] Første 3 referanser fikset: Tan & Yeh (2021), Pangaribuan et al. (2025), Clarke & Wright (1964)
+- [x] Legg inn **Toth & Vigo (2014)**
+- [x] Legg inn **Laporte (2009)**
+- [x] Legg inn **Solomon (1987)**
+- [x] Legg inn **Cormen et al. (2009)**
+- [x] Legg inn **Dantzig & Ramser (1959)**
+- [x] Legg inn **Miller, Tucker & Zemlin (1960)** (brukt i 6.1)
+- [x] **Referer KI-verktøy** (ChatGPT, Claude, Gemini) – generiske 2026-oppføringer
+- [x] Liu (2023) fikset – fullt forfatternavn (Liu, Chen, Por, Ku) og full tittel
+- [x] DOI lagt til der tilgjengelig
+- [x] Alfabetisk rekkefølge
+- [ ] *Til vurdering: konkret versjon/dato for KI-verktøy hvis dere vil ha mer presisjon*
+- [ ] *Til vurdering: i kap. 5.4 – beskriv prompt-typer/eksempler hvis veileder krever det*
 
 ---
 
 ## 12. Vedlegg
 
-- [x] 12.1 Vedlegg A – Avstandsmatrise (km)
-- [ ] **12.2 Vedlegg B – rett overskrift** – skal være **Tidsmatrise (minutter)**, ikke duplikat av avstandsmatrisen
-- [ ] Legg til tidsmatrise-dataene (fra [data.json](../004 data/data.json))
+- [x] 12.1 Vedlegg A – Avstandsmatrise (km) (fikset «Fra / tl» → «Fra / til»)
+- [x] **12.2 Vedlegg B – Tidsmatrise (minutter)** – overskrift rettet 2026-04-22
+- [x] Tidsmatrise-data lagt inn fra [data.json](../004 data/data.json)
 - [ ] Vurder flere vedlegg: Python-kode, full noderegistrering, scenarioresultater
 
 ---
@@ -203,20 +208,20 @@ Teksten falt ut av PDF-eksporten – sikret i [kap4_casebeskrivelse.md](kap4_cas
 - [ ] Akser merket med enheter (km, min, tonn)
 - [ ] Konsekvent språk og referansestil
 - [ ] Ingen "veldig", "mye", "kanskje" – unngå upresise ord
-- [ ] **Kjør hele rapporten gjennom stavekontroll** – sett noen feil: "Innlefveringsdato" (s. 1), "oppgaven gjennomfres", "heurisktisk" (s. 12), "tilbærning" (s. 12), "overskrives" (s. 13 – skal være overskrides)
+- [~] **Kjør hele rapporten gjennom stavekontroll** – fikset 2026-04-22: Innlefveringsdato, heurisktisk, tilbærning, overskrives, pluss løsningsmedote og metaheurestikker. («gjennomfres» fantes ikke i rapporten.) Bør fortsatt kjøres en full pass før innlevering.
 
 ---
 
 ## Prioritert rekkefølge fremover
 
-1. **Fjern all veiledningstekst** fra malen i kap. 1–10 (rask fix, stor effekt)
+1. ~~**Fjern all veiledningstekst** fra malen i kap. 1–10~~ ✅ ferdig 2026-04-22
 2. **Kjør modellen** → resultater for kap. 7–8
-3. Skriv **Casebeskrivelse (kap. 4)** – relativt kort, men nødvendig
+3. ~~Skriv **Casebeskrivelse (kap. 4)** – relativt kort, men nødvendig~~ ✅ ferdig 2026-04-22 (utvidet med prosessflyt og nøkkeltall)
 4. Skriv **Analyse + Resultat (kap. 7–8)**
 5. Skriv **Diskusjon (kap. 9)** og **Konklusjon (kap. 10)**
-6. Ryd opp i **Modellering (kap. 6)** – mer formell notasjon
-7. Komplett **Bibliografi** i APA 7
+6. ~~Ryd opp i **Modellering (kap. 6)** – mer formell notasjon~~ ✅ ferdig 2026-04-22 (mengder, parametertabell, formler, MTZ, scenarier)
+7. ~~Komplett **Bibliografi** i APA 7~~ ✅ ferdig 2026-04-22 (16 APA 7-oppføringer, alfabetisert)
 8. **Sammendrag + Abstract** helt til slutt
 9. Fyll inn forside, erklæringer, publiseringsavtale
-10. Rett **Vedlegg B** (tidsmatrise)
+10. ~~Rett **Vedlegg B** (tidsmatrise)~~ ✅ ferdig 2026-04-22
 11. Finpuss: korrektur, stavefeil, figurnummerering
