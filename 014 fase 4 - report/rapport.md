@@ -8,7 +8,7 @@ Forfatter(e)
 
 Totalt antall sider inkludert forsiden: 
 
-Molde, Innlefveringsdato 
+Molde, Innleveringsdato 
 
 **==> picture [145 x 90] intentionally omitted <==**
 
@@ -93,10 +93,16 @@ _Du/dere fyller ut erklæringen ved å klikke i ruten til høyre for den enkelte
 |**2.0**|**Litteratur ..................................................................................................................3**|
 |**3.0**|**Teori ..........................................................................................................................3**|
 |**4.0**|**Casebeskrivelse .........................................................................................................4**|
-|**5.0**|**Metode og data (kan splittes i to) ............................................................................4**|
+|**5.0**|**Metode og data .........................................................................................................4**|
 |5.1|Metode .................................................................................................................. 4|
 |5.2|Data ....................................................................................................................... 5|
+|5.3|Genererte transportdata ...................................................................................... 5|
+|5.4|Bruk av KI i metodeprosessen ............................................................................. 6|
 |**6.0**|**Modellering ...............................................................................................................6**|
+|6.1|Modellformulering ............................................................................................... 6|
+|6.2|Implementering av modell i Python ................................................................... 6|
+|6.3|Testing og validering ........................................................................................... 6|
+|6.4|Modellvarianter og scenarier .............................................................................. 6|
 |**7.0**|**Analyse ......................................................................................................................6**|
 |**8.0**|**Resultat .....................................................................................................................6**|
 |**9.0**|**Diskusjon ...................................................................................................................7**|
@@ -112,23 +118,6 @@ Fortransport av slakteklar fisk fra oppdrettslokaliteter til slakteri er en sent
 
 Denne oppgaven tar utgangspunkt i fortransport i én region hos Lerøy og undersøker hvordan ruteplanlegging kan modelleres og analyseres ved hjelp av kvantitative metoder. Studien er avgrenset til transport fra 7 oppdrettslokaliteter til ett slakteri og fokuserer på kostnadsminimering som beslutningskriterium. 
 
-<!-- VEILEDNING FRA MAL (slett før innlevering):
-Introduksjonen bør ikke være for lang, mellom 1-4 sider, helst kun 1-2. For mye skrift her kan være et tegn på at man sliter med å være presis. Ta utgangspunkt i et generelt tema og deretter beskriv den aktuelle problemstillingen.
-
-Svar på følgende spørsmål:
-- Hvilket tema handler oppgaven om?
-- Hvorfor er tema aktuelt?
-- Hva har blitt gjort tidligere (de mest vesentlige referansene)?
-- Hva er rapportens problemstilling (eget underavsnitt)?
-- Hvilke avgrensinger gjøres (eget underavsnitt)?
-
-Viktige momenter:
-- Skap nysgjerrighet slik at leseren ønsker å lese videre. Aktualiser temaet og pek på konsekvenser resultatet kan gi. Men unngå å brodere ut hvordan resultatet oppnås.
-- Prøv å gi leseren innblikk i strukturen til rapporten gjennom hele introduksjonen (eksempler: «Lakseprisens volatilitet påvirker svært mange aktører som…», «Ref 1 har vist at lakseprisen er avhengig av…», «Litteraturstudiet vårt viser at ingen har inkludert faktorer som …», osv.)
-- Henvis tilbake til introduksjonen indirekte for å skape en rød tråd.
--->
-
-
 ## **1.1 Problemstilling** 
 
 Hvordan kan kvantitative ruteplanleggingsmodeller, støttet av kunstig intelligens, bidra til mer effektiv fortransport av slakteklar fisk i én region hos Lerøy? 
@@ -141,19 +130,6 @@ Hvordan kan kvantitative ruteplanleggingsmodeller, støttet av kunstig intellige
 
 3. Hvordan påvirkes den optimale ruten av endringer i transportvolum og antall oppdrettslokaliteter innenfor gitte rammebetingelser?
 
-<!-- VEILEDNING FRA MAL (slett før innlevering):
-Problemstillingen din er avgjørende for et godt resultat. Dette skal ikke være et «hva»- eller «hvilket»-spørsmål. Bruk «hvordan»- eller «hvorfor»-spørsmål, det gjør problemstillingen mer omfattende.
-
-En god problemstilling danner grunnlaget for hele oppgaven – tenk nøye gjennom. Kan gjenta noe fra innledningen.
-
-Viktig:
-- Vær så spesifikk som mulig
-- Vær nøye med formuleringene
-- Ikke skriv noe du ikke svarer på (dangerzone)
-- Ikke svar på mer enn det som står i problemstillingen (dangerzone)
--->
-
-
 ## **1.2 Delproblemer (valgfri)** 
 
 ## **1.3 Avgrensinger (Marte)** 
@@ -164,17 +140,7 @@ For det andre fokuserer oppgaven på et statisk ruteplanleggingsproblem. Det inn
 
 Oppgaven er også avgrenset til én type kjøretøy med fast kapasitet. Variasjoner i kjøretøystyper, kostnadsstrukturer eller bemanning er ikke inkludert. Dette forenkler modelleringen og gjør det mulig å fokusere på selve rutestrukturen. 
 
-Når det gjelder løsningsmedote er analysen avgrenset til bruk av enkel heurisktisk tilbærning basert på nearest-neighbor prinsippet. Oppgaven søker dermed ikke å finne en global optimal løsning ved hjelp av eksakte metoder eller metaheurestikker. Dette er gjort fordi vi rett og slett ikke er matematikere eller programmerere, og vi skal kunne etterprøve løsningen og trenger dermed en transparent modell innenfor prosjektets omfang. 
-
-<!-- VEILEDNING FRA MAL (slett før innlevering):
-Avgrensing er en svært viktig måte å snevre inn en problemstilling. Forklar hvorfor noe ikke er tatt med. Ikke skriv at du ikke har nok tid – det er et tegn på for vidt formulert problemstilling.
-
-Eksempler:
-- «Vi avgrenser oppgaven til kun ett produkt siden…»
-- «Vi analyserer 80% av kundene da de resterende ikke…»
-- «Oppgaven omfatter kun Norge, da det utenlandske markedet ikke…»
--->
-
+Når det gjelder løsningsmetode er analysen avgrenset til bruk av en enkel heuristisk tilnærming basert på nearest-neighbor-prinsippet. Oppgaven søker dermed ikke å finne en global optimal løsning ved hjelp av eksakte metoder eller metaheuristikker. Dette er gjort fordi vi rett og slett ikke er matematikere eller programmerere, og vi skal kunne etterprøve løsningen og trenger dermed en transparent modell innenfor prosjektets omfang. 
 
 ## **1.4 Antagelser (Marte)** 
 
@@ -186,22 +152,13 @@ For å gjøre ruteplanleggingsproblemet håndterbart er det gjort flere forenkle
 
 3. Det forutsettes at alle data er deterministiske og kjente på forhånd. Etterspørsel, tidsvinduer og lastetider er dermed faste vinduer uten usikkerhet. I en virkelig verden endrer slike parameter seg kontinuerlig, noe som betyr at modellen ikke kommer til å vise operasjonell usikkerhet. 
 
-4. Det antas at kjøretøyets kapasitet er fast og kjent, og at denne ikke kan overskrives. Det betyr at de konstruerte rutene må forholde seg til denne begrensningen. 
+4. Det antas at kjøretøyets kapasitet er fast og kjent, og at denne ikke kan overskrides. Det betyr at de konstruerte rutene må forholde seg til denne begrensningen. 
 
 Disse antakelsene innebærer at modellen representerer en forenklet versjon av 
 
 virkeligheten, men det gjør det mulig for oss å analysere strukturen i 
 
 ruteplanleggingsproblemet. Resultatet av denne analysen kan dermed ikke overføres til reelle operasjoner. 
-
-<!-- VEILEDNING FRA MAL (slett før innlevering):
-Antagelser er en måte å presisere en problemstilling på. En antagelse er ikke det samme som avgrensning. En avgrensning snevrer inn omfanget, mens en antagelse presiserer situasjonen som analyseres. Forklar hvorfor antagelsen er tatt og hvilke konsekvenser den får.
-
-Eksempler:
-- «Vi antar at antall innkommende ordrer er Poissonfordelt fordi…dette gjør at…»
-- «Vi antar at vi kan se vekk fra effekten av prisene i Sverige fordi…dette gjør at…»
--->
-
 
 ## **2.0 Litteratur (Marte)** 
 
@@ -224,15 +181,6 @@ tradisjonelle heuristikker og optimeringsmetoder. Et viktig poeng i denne litter
 En tredje utvikling i nyere VRP-litteratur er koblingen til bærekraft og bredere logistiske hensyn. Liu et al. sin systematiske litteraturgjennomgang fra 2023 viser at VRP i økende grad brukes i sammenhenger der miljømessige, økonomiske og operasjonelle hensyn må ses i sammenheng. Selv om denne oppgaven først og fremst fokuserer på transportkostnad og gjennomførbarhet, er dette relevant fordi mer effektiv ruteplanlegging også kan gi indirekte gevinster i form av redusert kjørelengde og bedre ressursutnyttelse. Rapporten bidrar ikke primært til bærekraftslitteraturen, men står i forlengelsen av denne ved å undersøke hvordan bedre planlegging kan gi mer effektive transporter i en havbrukskontekst. 
 
 Samlet viser litteraturen de siste fem årene at VRP-forskningen beveger seg mot mer realistiske, sammensatte og anvendte problemstillinger. Denne rapporten forholder seg til denne utviklingen ved å modellere et kapasitets- og tidsbegrenset ruteproblem inspirert av fortransport i havbruksnæringen. Samtidig avgrenser oppgaven seg bevisst fra de mest avanserte metodene i nyere forskning, som dype læringsmodeller og komplekse metaheuristikker, og velger i stedet en enklere heuristisk tilnærming. Dette gjør analysen mindre avansert metodisk, men til gjengjeld mer transparent, etterprøvbar og godt tilpasset prosjektets omfang og formål. 
-
-<!-- VEILEDNING FRA MAL (slett før innlevering):
-Diskuter de viktigste bidragene de 5 siste årene innen temaet. Trekk tråder til din problemstilling og beskriv hvor og hvordan din rapport forholder seg til disse. Pass på at referanser blir korrekte.
-
-- Det er ikke alltid nødvendig å ha et eget kapittel for litteratur. Det viktigste er at man aldri siterer noen eller kommer med fakta/påstander uten referanse. Dette kalles synsing og trekker ned karakteren kraftig.
-- Ved flere henvisninger til samme rapport – ikke repeter funnene, bruk bare referansen.
-- En referanse har to hensikter: kreditere de som fant resultatet, og gi leseren mulighet til å sjekke påstanden.
--->
-
 
 ## **3.0 Teori (Marte)** 
 
@@ -350,40 +298,19 @@ Litteraturen viser at moderne VRP-forskning beveger seg mot mer realistiske og a
 
 Samtidig understrekes det at heuristiske metoder fortsatt er avgjørende for å løse slike problemer i praksis, særlig når beregningstid og implementerbarhet er viktige faktorer. Denne oppgaven bygger på disse prinsippene ved å modellere fortransport som et kapasitets- og tidsbegrenset ruteproblem, løst ved hjelp av en greedy heuristikk. Valget av metode er i tråd med både klassisk teori og nyere forskning, og reflekterer en bevisst avveining mellom modellens realisme, kompleksitet og anvendbarhet. 
 
-<!-- VEILEDNING FRA MAL (slett før innlevering):
-Når du skal skrive en bacheloroppgave, er det viktig å inkludere en teoridel. Beskriv teoretisk perspektiv, tidligere litteratur som beskriver samme tema og hva forskere eventuelt er uenige om. Nevn hvorvidt tidligere forskning kan ha oversett noen faktorer, og plasser egen problemstilling i lys av tidligere litteratur. Pass på at du får frem hva problemstillingen din belyser, som ikke tidligere forskning allerede har gjennomgått. Teoridelen skal beskrive grunnlaget for studiet og danner utgangspunktet for videre metodevalg.
--->
+## **4.0 Casebeskrivelse** 
 
+Denne oppgaven tar utgangspunkt i en case knyttet til transportoptimalisering hos Lerøy Seafood Group, en sentral aktør innen norsk havbruksnæring. Lerøy har omfattende logistikk knyttet til transport av fisk mellom produksjonslokaliteter og videre til mottak eller slakteri, og fortransport av slakteklar fisk er en av flere logistikkaktiviteter der effektiv ruteplanlegging kan gi betydelige gevinster. 
 
-## **4.0 Casebeskrivelse ( Kenneth )** 
+Caset setter søkelys på fortransporten fra oppdrettslokaliteter til slakteri. Fisken hentes ved lokalitetene etter avtalte tidsvinduer, og må leveres innenfor angitte tidsrammer for å ivareta kvalitet og driftsflyt på slakteriet. Denne delen av verdikjeden er kritisk fordi forsinkelser eller ubalansert kapasitetsbruk direkte påvirker transportkostnader, dyrevelferd og produktets ferskhet. 
 
-Denne oppgaven tar utgangspunkt i en case knyttet til transportoptimalisering hos Lerøy Seafood. Lerøy er en sentral aktør innen norsk havbruksnæring og har omfattende logistikk knyttet til transport av fisk mellom produksjonslokaliteter og videre til mottak eller slakteri.
+Havbruksnæringen i Norge er preget av geografisk spredte anlegg langs kysten, med varierende avstander og transportforhold. Dette gjør ruteplanlegging til et sammensatt og løpende beslutningsproblem, og danner den bredere konteksten for oppgaven. 
 
-Caset setter søkelys på fortransport av fisk fra oppdrettslokaliteter til slakteri, hvor effektiv ruteplanlegging er viktig for å redusere transportkostnader, sikre god ressursutnyttelse og opprettholde stabile leveranser.
+Caset er avgrenset til én region og omfatter syv oppdrettslokaliteter og ett slakteri. Slakteriet fungerer som depot, der alle ruter starter og avsluttes. Kjøretøyene har en fast kapasitet på 180 enheter per bil, mens samlet etterspørsel i datasettet er 312 enheter. At etterspørselen overstiger kapasiteten til én bil gjør at flere ruter må planlegges samtidig. I tillegg er det definert tidsvinduer for henting ved hver lokalitet og en maksimal tillatt varighet per rute. 
 
-Transporten kjennetegnes av geografisk spredte lokasjoner, kapasitetsbegrensninger og tidsmessige krav, noe som gjør problemstillingen egnet for analyse ved bruk av kvantitative ruteplanleggingsmodeller.
+Kombinasjonen av geografisk spredte lokaliteter, kapasitetsbegrensninger og tidsvinduer gjør caset godt egnet for modellering som et ruteplanleggingsproblem med tidsvinduer (VRPTW). Problemet er tilstrekkelig komplekst til å gi analytisk interesse, men samtidig avgrenset nok til å gi oversiktlige og etterprøvbare resultater innenfor oppgavens rammer. I denne rapporten benyttes et syntetisk datasett utviklet for analyseformål, mens Lerøy Seafood Group fungerer som casegrunnlag for problemstillingen.
 
-I oppgaven benyttes et syntetisk datasett utviklet for analyseformål, mens Lerøy Seafood Group fungerer som casegrunnlag for problemstillingen.
-
-<!-- VEILEDNING FRA MAL (behold til resten er ferdig, slett før innlevering):
-Har skal problemstillingen utbroderes for den bedriften du samarbeidet med eller det. Ta med all relevant informasjon som er nødvendig for å få en full forståelse av problemet, men ikke mer. Husk å holde den røde tråden til problemstillingen, unødvendig informasjon trekker ned. Man kan gjerne beskrive om en bransje eller en teori hvis problemstillingen ikke omhandler en spesifikk bedrift.
-
-Anta vi f.eks. har som problemstilling og forbedre gjennomløpstiden for en vare i en produksjonsbedrift:
-- Type bedrift og hvorfor produktet har lav gjennomløpstid.
-- Beskrivelse av produktets oppbygning i komponenter.
-- Hvordan bedriften gjennomfører produksjonen av produktet i dag?
-- Hvilke faktorer som påvirker gjennomløpstiden.
-- Hvilke data som bedriften har for prosessen.
-- Hva bedriften tror som forårsaker lav gjennomløpstid.
--->
-
-
-## **5.0 Metode og data (kan splittes i to)** 
-
-<!-- VEILEDNING FRA MAL (slett før innlevering):
-Litt avhengig av omfanget, kan det være lurt å vurdere om du skal splitte kapittelet i to eller ikke.
--->
-
+## **5.0 Metode og data** 
 
 ## **5.1 Metode** 
 
@@ -458,21 +385,15 @@ Som grunnlag for modellutviklingen ble det først gjennomført en systematisk id
 
 ## **5.2.2 Velge region** 
 
-Datasettet som benyttes i denne oppgaven er syntetisk generert og representerer ikke en spesifikk geografisk region. Likevel er det konstruert slik at det etterligner realistiske transportforhold innen havbruksnæringen. 
+Datasettet representerer ikke en spesifikk geografisk region, men er konstruert for å etterligne realistiske transportforhold i havbruksnæringen. Avstander og lokasjonsstruktur er valgt slik at lokalitetene gir variasjon i rutevalg og transportavstander innenfor et plausibelt geografisk område. 
 
-Ved generering av datasettet er det lagt vekt på at avstander og lokasjonsstruktur skal være konsistente og representere et plausibelt geografisk område. Dette innebærer at lokalitetene er plassert slik at de gir realistiske rutevalg og transportavstander. 
-
-Bruken av syntetiske data gir økt fleksibilitet i modellutviklingen og muliggjør kontroll over sentrale variabler i analysen, men kan samtidig påvirke overførbarheten av resultatene. 
+Denne tilnærmingen gir fleksibilitet i modellutviklingen og kontroll over sentrale variabler, men kan påvirke overførbarheten til reelle geografiske forhold. 
 
 ## **5.2.3 Identifisere oppdrettslokaliteter** 
 
-Oppdrettslokalitetene i datasettet er syntetisk generert og representerer ikke faktiske anlegg. Lokalitetene er likevel konstruert for å etterligne realistiske forhold innen havbruksnæringen. 
+Totalt inngår syv oppdrettslokaliteter i modellen, i tråd med prosjektets avgrensning. Hver lokalitet fungerer som en node med tilhørende transportbehov og tidsvindu. 
 
-Totalt inngår syv oppdrettslokaliteter i modellen, i tråd med prosjektets avgrensning. Hver lokalitet fungerer som en node med tilhørende transportbehov. 
-
-Ved generering av lokalitetene er det lagt vekt på geografisk spredning, slik at datasettet gir variasjon i avstander og rutevalg. Dette bidrar til å skape et mer representativt og analytisk interessant ruteplanleggingsproblem. 
-
-Lokalitetene er generert med hensikt å balansere modellens realisme og gjennomførbarhet. 
+Ved generering av lokalitetene er det lagt vekt på geografisk spredning, slik at datasettet gir variasjon i avstander og rutevalg. Dette balanserer realisme og gjennomførbarhet, og skaper et analytisk interessant ruteplanleggingsproblem. 
 
 14 
 
@@ -484,53 +405,39 @@ Slakteriet fungerer som depot i modellen, hvor alle ruter starter og avsluttes. 
 
 Valget av ett slakteri bidrar til å forenkle modellstrukturen, samtidig som det gir et realistisk utgangspunkt for analyse av transport mellom oppdrettslokaliteter og mottaksanlegg. 
 
-## **5.3 Samle geografiske data** 
+## **5.2.5 Finne koordinater** 
 
-Etter identifisering av lokasjoner ble det etablert et geografisk datagrunnlag som grunnlag for videre analyse. Dette omfatter koordinater for alle noder samt strukturering av datasettet for bruk i modelleringen. 
+For hver node i datasettet er det definert x- og y-koordinater i et todimensjonalt koordinatsystem (se tabell i 5.1.2). Koordinatene er syntetisk generert og utgjør grunnlaget for beregning av avstander mellom alle noder i modellen. 
 
-Geografiske data er avgjørende for å kunne beregne avstander mellom lokalitetene, og dermed danne grunnlaget for ruteplanleggingen. 
+## **5.2.6 Kontrollere lokasjoner** 
 
-## **5.3.1 Finne koordinater** 
-
-For hver lokasjon i datasettet ble det definert geografiske koordinater i form av breddegrad og lengdegrad. Disse koordinatene er syntetisk generert, men konstruert slik at de representerer et realistisk geografisk område. 
-
-Koordinatene danner grunnlaget for beregning av avstander mellom alle noder i modellen, og er derfor en sentral del av datagrunnlaget. 
-
-Koordinatene benyttes videre til å beregne avstandsmatrise mellom nodene. 
-
-## **5.3.2 Kontrollere lokasjoner** 
-
-For å sikre konsistens i datasettet ble lokasjonene kontrollert med hensyn til geografisk plassering og innbyrdes avstander. 
+For å sikre konsistens i datasettet ble lokasjonene kontrollert med hensyn til innbyrdes plassering og avstander. 
 
 15 
 
-Dette innebærer at koordinatene er vurdert slik at de gir realistiske avstander mellom lokalitetene, og at ingen lokasjoner er plassert på en måte som skaper urealistiske transportforhold. 
+Koordinatene er vurdert slik at de gir realistiske avstander mellom lokalitetene, og ingen lokasjoner er plassert på en måte som skaper urealistiske transportforhold. Kontrollen bidrar til å sikre at modellen opererer på et troverdig grunnlag. 
 
-Denne kontrollen bidrar til å sikre at modellen opererer på et troverdig grunnlag. 
+## **5.2.7 Strukturere datasett** 
 
-## **5.3.3 Strukturere datasett** 
-
-De geografiske dataene ble strukturert i et tabellformat som er egnet for videre bruk i modellen. 
-
-Datasettet inneholder følgende variabler: 
+De geografiske dataene ble strukturert i et tabellformat som er egnet for videre bruk i modellen. Datasettet inneholder følgende variabler: 
 
 - node-ID 
 
 - lokasjonstype (oppdrettslokalitet eller slakteri) 
 
-- breddegrad 
+- x-koordinat 
 
-- lengdegrad 
+- y-koordinat 
 
-Datastrukturen er utformet slik at den enkelt kan benyttes i Python for beregning av avstander og videre modellimplementering. 
+Datastrukturen er utformet slik at den enkelt kan benyttes i Python for beregning av avstandsmatrise og videre modellimplementering. 
 
-## **5.4 Genererte transportdata** 
+## **5.3 Genererte transportdata** 
 
 For å kunne gjennomføre analysen ble det generert transportrelaterte data som beskriver etterspørsel og kostnadsstruktur i modellen. 
 
 Disse dataene utgjør grunnlaget for hvordan transportproblemet modelleres, og påvirker både rutevalg og totale transportkostnader. 
 
-## **5.4.1 Definere transportvolum** 
+## **5.3.1 Definere transportvolum** 
 
 For hver oppdrettslokalitet ble det definert et transportvolum som representerer mengden fisk som skal transporteres til slakteriet. 
 
@@ -542,7 +449,7 @@ kapasitetsbegrensningene knyttet til hvert kjøretøy.
 
 16 
 
-## **5.4.2 Definere kostnadsparametere** 
+## **5.3.2 Definere kostnadsparametere** 
 
 For å kunne evaluere ulike ruter er det definert en forenklet kostnadsstruktur i modellen. Transportkostnaden antas å være proporsjonal med kjørelengde mellom lokalitetene. Dette innebærer at lengre ruter gir høyere kostnad, uten at det gjennomføres detaljerte økonomiske beregninger. 
 
@@ -550,61 +457,93 @@ Denne forenklingen er vanlig i ruteplanleggingsproblemer og gjør det mulig å f
 
 Det er også definert en kapasitet for kjøretøyene, som begrenser hvor mye volum som kan transporteres per rute. 
 
+## **5.4 Bruk av KI i metodeprosessen** 
+
+I henhold til gjeldende retningslinjer for bruk av kunstig intelligens i studentarbeider dokumenteres det her hvordan generative språkmodeller er benyttet i prosjektet. 
+
+Gruppen har brukt ChatGPT, Claude og Gemini som støtteverktøy gjennom metodeprosessen. Verktøyene er i hovedsak benyttet til idémyldring og strukturering av kapittelinndeling og argumentflyt, kodegenerering og feilsøking i Python-implementasjonen av rutemodellen, samt forslag til oppsett av tabeller og figurer for presentasjon av data og resultater. 
+
+All bruk av KI er verifisert gjennom akademiske kilder og manuell gjennomgang. Kodeforslag er testet mot datasettet, og tekstlige bidrag er omskrevet og kontrollert for faglig presisjon før de er tatt inn i rapporten. Ingen sensitive data eller personopplysninger er lagt inn i verktøyene. 
+
+For å sikre reproduserbarhet er all kildekode, det syntetiske datasettet og skript for nettverksvisualisering publisert i prosjektets GitHub-repositorium (github.com/LOG650/G01-g1). Dette gjør det mulig for andre å kjøre modellen på nytt og etterprøve resultatene. 
+
 ## **6.0 Modellering** 
 
 ## **6.1 Modellformulering** 
 
-## **6.1.1 Definere beslutningsvariabler** 
+Modellen formuleres som et kapasitets- og tidsbegrenset Vehicle Routing Problem with Time Windows (CVRPTW), basert på klassisk formulering i Toth og Vigo (2014). Formuleringen består av mengder, parametere, beslutningsvariabler, en målfunksjon og et sett av operasjonelle begrensninger. 
 
-For å modellere ruteplanleggingsproblemet defineres binære beslutningsvariabler: 
+**Mengder** 
 
-**==> picture [265 x 25] intentionally omitted <==**
+|**Symbol**|**Beskrivelse**|
+|---|---|
+|N = {0, 1, …, 7}|Alle noder i nettverket, der node 0 er slakteriet (depot)|
+|V = N \ {0}|Oppdrettslokaliteter (kundenoder)|
+|K|Mengde tilgjengelige kjøretøy|
 
-Disse variablene bestemmer rutestrukturen og hvilke forbindelser som inngår i løsningen. I tillegg impliserer modellen en sekvensiell besøksrekkefølge for hvert kjøretøy. 
+**Parametere** 
 
-## **6.1.2 Definere målsetting** 
+|**Symbol**|**Beskrivelse**|**Verdi/enhet**|
+|---|---|---|
+|dᵢⱼ|Avstand mellom node i og j|km (se vedlegg A)|
+|tᵢⱼ|Reisetid mellom node i og j|min (se vedlegg B)|
+|qᵢ|Transportvolum (etterspørsel) i node i|enheter|
+|sᵢ|Lastetid i node i|min|
+|eᵢ, lᵢ|Tidligste og seneste starttidspunkt for henting i node i|min|
+|Q|Kapasitet per kjøretøy|180 enheter|
+|T_max|Maksimal tillatt rutevarighet|480 min|
+
+## **6.1.1 Beslutningsvariabler** 
+
+For å modellere ruteplanleggingsproblemet defineres en binær beslutningsvariabel: 
+
+xᵢⱼ = 1 hvis et kjøretøy kjører direkte fra node i til node j, ellers 0, for i, j ∈ N, i ≠ j. 
+
+I tillegg defineres en hjelpevariabel aᵢ som angir ankomsttid ved node i, og en rekkefølgevariabel uᵢ som brukes til subtour-eliminering (Miller, Tucker og Zemlin, 1960). 
+
+Disse variablene bestemmer rutestrukturen og hvilke forbindelser som inngår i løsningen. 
+
+## **6.1.2 Målsetting** 
 
 Målsettingen er å minimere total transportkostnad, representert ved samlet kjørt distanse: 
 
-17 
+min Σᵢ∈N Σⱼ∈N dᵢⱼ · xᵢⱼ 
 
-**==> picture [117 x 59] intentionally omitted <==**
+Denne formuleringen er i tråd med klassisk VRP-litteratur (Toth og Vigo, 2014) og gir et direkte mål på logistisk effektivitet. 
 
-**----- Start of picture text -----**<br>
-𝑖𝑗 ⋅𝑥𝑖𝑗<br>𝑗<br>min⁡ ∑∑𝑑<br>𝑖<br>**----- End of picture text -----**<br>
+## **6.1.3 Begrensninger** 
 
+Modellen er underlagt følgende operasjonelle begrensninger: 
 
-der: 
+- **Besøksbegrensning** – hver lokalitet besøkes nøyaktig én gang: 
 
-- 𝑑𝑖𝑗 er avstanden mellom lokasjon 𝑖og 𝑗 
+  Σⱼ∈N xᵢⱼ = 1, ∀ i ∈ V 
 
-- 𝑥𝑖𝑗 er beslutningsvariabelen 
+  Σᵢ∈N xᵢⱼ = 1, ∀ j ∈ V 
 
-Denne formuleringen er i tråd med klassisk VRP-litteratur og gir et direkte mål på logistisk effektivitet. 
+- **Flytkonservering** – hvis et kjøretøy ankommer en node, må det også forlate den: 
 
-## **6.1.3 Definere begrensninger** 
+  Σⱼ∈N xᵢⱼ − Σⱼ∈N xⱼᵢ = 0, ∀ i ∈ V 
 
-Modellen er underlagt flere operasjonelle begrensninger: 
+- **Kapasitetsbegrensning** – total last per rute kan ikke overstige kjøretøyets kapasitet: 
 
-- **Kapasitetsbegrensning:** 
+  Σᵢ∈r qᵢ ≤ Q, for hver rute r 
 
-Total last på hver rute kan ikke overstige kjøretøyets kapasitet. 
+- **Tidsvinduer (VRPTW)** – hver lokalitet må besøkes innenfor sitt tidsintervall: 
 
-- **Tidsvinduer (VRPTW):** 
+  eᵢ ≤ aᵢ ≤ lᵢ, ∀ i ∈ V 
 
-Hver lokalitet må besøkes innenfor et gitt tidsintervall. 
+- **Retur til depot** – alle ruter må avsluttes ved depot innen maksimal rutevarighet: 
 
-- **Besøksbegrensning:** 
+  Σ (tᵢⱼ + sⱼ) ≤ T_max = 480 min, for hver rute 
 
-Hver lokalitet skal besøkes nøyaktig én gang. 
+- **Subtour-eliminering (MTZ)** – hindrer at løsningen danner isolerte delrundturer som ikke er knyttet til depotet: 
 
-- **Flytkonservering:** 
+  uᵢ − uⱼ + |V| · xᵢⱼ ≤ |V| − 1, ∀ i, j ∈ V, i ≠ j 
 
-Hvis et kjøretøy ankommer en lokasjon, må det også forlate den. 
+- **Binærvariabel**: 
 
-- **Retur til depot:** 
-
-Alle ruter må avsluttes ved depot innen 480 minutter. 
+  xᵢⱼ ∈ {0, 1}, ∀ i, j ∈ N 
 
 Disse begrensningene sikrer at løsningen er operasjonelt gjennomførbar og realistisk. 
 
@@ -706,86 +645,69 @@ Basert på testresultatene er modellen iterativt (gjentagende) forbedret:
 
 Denne iterative prosessen bidrar til å forbedre både kvaliteten og realismen i løsningene. 
 
+## **6.4 Modellvarianter og scenarier** 
+
+For å undersøke hvordan løsningen responderer på endringer i forutsetninger, testes modellen i flere scenarier: 
+
+- **Baseline** – original etterspørsel (312 enheter), 180 enheters kapasitet og standard tidsvinduer, som beskrevet i kap. 5. 
+
+- **Økt etterspørsel (+20 %)** – belyser hvordan ekstra volum påvirker antall ruter og total kjørelengde. 
+
+- **Redusert kapasitet** – simulerer mindre kjøretøy og viser effekten på rutestrukturen. 
+
+- **Flere kjøretøy** – undersøker om parallell drift reduserer total kjørelengde. 
+
+- **Strammere tidsvinduer** – tester modellens robusthet mot operasjonell usikkerhet. 
+
+Scenariene analyseres i kap. 7 og danner grunnlag for sensitivitetsanalysen i kap. 9. 
+
 ## **7.0 Analyse** 
-
-<!-- VEILEDNING FRA MAL (slett før innlevering):
-Hvordan skrive bacheloroppgave etter at metodedelen er laget? Jo, du lager en analyse! Dette er siste bit før du kan presentere selve resultatene av studiene. Du kan velge mellom forskjellige metoder:
-- Kvalitativ metode (intervju eller lignende)
-- Kvantitativ metode
-- Dokumentanalyse
-
-Prat gjerne med veilederen din om du er usikker på hvilken metode som er best for problemstillingen.
--->
-
 
 ## **8.0 Resultat** 
 
-<!-- VEILEDNING FRA MAL (slett før innlevering):
-Resultatdelen er kanskje den viktigste delen av rapporten. Her beskriver du alle funnene som er gjort. Presenter resultatene klart og tydelig, gjerne ved hjelp av tabeller og figurer.
-
-Viktige punkter:
-- Dersom dette er et eget kapittel: presenter kun resultater i form av tabeller og/eller figurer.
-- Tabeller: oppsummerte resultater.
-- Resultatene skal være direkte linket til forskningsspørsmålet.
-   - Hvis ikke: enten kjør analysen på nytt, eller endre forskningsspørsmålet slik at det er samsvar.
-- NB: Forklarende tekst for hver tabell og hver figur! Som regel kommer teksten før, men kan komme etter eller både før og etter. Skal være en objektiv presentasjon.
--->
-
-
 ## **9.0 Diskusjon** 
-
-<!-- VEILEDNING FRA MAL (slett før innlevering):
-I diskusjonsdelen skal du diskutere funnene. Inkluder en kritisk metodediskusjon der du vurderer om metoden var riktig. Diskuter pålitelighet, generaliserbarhet, svakheter, og hvorvidt studiet har gitt ny teoretisk innsikt.
-
-Viktige punkter:
-- Her skal resultatene diskuteres (studenter blander ofte diskusjon og resultater).
-- Kommenter resultatene: er de som forventet? Uventede funn – hvordan forklare?
-- Stemmer resultatene med forskningslitteraturen? Hvis ikke, hvorfor? Hvis ja, henvis.
-- Diskuter opp mot problemstillingen. Har dere fått svar på forskningsspørsmålet?
-- Betydning for næringslivet/bedriften – eget punkt anbefales.
-- Hvilke endringer bør bedriften/næringslivet gjøre?
-- Mulig å generalisere?
-- Ta med begrensinger/svakheter – men ikke overfokuser, vær ærlige.
--->
-
 
 ## **10.0 Konklusjon** 
 
-<!-- VEILEDNING FRA MAL (slett før innlevering):
-I konklusjonen oppsummerer du hovedfunn sett i forhold til problemstillingen. Avslutt gjerne med spørsmål til videre forskning og personlige refleksjoner.
-
-Hva er det viktigste dere har funnet?
-- Konkluder i henhold til oppgavens problemstilling. Ofte begynner en konklusjon med å gjenta forskningsspørsmålet:
-   - «I denne oppgaven har vi analysert/redegjort for...»
-   - «Hovedfunnene i oppgaven viser at ...»
-   - «På tross av svakhetene i oppgaven er det indikasjoner om at ...»
-- Litt gjentagelse fra diskusjon/resultat er greit. Dra frem de viktigste funnene og betydningen for caset.
--->
-
-
 ## **11.0 Bibliografi** 
 
-The Vehicle Routing Problem: State-of-the-Art Classification and Review https://www.mdpi.com/2076-3417/11/21/10295 
+Adamo, T., Gendreau, M., Ghiani, G., & Guerriero, E. (2024). _A review of recent advances in time-dependent vehicle routing_. _European Journal of Operational Research, 319_(1), 1–15. https://doi.org/10.1016/j.ejor.2024.06.016 
 
-Literature Review on Vehicle Routing Problem: Approaches, Algorithms and Current Challenges https://www.newinera.com/index.php/JournalLaMultiapp/article/view/2382 
+Anthropic. (2026). _Claude_ [stor språkmodell]. https://claude.ai 
 
-Scheduling of Vehicle Routing Problem from a Central Depot to a Number of Delivery Points 
+Archetti, C., Coelho, L. C., Speranza, M. G., & Vansteenwegen, P. (2026). _Beyond fifty years of vehicle routing: Insights into the history and the future_. _European Journal of Operational Research, 330_(2), 355–372. https://doi.org/10.1016/j.ejor.2025.06.014 
 
-Adamo, T., Gendreau, M., Ghiani, G., & Guerriero, E. (2024). _A review of recent advances in time-dependent vehicle routing_ . _European Journal of Operational Research, 319_ (1), 1– 15. https://doi.org/10.1016/j.ejor.2024.06.016 
+Bogyrbayeva, A., Meraliyev, M., Mustakhov, T., & Dauletbayev, B. (2024). _Machine learning to solve vehicle routing problems: A survey_. _IEEE Transactions on Intelligent Transportation Systems, 25_. https://arxiv.org/pdf/2205.02453 
 
-23 
+Clarke, G., & Wright, J. W. (1964). _Scheduling of vehicles from a central depot to a number of delivery points_. _Operations Research, 12_(4), 568–581. https://doi.org/10.1287/opre.12.4.568 
 
-Archetti, C., Coelho, L. C., Speranza, M. G., & Vansteenwegen, P. (2026). _Beyond fifty years of vehicle routing: Insights into the history and the future_ . _European Journal of Operational Research, 330_ (2), 355–372. https://doi.org/10.1016/j.ejor.2025.06.014 
+Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). _Introduction to algorithms_ (3. utg.). MIT Press. 
 
-Bogyrbayeva, A., Meraliyev, M., Mustakhov, T., & Dauletbayev, B. (2024). _Machine learning to solve vehicle routing problems_ . _IEEE Transactions on Intelligent Transportation Systems, 25_ . https://arxiv.org/pdf/2205.02453 
+Dantzig, G. B., & Ramser, J. H. (1959). _The truck dispatching problem_. _Management Science, 6_(1), 80–91. https://doi.org/10.1287/mnsc.6.1.80 
 
-Liu, X., mfl. (2023). _A systematic literature review of vehicle routing problem... Sustainability, 15_ (15), 12004. https://www.mdpi.com/2071-1050/15/15/12004 
+Google. (2026). _Gemini_ [stor språkmodell]. https://gemini.google.com 
+
+Laporte, G. (2009). _Fifty years of vehicle routing_. _Transportation Science, 43_(4), 408–416. https://doi.org/10.1287/trsc.1090.0301 
+
+Liu, X., Chen, Y.-L., Por, L. Y., & Ku, C. S. (2023). _A systematic literature review of vehicle routing problems with time windows_. _Sustainability, 15_(15), 12004. https://doi.org/10.3390/su151512004 
+
+Miller, C. E., Tucker, A. W., & Zemlin, R. A. (1960). _Integer programming formulation of traveling salesman problems_. _Journal of the ACM, 7_(4), 326–329. https://doi.org/10.1145/321043.321046 
+
+OpenAI. (2026). _ChatGPT_ [stor språkmodell]. https://chat.openai.com 
+
+Pangaribuan, M. A., Hidayati, J., & Nasution, H. (2025). _Literature review on vehicle routing problem: Approaches, algorithms and current challenges_. _Journal La Multiapp, 6_(6), 1397–1409. https://doi.org/10.37899/journallamultiapp.v6i6.2382 
+
+Solomon, M. M. (1987). _Algorithms for the vehicle routing and scheduling problems with time window constraints_. _Operations Research, 35_(2), 254–265. https://doi.org/10.1287/opre.35.2.254 
+
+Tan, S.-Y., & Yeh, W.-C. (2021). _The vehicle routing problem: State-of-the-art classification and review_. _Applied Sciences, 11_(21), 10295. https://doi.org/10.3390/app112110295 
+
+Toth, P., & Vigo, D. (2014). _Vehicle routing: Problems, methods, and applications_ (2. utg.). MOS-SIAM Series on Optimization. https://doi.org/10.1137/1.9781611973594 
 
 ## **12.0 Vedlegg** 
 
 ## **12.1 Vedlegg A – Avstandsmatrise (km)** 
 
-|**Fra / tl**|**Slakteri**|**Lok. 1**|**Lok. 2**|**Lok. 3**|**Lok. 4**|**Lok. 5**|**Lok. 6**|**Lok. 7**|
+|**Fra / til**|**Slakteri**|**Lok. 1**|**Lok. 2**|**Lok. 3**|**Lok. 4**|**Lok. 5**|**Lok. 6**|**Lok. 7**|
 |---|---|---|---|---|---|---|---|---|
 |**Slakteri**|0.0|65.5|64.2|74.2|60.0|58.7|25.9|71.2|
 |**Lokalitet 1**|65.5|0.0|79.6|20.0|82.3|80.1|51.1|42.4|
@@ -800,18 +722,18 @@ Liu, X., mfl. (2023). _A systematic literature review of vehicle routing problem
 
 24 
 
-## **12.2 Vedlegg B – Avstandsmatrise (km)** 
+## **12.2 Vedlegg B – Tidsmatrise (minutter)** 
 
-|**Fra / tl**|**Slakteri**|**Lok. 1**|**Lok. 2**|**Lok. 3**|**Lok. 4**|**Lok. 5**|**Lok. 6**|**Lok. 7**|
+|**Fra / til**|**Slakteri**|**Lok. 1**|**Lok. 2**|**Lok. 3**|**Lok. 4**|**Lok. 5**|**Lok. 6**|**Lok. 7**|
 |---|---|---|---|---|---|---|---|---|
-|**Slakteri**|0.0|65.5|64.2|74.2|60.0|58.7|25.9|71.2|
-|**Lokalitet 1**|65.5|0.0|79.6|20.0|82.3|80.1|51.1|42.4|
-|**Lokalitet 2**|64.2|79.6|0.0|98.6|7.8|7.2|81.0|112.0|
-|**Lokalitet 3**|74.2|20.0|98.6|0.0|100.7|98.5|53.8|26.7|
-|**Lokalitet 4**|60.0|82.3|7.8|100.7|0.0|2.2|78.7|112.4|
-|**Lokalitet 5**|58.7|80.1|7.2|98.5|2.2|0.0|77.0|110.3|
-|**Lokalitet 6**|25.9|51.1|81.0|53.8|78.7|77.0|0.0|45.9|
-|**Lokalitet 7**|71.2|42.4|112.0|26.7|112.4|110.3|45.9|0.0|
+|**Slakteri**|0|65|64|74|60|58|25|71|
+|**Lokalitet 1**|65|0|79|20|82|80|51|42|
+|**Lokalitet 2**|64|79|0|98|7|7|80|112|
+|**Lokalitet 3**|74|20|98|0|100|98|54|27|
+|**Lokalitet 4**|60|82|7|100|0|2|79|112|
+|**Lokalitet 5**|58|80|7|98|2|0|77|110|
+|**Lokalitet 6**|25|51|80|54|79|77|0|46|
+|**Lokalitet 7**|71|42|112|27|112|110|46|0|
 
 
 
