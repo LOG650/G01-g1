@@ -87,9 +87,8 @@ _Du/dere fyller ut erklæringen ved å klikke i ruten til høyre for den enkelte
 |**1.0**|**Innledning .................................................................................................................1**|
 |---|---|
 |1.1|Problemstilling ...................................................................................................... 2|
-|1.2|Delproblemer (valgfri) .......................................................................................... 2|
-|1.3|Avgrensinger ......................................................................................................... 2|
-|1.4|Antagelser ............................................................................................................. 3|
+|1.2|Avgrensinger ......................................................................................................... 2|
+|1.3|Antagelser ............................................................................................................. 3|
 |**2.0**|**Litteratur ..................................................................................................................3**|
 |**3.0**|**Teori ..........................................................................................................................3**|
 |**4.0**|**Casebeskrivelse .........................................................................................................4**|
@@ -140,15 +139,16 @@ For det andre fokuserer oppgaven på et statisk ruteplanleggingsproblem. Det inn
 
 Oppgaven er også avgrenset til én type kjøretøy med fast kapasitet. Variasjoner i kjøretøystyper, kostnadsstrukturer eller bemanning er ikke inkludert. Dette forenkler modelleringen og gjør det mulig å fokusere på selve rutestrukturen. 
 
-Når det gjelder løsningsmetode er analysen avgrenset til bruk av en enkel heuristisk tilnærming basert på nearest-neighbor-prinsippet. Oppgaven søker dermed ikke å finne en global optimal løsning ved hjelp av eksakte metoder eller metaheuristikker. Dette er gjort fordi vi rett og slett ikke er matematikere eller programmerere, og vi skal kunne etterprøve løsningen og trenger dermed en transparent modell innenfor prosjektets omfang. 
+Når det gjelder løsningsmetode er analysen avgrenset til bruk av en enkel heuristisk tilnærming basert på nearest-neighbor-prinsippet. Oppgaven søker dermed ikke å finne en global optimal løsning ved hjelp av eksakte metoder eller metaheuristikker. Valget er gjort for å sikre transparens og etterprøvbarhet innenfor prosjektets omfang. 
 
-## **1.4 Antagelser (Marte)** 
+
+## **1.3 Antagelser (Marte)** 
 
 For å gjøre ruteplanleggingsproblemet håndterbart er det gjort flere forenklede antakelser. Vi erkjenner at dette påvirker hvor realistiske resultatene blir. 
 
-1. Det antas at avstanden mellom lokasjoner er oppgitt euklidisk basert på koordinater, som i praksis betyr at transporten går gjennom en rett linje i terrenget mellom to punkter, og ikke et faktisk veinett. Konsekvensen av dette er at modellen ikke representerer reels kjørelengde og reisetid 
+1. Det antas at avstanden mellom lokasjoner er oppgitt euklidisk basert på koordinater, som i praksis betyr at transporten går gjennom en rett linje i terrenget mellom to punkter, og ikke et faktisk veinett. Konsekvensen av dette er at modellen ikke representerer reell kjørelengde og reisetid. 
 
-2. Det antas at kjørehastigheten mellom to lokasjoner er konstant, slik at reisetid er direkte proposjonal med avstand. Det innebærer at variasjoner i trafikkforhold, vær eller infrastruktur ikke tas hensyn til, som vil påvirke modellens realisme. 
+2. Det antas at kjørehastigheten mellom to lokasjoner er konstant, slik at reisetid er direkte proporsjonal med avstand. Det innebærer at variasjoner i trafikkforhold, vær eller infrastruktur ikke tas hensyn til, som vil påvirke modellens realisme. 
 
 3. Det forutsettes at alle data er deterministiske og kjente på forhånd. Etterspørsel, tidsvinduer og lastetider er dermed faste vinduer uten usikkerhet. I en virkelig verden endrer slike parameter seg kontinuerlig, noe som betyr at modellen ikke kommer til å vise operasjonell usikkerhet. 
 
@@ -162,33 +162,27 @@ ruteplanleggingsproblemet. Resultatet av denne analysen kan dermed ikke overfør
 
 ## **2.0 Litteratur (Marte)** 
 
-Litteraturkapittelet er generert av KI og kontrollert av et menneske. 
+De siste fem årene har litteraturen om Vehicle Routing Problem (VRP) vært preget av tre tydelige utviklingstrekk: økt vekt på mer realistiske problemvarianter, fortsatt sterk bruk av heuristikker, og økende interesse for maskinlæring og KI-baserte løsningsmetoder. Samtidig viser nyere oversiktsartikler at det klassiske kapasitetsbegrensede VRP fortsatt er et sentralt utgangspunkt, men at forskningen i økende grad retter seg mot varianter med tidsvinduer, dynamiske forhold og bærekraftshensyn. Archetti et al. (2026) beskriver hvordan nyere VRP-forskning i større grad fokuserer på varianter og utvidelser som gjør modellene mer anvendelige i praksis, fremfor kun å studere den klassiske basisversjonen. Dette er relevant for denne oppgaven, siden fortransport av slakteklar fisk ikke bare handler om å minimere avstand, men også om å håndtere operative begrensninger som kapasitet og tid. 
 
-4 
+Et sentralt bidrag i nyere litteratur er derfor studier av tidsavhengige og tidsbegrensede ruteproblemer. Adamo et al. (2024) viser at feltet de siste årene har hatt viktige metodiske fremskritt innen tidsavhengig VRP, blant annet gjennom bedre håndtering av reisetid, sanntidsreoptimalisering og mer avanserte løsningsmetoder. Selv om denne oppgaven ikke modellerer sanntidsendringer i veinett eller trafikk, er litteraturen likevel relevant fordi den understreker at tid er en kritisk dimensjon i moderne ruteplanlegging. Vår oppgave ligger dermed nærmere denne forskningsretningen enn en ren, klassisk CVRP-modell, ettersom tidsmatrise, tidsvinduer og maksimal rutevarighet inngår som sentrale begrensninger. 
 
-De siste fem årene har litteraturen om Vehicle Routing Problem (VRP) vært preget av tre tydelige utviklingstrekk: økt vekt på mer realistiske problemvarianter, fortsatt sterk bruk av heuristikker, og økende interesse for maskinlæring og KI-baserte løsningsmetoder. Samtidig viser nyere oversiktsartikler at det klassiske kapasitetsbegrensede VRP fortsatt er et sentralt utgangspunkt, men at forskningen i økende grad retter seg mot varianter med tidsvinduer, dynamiske forhold og bærekraftshensyn. Archetti et al. beskriver i sin oversiktsartikkel hvordan nyere VRP-forskning i større grad fokuserer på varianter og utvidelser som gjør modellene mer anvendelige i praksis, fremfor kun å studere den klassiske basisversjonen. Dette er relevant for denne oppgaven, siden fortransport av slakteklar fisk ikke bare handler om å minimere avstand, men også om å håndtere operative begrensninger som kapasitet og tid. 
+Et annet tydelig trekk i forskningen er at heuristikker fortsatt står sterkt som praktisk løsningsstrategi. Liu et al. (2023) viser at heuristikker og metaheuristikker fortsatt er blant de mest brukte tilnærmingene i VRP-forskning, nettopp fordi de gir gode løsninger med akseptabel beregningstid når problemene blir store og komplekse. Oversikten fremhever også at nyere forskning i stor grad bygger videre på slike tilnærminger, heller enn å erstatte dem fullstendig. Dette støtter valg av metode i denne rapporten. Oppgaven søker ikke å bevise en globalt optimal løsning gjennom en eksakt metode, men å utvikle en gjennomførbar og faglig relevant modell for et avgrenset transportproblem. Den greedy-baserte nearest neighbor-heuristikken som benyttes her, er derfor i tråd med en etablert retning i litteraturen, hvor beregningseffektivitet og operasjonell anvendbarhet vektlegges. 
 
-Et sentralt bidrag i nyere litteratur er derfor studier av tidsavhengige og tidsbegrensede ruteproblemer. Adamo et al. viser i sin review fra 2024 at feltet de siste årene har hatt viktige metodiske fremskritt innen tidsavhengig VRP, blant annet gjennom bedre håndtering av reisetid, sanntidsreoptimalisering og mer avanserte løsningsmetoder. Selv om denne oppgaven ikke modellerer sanntidsendringer i veinett eller trafikk, er litteraturen likevel relevant fordi den understreker at tid er en kritisk dimensjon i moderne ruteplanlegging. Vår oppgave ligger dermed nærmere denne forskningsretningen enn en ren, klassisk CVRP-modell, ettersom tidsmatrise, tidsvinduer og maksimal rutevarighet inngår som sentrale begrensninger. 
-
-Et annet tydelig trekk i forskningen er at heuristikker fortsatt står sterkt som praktisk løsningsstrategi. Liu et al. sin survey fra 2023 viser at heuristikker og metaheuristikker fortsatt er blant de mest brukte tilnærmingene i VRP-forskning, nettopp fordi de gir gode løsninger med akseptabel beregningstid når problemene blir store og komplekse. Oversikten fremhever også at nyere forskning i stor grad bygger videre på slike tilnærminger, heller enn å erstatte dem fullstendig. Dette støtter valg av metode i denne rapporten. Oppgaven søker ikke å bevise en globalt optimal løsning gjennom en eksakt metode, men å utvikle en gjennomførbar og faglig relevant modell for et avgrenset transportproblem. Den greedy-baserte nearest neighbor-heuristikken som benyttes her, er derfor i tråd med en etablert retning i litteraturen, hvor beregningseffektivitet og operasjonell anvendbarhet vektlegges. 
-
-Samtidig viser nyere litteratur at maskinlæring og KI får en stadig større plass i VRP-feltet. Bogyrbayeva et al. gir en systematisk oversikt over læringsbaserte metoder og viser at det de siste årene har vært sterk vekst i forskning som kombinerer maskinlæring med 
+Samtidig viser nyere litteratur at maskinlæring og KI får en stadig større plass i VRP-feltet. Bogyrbayeva et al. (2024) gir en systematisk oversikt over læringsbaserte metoder og viser at det de siste årene har vært sterk vekst i forskning som kombinerer maskinlæring med 
 
 5 
 
 tradisjonelle heuristikker og optimeringsmetoder. Et viktig poeng i denne litteraturen er at læringsbaserte metoder ikke nødvendigvis erstatter klassiske metoder, men ofte brukes som støtte for bedre beslutninger, raskere søk eller forbedret generalisering. For denne oppgaven er dette særlig relevant fordi prosjektet er plassert i skjæringspunktet mellom logistikk og KI-støttet analyse. Rapporten benytter ikke maskinlæring som selve løsningsmetoden, men forholder seg til denne utviklingen ved å bruke en tradisjonell heuristisk modell som et transparent og forståelig utgangspunkt. Dermed plasserer oppgaven seg i et faglig landskap hvor enkle, forklarbare modeller fortsatt har verdi, særlig i tidlige analyser og avgrensede case. 
 
-En tredje utvikling i nyere VRP-litteratur er koblingen til bærekraft og bredere logistiske hensyn. Liu et al. sin systematiske litteraturgjennomgang fra 2023 viser at VRP i økende grad brukes i sammenhenger der miljømessige, økonomiske og operasjonelle hensyn må ses i sammenheng. Selv om denne oppgaven først og fremst fokuserer på transportkostnad og gjennomførbarhet, er dette relevant fordi mer effektiv ruteplanlegging også kan gi indirekte gevinster i form av redusert kjørelengde og bedre ressursutnyttelse. Rapporten bidrar ikke primært til bærekraftslitteraturen, men står i forlengelsen av denne ved å undersøke hvordan bedre planlegging kan gi mer effektive transporter i en havbrukskontekst. 
+En tredje utvikling i nyere VRP-litteratur er koblingen til bærekraft og bredere logistiske hensyn. Liu et al. (2023) viser i sin systematiske litteraturgjennomgang at VRP i økende grad brukes i sammenhenger der miljømessige, økonomiske og operasjonelle hensyn må ses i sammenheng. Selv om denne oppgaven først og fremst fokuserer på transportkostnad og gjennomførbarhet, er dette relevant fordi mer effektiv ruteplanlegging også kan gi indirekte gevinster i form av redusert kjørelengde og bedre ressursutnyttelse. Rapporten bidrar ikke primært til bærekraftslitteraturen, men står i forlengelsen av denne ved å undersøke hvordan bedre planlegging kan gi mer effektive transporter i en havbrukskontekst. 
 
 Samlet viser litteraturen de siste fem årene at VRP-forskningen beveger seg mot mer realistiske, sammensatte og anvendte problemstillinger. Denne rapporten forholder seg til denne utviklingen ved å modellere et kapasitets- og tidsbegrenset ruteproblem inspirert av fortransport i havbruksnæringen. Samtidig avgrenser oppgaven seg bevisst fra de mest avanserte metodene i nyere forskning, som dype læringsmodeller og komplekse metaheuristikker, og velger i stedet en enklere heuristisk tilnærming. Dette gjør analysen mindre avansert metodisk, men til gjengjeld mer transparent, etterprøvbar og godt tilpasset prosjektets omfang og formål. 
 
 ## **3.0 Teori (Marte)** 
 
-Teorikapittelet er generert av KI. Vi har søkt oss frem til relevante kilder i forkant, og deretter latt KI få kunstnerisk frihet basert på de kildene, i tillegg til kilder den selv har foreslått. Alle henvisninger som KI har foreslått er sjekket av et menneske. 
-
 ## **3.1 Vehicle Routing Problem (VRP)** 
 
-Vehicle Routing Problem (VRP) er et sentralt optimaliseringsproblem innen logistikk og transportplanlegging, først formulert av George B. Dantzig og John H. Ramser. Problemet omhandler hvordan en flåte av kjøretøy kan planlegges slik at et sett av lokasjoner betjenes med lavest mulig kostnad, ofte uttrykt som total kjørelengde eller transporttid (Toth & Vigo, 2014). 
+Vehicle Routing Problem (VRP) er et sentralt optimaliseringsproblem innen logistikk og transportplanlegging, først formulert av Dantzig og Ramser (1959). Problemet omhandler hvordan en flåte av kjøretøy kan planlegges slik at et sett av lokasjoner betjenes med lavest mulig kostnad, ofte uttrykt som total kjørelengde eller transporttid (Toth & Vigo, 2014). 
 
 VRP er klassifisert som et NP-hard problem, noe som innebærer at beregningskompleksiteten øker raskt med antall lokasjoner (Laporte, 2009). Dette gjør at eksakte løsninger ofte er upraktiske i realistiske anvendelser. 
 
@@ -461,11 +455,12 @@ Det er også definert en kapasitet for kjøretøyene, som begrenser hvor mye vol
 
 I henhold til gjeldende retningslinjer for bruk av kunstig intelligens i studentarbeider dokumenteres det her hvordan generative språkmodeller er benyttet i prosjektet. 
 
-Gruppen har brukt ChatGPT, Claude og Gemini som støtteverktøy gjennom metodeprosessen. Verktøyene er i hovedsak benyttet til idémyldring og strukturering av kapittelinndeling og argumentflyt, kodegenerering og feilsøking i Python-implementasjonen av rutemodellen, samt forslag til oppsett av tabeller og figurer for presentasjon av data og resultater. 
+Gruppen har brukt ChatGPT, Claude og Gemini som støtteverktøy gjennom metodeprosessen. Verktøyene er i hovedsak benyttet til idémyldring og strukturering av kapittelinndeling og argumentflyt, litteratursøk og utarbeiding av teoretisk rammeverk, språkvask og datastrukturering, kodegenerering og feilsøking i Python-implementasjonen av rutemodellen, samt forslag til oppsett av tabeller og figurer for presentasjon av data og resultater. 
 
-All bruk av KI er verifisert gjennom akademiske kilder og manuell gjennomgang. Kodeforslag er testet mot datasettet, og tekstlige bidrag er omskrevet og kontrollert for faglig presisjon før de er tatt inn i rapporten. Ingen sensitive data eller personopplysninger er lagt inn i verktøyene. 
+All bruk av KI er verifisert gjennom akademiske kilder og manuell gjennomgang. Kodeforslag er testet mot datasettet, og tekstlige bidrag er omskrevet og kontrollert for faglig presisjon før de er tatt inn i rapporten. Alle kildehenvisninger er kontrollert manuelt, og teksten er lest gjennom og godkjent av minst ett gruppemedlem. Ingen sensitive data eller personopplysninger er lagt inn i verktøyene. 
 
-For å sikre reproduserbarhet er all kildekode, det syntetiske datasettet og skript for nettverksvisualisering publisert i prosjektets GitHub-repositorium (github.com/LOG650/G01-g1). Dette gjør det mulig for andre å kjøre modellen på nytt og etterprøve resultatene. 
+For å sikre reproduserbarhet er all kildekode, det syntetiske datasettet og skript for nettverksvisualisering publisert i prosjektets GitHub-repositorium (github.com/LOG650/G01-g1). For å sikre sporbarhet og etterprøvbarhet er all vesentlig KI-bruk dokumentert fortløpende i prosjektloggen ([logg.md](../logg.md)), som er lagt ved rapporten som Vedlegg C. Dette gjør det mulig for andre å kjøre modellen på nytt og etterprøve resultatene. 
+
 
 ## **6.0 Modellering** 
 
@@ -734,6 +729,10 @@ Toth, P., & Vigo, D. (2014). _Vehicle routing: Problems, methods, and applicatio
 |**Lokalitet 5**|58|80|7|98|2|0|77|110|
 |**Lokalitet 6**|25|51|80|54|79|77|0|46|
 |**Lokalitet 7**|71|42|112|27|112|110|46|0|
+
+## **12.3 Vedlegg C – Prosjektlogg og dokumentasjon av KI-bruk**
+
+Prosjektloggen [logg.md](../logg.md) dokumenterer prosjektets utvikling kronologisk, inkludert hvilke KI-verktøy som har vært brukt, til hvilke formål, og hvordan resultatene er kvalitetssikret. Loggen oppdateres fortløpende gjennom prosjektperioden og er lagt ved i sin helhet.
 
 
 

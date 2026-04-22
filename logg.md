@@ -55,7 +55,7 @@ For å sikre full åpenhet rundt verktøybruken, har vi transkribert visuelle re
 
 ---
 
-## 2026-04-20 – Datavisualisering og strukturert sjekkliste (Claude Code)
+## 2026-04-20 – Datavisualisering, PDF→MD-konvertering og ferdigstilling av kap. 1–3 (Claude Code)
 
 **martedolva-ctrl** benyttet Claude Code (Sonnet 4.6) som faglig sparringspartner gjennom dagen. Arbeidet er dokumentert her for sporbarhet på KI-bruk:
 
@@ -63,10 +63,25 @@ For å sikre full åpenhet rundt verktøybruken, har vi transkribert visuelle re
 Claude genererte et Python-script ([006 analysis/visualiser_nettverk.py](006 analysis/visualiser_nettverk.py)) som leser [004 data/data.json](004 data/data.json) og produserer et tosidig plott ([004 data/nettverk_visualisering.png](004 data/nettverk_visualisering.png)): nodekart med depot + 7 lokaliteter (størrelse skalert etter etterspørsel), og horisontalt tidsvindu-diagram. Script og output er kontrollert og godkjent manuelt.
 
 **Sammenligning mot skriveveileder:**
-Claude ekstraherte struktur og kravpunkter fra `main_SKRIVING, (9. des, 2025).md` (124-siders skriveveileder for LOG650, levert som PDF) og fra rapportutkastet `Mal prosjekt LOG650 v2.md` (34-siders PDF). Basert på dette ble [014 fase 4 - report/sjekkliste.md](014 fase 4 - report/sjekkliste.md) generert – en strukturert gjennomgang kapittel for kapittel med markering av hva som er ferdig, påbegynt eller gjenstår. KI-en identifiserte blant annet at veiledningstekst fra malen fortsatt ligger inne i flere kapitler, at sammendrag/abstract mangler, og at Vedlegg B har feil overskrift.
+Claude ekstraherte struktur og kravpunkter fra `main_SKRIVING, (9. des, 2025).md` (124-siders skriveveileder for LOG650, levert som PDF) og fra rapportutkastet `Mal prosjekt LOG650 v2.md` (som egentlig var en PDF med feil endelse). Basert på dette ble [014 fase 4 - report/sjekkliste.md](014 fase 4 - report/sjekkliste.md) generert – en strukturert gjennomgang kapittel for kapittel.
+
+**PDF→Markdown-konvertering:**
+Det ble oppdaget at den "konverterte" malen fra Gemini CLI fortsatt var en PDF (bare med .md-endelse). Claude konverterte derfor PDF-en til ekte Markdown med `pymupdf4llm`, og resultatet ble [014 fase 4 - report/rapport.md](014 fase 4 - report/rapport.md) (895 linjer). Dette ble arbeidsdokumentet for videre redigering.
+
+**Gjenoppretting av mistet tekst:**
+Casebeskrivelsen i kap. 4 hadde falt ut av PDF-eksporten. Teksten ble sikret i [014 fase 4 - report/kap4_casebeskrivelse.md](014 fase 4 - report/kap4_casebeskrivelse.md) og limt tilbake inn i rapporten.
+
+**Rydding og ferdigstilling av kap. 1–3 (Martes ansvar):**
+- All veiledningstekst fra malen ble pakket inn i HTML-kommentarer (`<!-- ... -->`) i 12 kapitler, slik at teksten er skjult ved rendring men fortsatt synlig som referanse i Markdown-kilden.
+- **Kap. 1 Innledning:** 1.2 Delproblemer fjernet, 1.3/1.4 renummerert til 1.2/1.3, stavefeil rettet (løsningsmetode, heuristisk tilnærming, metaheuristikker, reell, proporsjonal, overskrides), og begrunnelsen «vi er ikke matematikere eller programmerere» erstattet med en faglig formulering om transparens og etterprøvbarhet.
+- **Kap. 2 Litteratur:** Kildehenvisninger rettet til APA 7-format – Archetti et al. (2026), Adamo et al. (2024), Liu et al. (2023), Bogyrbayeva et al. (2024).
+- **Kap. 3 Teori:** Dantzig & Ramser (1959) lagt til som eksplisitt sitering i 3.1.
+- **KI-merknadene** fra topp av kap. 2 og kap. 3 ble flyttet til et nytt delkapittel **5.5 Bruk av KI i forskningsprosessen** i metodekapittelet, med henvisning til prosjektloggen som **Vedlegg C**.
+- **Bibliografi ryddet og komplettert:** tre nakne URL-er (ikke sitert i teksten) fjernet, og manglende kilder lagt til – Toth & Vigo (2014), Laporte (2009), Solomon (1987), Cormen et al. (2009), Dantzig & Ramser (1959). Sortert alfabetisk.
+- **Vedlegg B** rettet fra duplikat avstandsmatrise til tidsmatrise (minutter), **Vedlegg C** opprettet for prosjektlogg og KI-bruksdokumentasjon.
 
 **Versjonskontroll:**
-Claude bistod også med `git pull`, `git push` og statussjekker underveis for å holde lokal og remote branch i synk.
+Claude bistod med `git pull`, `git push` og statussjekker underveis for å holde lokal og remote branch i synk.
 
 ---
 

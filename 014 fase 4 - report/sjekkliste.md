@@ -11,12 +11,14 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 
 ## Hovedfunn fra sammenligningen
 
-- **Kap. 1–3 og 5–6 har substansielt innhold** (innledning, litteratur, teori, metode, modellering).
+- **Kap. 1, 2 og 3 er ferdigstilt** (2026-04-20).
+- **Bibliografi er ryddet og komplettert** med alle siterte kilder (2026-04-20).
+- **Kap. 5 og 6 har substansielt innhold** (metode, modellering) – må ryddes.
 - **Kap. 4 Casebeskrivelse** – tekst finnes i [kap4_casebeskrivelse.md](kap4_casebeskrivelse.md), men er ikke lagt inn i rapporten.
 - **Kap. 7 Analyse, 8 Resultat, 9 Diskusjon, 10 Konklusjon er tomme** – kun veiledningstekst fra malen.
 - **Sammendrag og Abstract mangler helt**.
 - **Malens veiledningstekst ligger fortsatt inne** i flere kapitler (1.0, 1.3, 1.4, 2.0, 3.0 siste avsnitt, 4.0, 7.0, 8.0, 9.0, 10.0) – må fjernes før innlevering.
-- **Vedlegg A og B er begge "Avstandsmatrise"** – B skal være tidsmatrise.
+- **Vedlegg B korrigert til tidsmatrise** (2026-04-20). **Vedlegg C – Prosjektlogg/KI-bruk** lagt til.
 - **Bibliografi er delvis** og ikke konsekvent APA 7 (nakne URL-er, manglende info).
 - **Forside-elementer** (egenerklæring, publiseringsavtale) ble eksportert som bilder i PDF og ligger nå som transkriberte tekstblokker i [rapport.md](rapport.md) – kan ryddes bort.
 
@@ -35,7 +37,7 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 
 ---
 
-## 1. Innledning *(Alle)*
+## 1. Innledning *(Alle)* ✅ FERDIG (2026-04-20)
 
 - [x] Motivasjon og faglig relevans skrevet
 - [x] Problemstilling formulert som "hvordan"-spørsmål
@@ -43,33 +45,38 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 - [x] Avgrensinger begrunnet faglig (1.3)
 - [x] Antagelser listet og begrunnet (1.4)
 - [x] **Fjern veiledningsteksten** fra malen (fjernet 2026-04-22: 4 blokker i kap. 1 – introduksjon, problemstilling, avgrensninger, antagelser)
+- [x] Begrunnelse "ikke matematikere/programmerere" erstattet med faglig formulering om transparens og etterprøvbarhet (merge 2026-04-22)
+- [x] Stavefeil rettet (løsningsmetode, heuristisk tilnærming, metaheuristikker, reell, proporsjonal, overskrides)
 - [ ] 1.2 Delproblemer – enten skriv noe, eller slett overskriften (markert "valgfri")
 - [ ] Vurder: skal delproblemer stå, eller dekkes det av forskningsspørsmålene i 1.1?
 
 ---
 
-## 2. Litteratur *(Alle)*
+## 2. Litteratur *(Alle)* ✅ FERDIG (2026-04-20)
 
 - [x] Substansielt kapittel – 5-års utviklingstrekk beskrevet
 - [x] Relevant forskning presentert (Archetti, Adamo, Liu, Bogyrbayeva)
 - [x] Koblet til oppgavens problemstilling og metodevalg
-- [ ] **Sjekk kildehenvisninger** – står "Archetti et al." uten årstall/sidetall flere steder i teksten
+- [x] Kildehenvisninger rettet til APA-format (Archetti et al. (2026), Adamo et al. (2024), Liu et al. (2023), Bogyrbayeva et al. (2024))
 - [x] **Fjern veiledningsteksten** (fjernet 2026-04-22)
-- [ ] Vurder om kap. 2 og 3 kan slås sammen – skriveveilederen anbefaler ett samlet teori-/litteraturkapittel
+- [x] KI-merknad flyttet til kap. 5.4 Bruk av KI i metodeprosessen
+- [ ] ~~Vurder om kap. 2 og 3 kan slås sammen~~ – utsatt til etter tilbakemelding fra faglærerne
 
 ---
 
-## 3. Teori *(Alle)*
+## 3. Teori *(Alle)* ✅ FERDIG (2026-04-20)
 
-- [x] 3.1 VRP – definert og referert (Toth & Vigo 2014, Laporte 2009, Archetti 2026)
+- [x] 3.1 VRP – definert og referert (Dantzig & Ramser 1959, Toth & Vigo 2014, Laporte 2009, Archetti 2026)
 - [x] 3.2 VRPTW – Solomon 1987, Adamo 2024
 - [x] 3.3 Eksakte metoder vs heuristikker
-- [x] 3.4 Greedy/nearest neighbor (Cormen 2009)
-- [x] 3.5 KI i ruteplanlegging
+- [x] 3.4 Greedy/nearest neighbor (Cormen 2009, Liu 2023)
+- [x] 3.5 KI i ruteplanlegging (Bogyrbayeva 2024)
 - [x] 3.6 Oppsummering og kobling til problemstilling
 - [x] **Fjern veiledningsteksten** på slutten (fjernet 2026-04-22)
-- [ ] Sjekk at Cormen et al. 2009 faktisk er brukt i bibliografien (mangler nå)
-- [ ] Vurder å integrere med kap. 2 (skriveveileder anbefaler det)
+- [x] KI-merknad flyttet til kap. 5.4
+- [x] Dantzig & Ramser (1959) lagt til som eksplisitt sitering i 3.1
+- [x] Cormen et al. 2009 inkludert i bibliografi (merge 2026-04-22)
+- [x] ~~Vurder å integrere med kap. 2~~ – utsatt til etter tilbakemelding fra faglærerne
 
 ---
 
@@ -184,6 +191,8 @@ Teksten er integrert i [rapport.md](rapport.md) og utvidet med prosessflyt, ramm
 - [x] Liu (2023) fikset – fullt forfatternavn (Liu, Chen, Por, Ku) og full tittel
 - [x] DOI lagt til der tilgjengelig
 - [x] Alfabetisk rekkefølge
+- [x] Tre nakne URL-er fjernet (ikke sitert i teksten)
+- [ ] Sjekk DOI-lenker fungerer før innlevering
 - [ ] *Til vurdering: konkret versjon/dato for KI-verktøy hvis dere vil ha mer presisjon*
 - [ ] *Til vurdering: i kap. 5.4 – beskriv prompt-typer/eksempler hvis veileder krever det*
 
@@ -194,6 +203,7 @@ Teksten er integrert i [rapport.md](rapport.md) og utvidet med prosessflyt, ramm
 - [x] 12.1 Vedlegg A – Avstandsmatrise (km) (fikset «Fra / tl» → «Fra / til»)
 - [x] **12.2 Vedlegg B – Tidsmatrise (minutter)** – overskrift rettet 2026-04-22
 - [x] Tidsmatrise-data lagt inn fra [data.json](../004 data/data.json)
+- [x] 12.3 Vedlegg C – Prosjektlogg og dokumentasjon av KI-bruk – lagt til (merge 2026-04-22)
 - [ ] Vurder flere vedlegg: Python-kode, full noderegistrering, scenarioresultater
 
 ---
