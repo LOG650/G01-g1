@@ -441,19 +441,180 @@ def steg4_sammenlign(data: dict, nn_result: dict, milp_result: dict,
     print(f"Figur lagret: {out2.relative_to(Path(__file__).parent.parent)}")
 
 
-if __name__ == "__main__":
-    data = last_data()
-    sanity_check(data)
-
+def run_both(data: dict, K_max: int = 4) -> tuple[dict, dict]:
+    """Kjør NN iterativt til feasible + MILP, returner begge resultater."""
     nn_best = None
-    for K in range(1, 5):
+    for K in range(1, K_max + 1):
         r = nearest_neighbor(data, K)
         if r["feasible"]:
             if nn_best is None or r["total_distance"] < nn_best["total_distance"]:
                 nn_best = r
             else:
                 break
+    milp = milp_solve(data, K_max=K_max)
+    return nn_best, milp
 
+
+def lag_scenario(base: dict, navn: str, **endringer) -> dict:
+    """Lag modifisert datasett for scenarioanalyse."""
+    import copy
+    d = copy.deepcopy(base)
+    d["_scenario"] = navn
+
+    if "etterspørsel_faktor" in endringer:
+        f = endringer["etterspørsel_faktor"]
+        for loc in d["locations"]:
+            loc["demand"] = round(loc["demand"] * f)
+
+    if "kapasitet" in endringer:
+        d["capacity"] = endringer["kapasitet"]
+
+    if "tidsvindu_faktor" in endringer:
+        f = endringer["tidsvindu_faktor"]
+        for loc in d["locations"]:
+            e, l = loc["time_window"]
+            mid = (e + l) / 2
+            bredde = (l - e) * f
+            loc["time_window"] = [round(mid - bredde / 2), round(mid + bredde / 2)]
+
+    return d
+
+
+def steg5_scenarioanalyse(base_data: dict) -> None:
+    """Steg 5: Kjør alle scenarier fra kap. 6.4, samle og presenter resultater."""
+    print("\n" + "=" * 60)
+    print("STEG 5 – Scenarioanalyse (kap. 6.4)")
+    print("=" * 60)
+
+    scenarier = [
+        ("Baseline",            {}),
+        ("Økt etterspørsel +20 %", {"etterspørsel_faktor": 1.20}),
+        ("Redusert kapasitet (Q=120)", {"kapasitet": 120}),
+        ("Flere kjøretøy (K_max=5)", {}),
+        ("Strammere tidsvinduer (50 %)", {"tidsvindu_faktor": 0.5}),
+    ]
+
+    resultater = []
+    for navn, endringer in scenarier:
+        data_s = lag_scenario(base_data, navn, **endringer)
+        sum_dem = sum(loc["demand"] for loc in data_s["locations"])
+        Q_s = data_s["capacity"]
+        print(f"\n--- {navn} ---")
+        print(f"  Sum etterspørsel: {sum_dem} | Kapasitet: {Q_s}"
+              f" | Min biler (kap.): {-(-sum_dem // Q_s)}")
+
+        K_max = 5 if "Flere kjøretøy" in navn else 4
+        nn, milp = run_both(data_s, K_max=K_max)
+
+        if nn is None:
+            nn_str = "INFEASIBLE"
+            nn_km = None
+            nn_K = None
+        else:
+            nn_km = nn["total_distance"]
+            nn_K = len(nn["routes"])
+            nn_str = f"{nn_km:.1f} km / {nn_K} biler"
+
+        if milp and milp.get("feasible"):
+            milp_km = milp["total_distance"]
+            milp_K = milp["n_vehicles"]
+            milp_str = f"{milp_km:.1f} km / {milp_K} biler"
+            if nn_km is not None:
+                gap = (nn_km - milp_km) / milp_km * 100
+                gap_str = f"{gap:.1f} %"
+            else:
+                gap_str = "n/a"
+        else:
+            milp_str = "INFEASIBLE"
+            gap_str = "n/a"
+
+        print(f"  NN:   {nn_str}")
+        print(f"  MILP: {milp_str}")
+        print(f"  Gap:  {gap_str}")
+
+        resultater.append({
+            "scenario": navn,
+            "sum_demand": sum_dem,
+            "kapasitet": Q_s,
+            "nn": nn,
+            "milp": milp,
+        })
+
+    print("\n" + "=" * 60)
+    print("OPPSUMMERINGSTABELL (steg 5)")
+    print("=" * 60)
+    print(f"\n{'Scenario':<32}{'MILP km':>10}{'MILP K':>8}"
+          f"{'NN km':>10}{'NN K':>7}{'Gap':>9}")
+    print("-" * 76)
+    for r in resultater:
+        milp = r["milp"]
+        nn = r["nn"]
+        if milp and milp.get("feasible"):
+            mk, mK = f"{milp['total_distance']:.1f}", str(milp["n_vehicles"])
+        else:
+            mk, mK = "inf.", "—"
+        if nn is not None:
+            nk, nK = f"{nn['total_distance']:.1f}", str(len(nn["routes"]))
+        else:
+            nk, nK = "inf.", "—"
+        gap = "—"
+        if nn is not None and milp and milp.get("feasible"):
+            gap = f"{(nn['total_distance'] - milp['total_distance']) / milp['total_distance'] * 100:.1f} %"
+        print(f"{r['scenario']:<32}{mk:>10}{mK:>8}{nk:>10}{nK:>7}{gap:>9}")
+    print("-" * 76)
+
+    lag_scenario_figur(resultater)
+    return resultater
+
+
+def lag_scenario_figur(resultater: list) -> None:
+    """Stolpediagram: MILP vs NN total km per scenario."""
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    navn = [r["scenario"] for r in resultater]
+    milp_km = [r["milp"]["total_distance"] if r["milp"] and r["milp"].get("feasible") else 0
+               for r in resultater]
+    nn_km = [r["nn"]["total_distance"] if r["nn"] is not None else 0 for r in resultater]
+
+    x = np.arange(len(navn))
+    w = 0.38
+    fig, ax = plt.subplots(figsize=(12, 6))
+    bars_m = ax.bar(x - w / 2, milp_km, w, color="#2a9d8f", label="MILP (optimum)",
+                    edgecolor="white")
+    bars_n = ax.bar(x + w / 2, nn_km, w, color="#e63946", label="NN-heuristikk",
+                    edgecolor="white")
+
+    for bar, v in zip(bars_m, milp_km):
+        if v > 0:
+            ax.text(bar.get_x() + bar.get_width() / 2, v + 8, f"{v:.0f}",
+                    ha="center", fontsize=9, fontweight="bold")
+    for bar, v in zip(bars_n, nn_km):
+        if v > 0:
+            ax.text(bar.get_x() + bar.get_width() / 2, v + 8, f"{v:.0f}",
+                    ha="center", fontsize=9, fontweight="bold")
+
+    ax.set_xticks(x)
+    ax.set_xticklabels(navn, rotation=15, ha="right", fontsize=9)
+    ax.set_ylabel("Total kjørelengde (km)")
+    ax.set_title("Scenarioanalyse – total kjørelengde per scenario og metode",
+                 fontsize=12, fontweight="bold")
+    ax.legend(loc="upper left", fontsize=10)
+    ax.grid(True, axis="y", linestyle="--", alpha=0.4)
+    ax.set_axisbelow(True)
+    ax.set_ylim(0, max(max(nn_km), max(milp_km)) * 1.2)
+
+    plt.tight_layout()
+    out = Path(__file__).parent.parent / "004 data" / "scenarioanalyse.png"
+    plt.savefig(out, dpi=150, bbox_inches="tight")
+    print(f"\nFigur lagret: {out.relative_to(Path(__file__).parent.parent)}")
+
+
+if __name__ == "__main__":
+    data = last_data()
+    sanity_check(data)
     steg2_nn_iterativt(data)
-    milp_best = steg3_milp(data)
+    nn_best, milp_best = run_both(data)
+    steg3_milp(data)
     steg4_sammenlign(data, nn_best, milp_best)
+    steg5_scenarioanalyse(data)
