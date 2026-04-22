@@ -3,27 +3,31 @@
 Oppdatert 2026-04-20 etter gjennomgang av gruppens utkast (34 sider) sammenholdt med skriveveilederen **main_SKRIVING (9. des. 2025)**.
 
 **Kildefiler:**
-- [rapport.md](rapport.md) – **ekte Markdown-versjon** konvertert fra PDF 2026-04-20 (895 linjer). Bruk denne til videre redigering.
+- [rapport.md](rapport.md) – **ekte Markdown-versjon**, arbeidsdokumentet.
 - [Mal prosjekt LOG650 v2.md](Mal prosjekt LOG650 v2.md) – originalen (PDF med feil .md-endelse).
-- ~~kap4_casebeskrivelse.md~~ – innholdet ble integrert i [rapport.md](rapport.md) og filen slettet i commit `5026980`.
 
 Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 
-## Hovedfunn fra sammenligningen
+## Status (oppdatert 2026-04-22)
 
-- **Kap. 1, 2 og 3 er ferdigstilt** (2026-04-20).
-- **Bibliografi er ryddet og komplettert** med alle siterte kilder (2026-04-20).
-- **Løsningsmetode utvidet til MILP + NN-heuristikk** (2026-04-22): kap. 1.2 mykere avgrensning, nytt kap. 6.2.4 om MILP (PuLP/CBC), kap. 6.3.2 utvidet til å dekke optimalitetsgap.
-- **Kap. 7 Analyse og 8 Resultat er fylt ut** (2026-04-22): baseline-sammenligning NN vs MILP (gap 36,2 %), scenarioanalyse for alle 5 scenarier, 3 figurer generert.
-- **Kap. 9 Diskusjon er fylt ut** (2026-04-22): tolkning, kobling til Solomon/Adamo/Liu/Archetti/Bogyrbayeva, styrker/svakheter, generaliserbarhet, praktiske implikasjoner, KI-refleksjon.
-- **Kap. 5 og 6 har substansielt innhold** (metode, modellering) – må ryddes.
-- **Kap. 4 Casebeskrivelse** – tekst finnes i [kap4_casebeskrivelse.md](kap4_casebeskrivelse.md), men er ikke lagt inn i rapporten.
-- **Kap. 7 Analyse, 8 Resultat, 9 Diskusjon, 10 Konklusjon er tomme** – kun veiledningstekst fra malen.
-- **Sammendrag og Abstract mangler helt**.
-- **Malens veiledningstekst ligger fortsatt inne** i flere kapitler (1.0, 1.3, 1.4, 2.0, 3.0 siste avsnitt, 4.0, 7.0, 8.0, 9.0, 10.0) – må fjernes før innlevering.
-- **Vedlegg B korrigert til tidsmatrise** (2026-04-20). **Vedlegg C – Prosjektlogg/KI-bruk** lagt til.
-- **Bibliografi er delvis** og ikke konsekvent APA 7 (nakne URL-er, manglende info).
-- **Forside-elementer** (egenerklæring, publiseringsavtale) ble eksportert som bilder i PDF og ligger nå som transkriberte tekstblokker i [rapport.md](rapport.md) – kan ryddes bort.
+**Ferdig:**
+- Kap. 1 Innledning, 2 Litteratur, 3 Teori
+- Kap. 4 Casebeskrivelse (utvidet med prosessflyt og nøkkeltall)
+- Kap. 5 Metode og data (inkl. 5.4 Bruk av KI)
+- Kap. 6 Modellering (formalisert med mengder, formler, MTZ, 5 scenarier)
+- Kap. 7 Analyse og 8 Resultat (baseline + scenarier, 3 figurer)
+- Kap. 9 Diskusjon (6 delkapitler inkl. KI-refleksjon)
+- Bibliografi (16 APA 7-oppføringer, alfabetisert)
+- Vedlegg A (avstandsmatrise), B (tidsmatrise), C (prosjektlogg)
+- All veiledningstekst fra malen fjernet
+
+**Gjenstår:**
+- Kap. 10 Konklusjon
+- Sammendrag (norsk, 200–300 ord)
+- Abstract (engelsk)
+- Forside-elementer: tittel, forfattere, dato, egenerklæring, publiseringsavtale
+- Forside-bildebokser fra PDF-eksport som ligger som tekstblokker i rapport.md
+- Finpuss: stavekontroll, DOI-sjekk, figurnummerering
 
 ---
 
@@ -50,8 +54,7 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 - [x] **Fjern veiledningsteksten** fra malen (fjernet 2026-04-22: 4 blokker i kap. 1 – introduksjon, problemstilling, avgrensninger, antagelser)
 - [x] Begrunnelse "ikke matematikere/programmerere" erstattet med faglig formulering om transparens og etterprøvbarhet (merge 2026-04-22)
 - [x] Stavefeil rettet (løsningsmetode, heuristisk tilnærming, metaheuristikker, reell, proporsjonal, overskrides)
-- [ ] 1.2 Delproblemer – enten skriv noe, eller slett overskriften (markert "valgfri")
-- [ ] Vurder: skal delproblemer stå, eller dekkes det av forskningsspørsmålene i 1.1?
+- [x] 1.2 Delproblemer slettet, kap. 1 renummerert (1.3→1.2, 1.4→1.3)
 
 ---
 
@@ -83,18 +86,15 @@ Legende: `[ ]` gjenstår · `[~]` påbegynt · `[x]` ferdig
 
 ---
 
-## 4. Casebeskrivelse *(Case/modell)* ✅ UTVIDET 2026-04-22
-
-Teksten er integrert i [rapport.md](rapport.md) og utvidet med prosessflyt, rammebetingelser med nøkkeltall og eksplisitt kobling til VRPTW.
+## 4. Casebeskrivelse *(Case/modell)* ✅ FERDIG (2026-04-22)
 
 - [x] Beskriv Lerøy Seafood Group og fortransport av slakteklar fisk
-- [x] Prosessflyt: fra oppdrettslokalitet til slakteri (utvidet – henting, tidsvinduer, kvalitet/dyrevelferd)
+- [x] Prosessflyt: fra oppdrettslokalitet til slakteri
 - [x] Kontekst: havbruksnæringen i Norge
 - [x] Rammebetingelser: geografisk spredning, kapasitet, tidskrav
-- [x] Hvorfor er caset egnet for kvantitativ ruteplanlegging (kobling til VRPTW fra kap. 3)
-- [x] ~~Legg teksten tilbake i Word-dokumentet~~ – foreldet, rapport.md er nå kilden
-- [x] **Fjern veiledningsteksten** fra malen (fjernet 2026-04-22)
-- [x] Utvidelse med nøkkeltall: 7 lokaliteter, 1 slakteri, kapasitet 180 t, etterspørsel 312 t (lagt til 2026-04-22)
+- [x] Hvorfor caset er egnet for kvantitativ ruteplanlegging (kobling til VRPTW)
+- [x] Nøkkeltall: 7 lokaliteter, 1 slakteri, kapasitet 180 t, etterspørsel 312 t
+- [x] Veiledningstekst fjernet
 
 ---
 
@@ -149,10 +149,10 @@ Teksten er integrert i [rapport.md](rapport.md) og utvidet med prosessflyt, ramm
 - [x] 8.3 Nøkkeltall knyttet til FS1, FS2, FS3
 - [x] Figurer lagret: sammenligning_NN_vs_MILP.png, total_distanse_sammenligning.png, scenarioanalyse.png
 - [x] Kart/rutediagram inkludert
-- [ ] Forklarende tekst for **hver** figur og tabell
-- [ ] Koble hvert resultat eksplisitt til forskningsspørsmålene (FS1, FS2, FS3)
-- [x] **Fjern veiledningsteksten** (fjernet 2026-04-22)
-- [ ] Vurder: bør 7 og 8 slås sammen til "Analyse og resultater" (jf. skriveveileder kap. 4.6)?
+- [x] Forklarende tekst for hver figur og tabell
+- [x] Hvert resultat koblet til forskningsspørsmål (FS1, FS2, FS3)
+- [x] Veiledningstekst fjernet
+- [ ] ~~Vurder: bør 7 og 8 slås sammen~~ – utsatt til tilbakemelding fra faglærer
 
 ---
 
@@ -216,7 +216,7 @@ Teksten er integrert i [rapport.md](rapport.md) og utvidet med prosessflyt, ramm
 - [ ] Problemstillingen besvares eksplisitt i konklusjonen
 - [ ] Tydelig kobling teori → metode → data → analyse → konklusjon
 - [ ] Alle antakelser er etterprøvbare
-- [ ] Drøfting viser kritisk refleksjon (kommer i kap. 9)
+- [x] Drøfting viser kritisk refleksjon (kap. 9 ferdig)
 - [ ] Figurer har figurtekst og kilde **under**; tabeller har tittel **over**
 - [ ] Akser merket med enheter (km, min, tonn)
 - [ ] Konsekvent språk og referansestil
@@ -227,14 +227,8 @@ Teksten er integrert i [rapport.md](rapport.md) og utvidet med prosessflyt, ramm
 
 ## Prioritert rekkefølge fremover
 
-1. ~~**Fjern all veiledningstekst** fra malen i kap. 1–10~~ ✅ ferdig 2026-04-22
-2. **Kjør modellen** → resultater for kap. 7–8
-3. ~~Skriv **Casebeskrivelse (kap. 4)** – relativt kort, men nødvendig~~ ✅ ferdig 2026-04-22 (utvidet med prosessflyt og nøkkeltall)
-4. Skriv **Analyse + Resultat (kap. 7–8)**
-5. Skriv **Diskusjon (kap. 9)** og **Konklusjon (kap. 10)**
-6. ~~Ryd opp i **Modellering (kap. 6)** – mer formell notasjon~~ ✅ ferdig 2026-04-22 (mengder, parametertabell, formler, MTZ, scenarier)
-7. ~~Komplett **Bibliografi** i APA 7~~ ✅ ferdig 2026-04-22 (16 APA 7-oppføringer, alfabetisert)
-8. **Sammendrag + Abstract** helt til slutt
-9. Fyll inn forside, erklæringer, publiseringsavtale
-10. ~~Rett **Vedlegg B** (tidsmatrise)~~ ✅ ferdig 2026-04-22
-11. Finpuss: korrektur, stavefeil, figurnummerering
+1. **Skriv kap. 10 Konklusjon** – eksplisitt svar på problemstillingen og FS1/FS2/FS3
+2. **Skriv Sammendrag og Abstract**
+3. **Fyll inn forside-elementer** (tittel, forfattere, dato, erklæringer)
+4. **Rydde bort transkriberte tekstblokker** fra PDF-eksport på forsiden i rapport.md
+5. **Finpuss:** full stavekontroll, DOI-sjekk, figurnummerering, formattering
