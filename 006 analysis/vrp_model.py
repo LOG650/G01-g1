@@ -326,8 +326,134 @@ def steg2_nn_iterativt(data: dict) -> None:
     print("\n→ Grense nådd uten at NN stabiliserer. Se resultat over.")
 
 
+def steg4_sammenlign(data: dict, nn_result: dict, milp_result: dict,
+                    save_figures: bool = True) -> None:
+    """Steg 4: formell sammenligning NN vs MILP + tabeller og figurer."""
+    import matplotlib.pyplot as plt
+
+    print("\n" + "=" * 60)
+    print("STEG 4 – Sammenligning NN-heuristikk vs MILP-optimum")
+    print("=" * 60)
+
+    nn_total = nn_result["total_distance"]
+    milp_total = milp_result["total_distance"]
+    gap_pct = (nn_total - milp_total) / milp_total * 100
+
+    print(f"\n{'Metode':<25}{'Biler':>8}{'Total km':>12}{'Gap vs optimum':>18}")
+    print("-" * 63)
+    print(f"{'MILP (optimum)':<25}{milp_result['n_vehicles']:>8}"
+          f"{milp_total:>12.2f}{'0.00 %':>18}")
+    print(f"{'NN-heuristikk':<25}{len(nn_result['routes']):>8}"
+          f"{nn_total:>12.2f}{gap_pct:>16.2f} %")
+    print("-" * 63)
+
+    print("\nPer bil (MILP):")
+    for r in milp_result["routes"]:
+        ut = r["load"] / 180 * 100
+        print(f"  Bil {r['vehicle']}: {r['distance']:>6.1f} km"
+              f" | last {r['load']:>3}/180 ({ut:.0f} %)"
+              f" | retur {r['return_time']:.0f} min")
+
+    print("\nPer bil (NN):")
+    for r in nn_result["routes"]:
+        ut = r["load"] / 180 * 100
+        print(f"  Bil {r['vehicle']}: {r['distance']:>6.1f} km"
+              f" | last {r['load']:>3}/180 ({ut:.0f} %)"
+              f" | retur {r['return_time']:.0f} min")
+
+    print("\nHovedfunn:")
+    diff_km = nn_total - milp_total
+    diff_biler = len(nn_result["routes"]) - milp_result["n_vehicles"]
+    print(f"  • NN bruker {diff_biler} flere bil(er) enn optimum")
+    print(f"  • NN kjører {diff_km:.1f} km lengre ({gap_pct:.1f} % over optimum)")
+    print(f"  • MILP utnytter kapasiteten bedre "
+          f"(snitt {sum(r['load'] for r in milp_result['routes']) / len(milp_result['routes']):.0f}"
+          f" mot {sum(r['load'] for r in nn_result['routes']) / len(nn_result['routes']):.0f} enheter)")
+
+    if not save_figures:
+        return
+
+    fig, axes = plt.subplots(1, 2, figsize=(15, 7))
+    fig.suptitle("Sammenligning av løsninger – NN-heuristikk vs. MILP-optimum",
+                 fontsize=13, fontweight="bold")
+
+    colors = ["#3a7ebf", "#e63946", "#2a9d8f", "#f4a261", "#9b5de5"]
+    lok = {n["id"]: n for n in data["locations"]}
+    depot = data["depot"]
+
+    for ax, result, title in [(axes[0], nn_result, f"NN-heuristikk ({len(nn_result['routes'])} biler, {nn_total:.1f} km)"),
+                              (axes[1], milp_result, f"MILP-optimum ({milp_result['n_vehicles']} biler, {milp_total:.1f} km)")]:
+        ax.set_facecolor("#f7f9fc")
+        ax.set_title(title, fontsize=11)
+
+        for idx, r in enumerate(result["routes"]):
+            xs = [depot["x"] if n == 0 else lok[n]["x"] for n in r["nodes"]]
+            ys = [depot["y"] if n == 0 else lok[n]["y"] for n in r["nodes"]]
+            c = colors[idx % len(colors)]
+            ax.plot(xs, ys, "-o", color=c, linewidth=2, markersize=8,
+                    label=f"Bil {r['vehicle']} ({r['distance']:.0f} km)", zorder=3)
+
+        for n in data["locations"]:
+            ax.annotate(f"L{n['id']}", xy=(n["x"], n["y"]),
+                        xytext=(6, 6), textcoords="offset points", fontsize=9)
+
+        ax.scatter(depot["x"], depot["y"], s=220, color="black",
+                   marker="s", zorder=5, edgecolors="white", linewidths=1.5)
+        ax.annotate("Slakteri", xy=(depot["x"], depot["y"]),
+                    xytext=(6, 6), textcoords="offset points",
+                    fontsize=9, fontweight="bold")
+
+        ax.set_xlim(-5, 110)
+        ax.set_ylim(-5, 105)
+        ax.set_xlabel("X-koordinat")
+        ax.set_ylabel("Y-koordinat")
+        ax.grid(True, linestyle="--", alpha=0.4)
+        ax.legend(fontsize=8, loc="upper left")
+
+    plt.tight_layout()
+    out = Path(__file__).parent.parent / "004 data" / "sammenligning_NN_vs_MILP.png"
+    plt.savefig(out, dpi=150, bbox_inches="tight")
+    print(f"\nFigur lagret: {out.relative_to(Path(__file__).parent.parent)}")
+
+    fig2, ax = plt.subplots(figsize=(8, 5))
+    metoder = ["MILP\n(optimum)", "NN-heuristikk"]
+    verdier = [milp_total, nn_total]
+    biler = [milp_result["n_vehicles"], len(nn_result["routes"])]
+    farger = ["#2a9d8f", "#e63946"]
+
+    bars = ax.bar(metoder, verdier, color=farger, edgecolor="white", linewidth=2)
+    for bar, v, b in zip(bars, verdier, biler):
+        ax.text(bar.get_x() + bar.get_width() / 2, v + 5,
+                f"{v:.1f} km\n{b} biler",
+                ha="center", fontsize=10, fontweight="bold")
+
+    ax.set_ylabel("Total kjørelengde (km)")
+    ax.set_title(f"Total kjørelengde per løsningsmetode\n"
+                 f"(optimalitetsgap = {gap_pct:.1f} %)",
+                 fontsize=11, fontweight="bold")
+    ax.set_ylim(0, max(verdier) * 1.2)
+    ax.grid(True, axis="y", linestyle="--", alpha=0.4)
+    ax.set_axisbelow(True)
+
+    plt.tight_layout()
+    out2 = Path(__file__).parent.parent / "004 data" / "total_distanse_sammenligning.png"
+    plt.savefig(out2, dpi=150, bbox_inches="tight")
+    print(f"Figur lagret: {out2.relative_to(Path(__file__).parent.parent)}")
+
+
 if __name__ == "__main__":
     data = last_data()
     sanity_check(data)
+
+    nn_best = None
+    for K in range(1, 5):
+        r = nearest_neighbor(data, K)
+        if r["feasible"]:
+            if nn_best is None or r["total_distance"] < nn_best["total_distance"]:
+                nn_best = r
+            else:
+                break
+
     steg2_nn_iterativt(data)
-    steg3_milp(data)
+    milp_best = steg3_milp(data)
+    steg4_sammenlign(data, nn_best, milp_best)
