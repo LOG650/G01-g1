@@ -129,9 +129,7 @@ Hvordan kan kvantitative ruteplanleggingsmodeller, støttet av kunstig intellige
 
 3. Hvordan påvirkes den optimale ruten av endringer i transportvolum og antall oppdrettslokaliteter innenfor gitte rammebetingelser?
 
-## **1.2 Delproblemer (valgfri)** 
-
-## **1.3 Avgrensinger (Marte)** 
+## **1.2 Avgrensinger** 
 
 For å gjøre problemstillingen håndterbar er oppgaven avgrenset på flere områder. For det første er analysen begrenset til én region og ett slakteri (depot), med tilhørende syv oppdrettslokaliteter. Dette innebærer at problemstillingen ikke tar hensyn til samspill mellom flere depoter eller større geografiske nettverk. Avgrensningen er gjort for å isolere effekten av rutevalg og gjøre modellen håndterbar. 
 
@@ -142,7 +140,7 @@ Oppgaven er også avgrenset til én type kjøretøy med fast kapasitet. Variasjo
 Når det gjelder løsningsmetode benytter oppgaven to komplementære tilnærminger: en eksakt MILP-formulering som gir en referanseoptimal løsning, og en greedy nearest-neighbor-heuristikk som representerer en operasjonelt enkel og transparent metode. Sammenligningen mellom de to gjør det mulig å kvantifisere heuristikkens kvalitet opp mot det matematiske optimum. Mer avanserte metaheuristikker (f.eks. tabu search, genetiske algoritmer eller læringsbaserte metoder) er utenfor prosjektets omfang. 
 
 
-## **1.3 Antagelser (Marte)** 
+## **1.3 Antagelser** 
 
 For å gjøre ruteplanleggingsproblemet håndterbart er det gjort flere forenklede antakelser. Vi erkjenner at dette påvirker hvor realistiske resultatene blir. 
 
