@@ -761,19 +761,27 @@ I dette kapittelet tolkes resultatene fra kap. 7 og 8 i lys av problemstillingen
 
 ## **9.1 Tolkning av hovedfunn**
 
-Hovedfunnet i studien er at MILP-optimum gir 36,2 % kortere total kjørelengde enn NN-heuristikken i baselinedatasettet, samtidig som antall kjøretøy reduseres fra tre til to. Resultatet er betydelig større enn hva enkelte VRP-studier rapporterer for sammenlignbare heuristikker, og skyldes først og fremst at tidsvinduene i datasettet er uensartede: enkelte lokaliteter har stramme vinduer (L1: [80, 126]), mens andre er svært fleksible (L4: [62, 435]). NN velger gjentatte ganger nærmeste gyldige node basert på et lokalt avstandskriterium, uten å ta hensyn til hvordan dette påvirker muligheten til å kombinere senere besøk innenfor kapasitet og tid. Resultatet er at bil 2 i NN-løsningen blir liggende på bare 36 % kapasitetsutnyttelse, mens MILP-løsningen pakker Bil 2 til 97 %.
+Resultatene besvarer hver av de tre forskningsspørsmålene direkte:
 
-Scenarioanalysen viser at gapet ikke er konstant, men varierer betydelig med problembetingelsene. Når kapasiteten reduseres til Q = 120, sammenfaller de to metodene fullstendig (0 % gap). Forklaringen er at etterspørselsstrukturen da tvinger frem tre kjøretøy uavhengig av rekkefølge, og valgrommet snevres inn til i praksis ett sett av fornuftige ruter. Dette er konsistent med et hovedpoeng i Liu et al. (2023), som viser at enkle heuristikker kan være konkurransedyktige når problemet er tilstrekkelig innskrenket av harde restriksjoner.
+**FS1 (modellering)** viser at fortransporten lar seg representere som et kapasitets- og tidsbegrenset Vehicle Routing Problem (CVRPTW) med åtte noder. Modellen i kap. 6 er gjennomførbar både som eksakt MILP-formulering og som greedy nearest-neighbor-heuristikk, og begge metodene gir gyldige løsninger på det syntetiske datasettet.
 
-Et annet viktig funn er at økt kjøretøytilgjengelighet (K_max = 5) ikke gir forbedring – verken for MILP eller NN. Dette tyder på at antall kjøretøy ikke er den bindende begrensningen i baselinedatasettet. I stedet er det samspillet mellom kapasitet og tidsvinduer som styrer løsningen, noe som understrekes ved at begge MILP-biler returnerer til depot nøyaktig på T_max = 480 minutter.
+**FS2 (sammenligning mot baseline)** viser at MILP-optimum gir 36,2 % kortere total kjørelengde enn NN-heuristikken (392,09 km mot 534,00 km) og bruker ett kjøretøy mindre. Forskjellen oppstår fordi NN gjør lokale, grådige valg uten å ta hensyn til hvordan de begrenser senere besøk. Konkret havner bil 2 i NN-løsningen på 36 % kapasitetsutnyttelse, mens MILP pakker Bil 2 til 97 %. Dette er forskjellen mellom å velge nærmeste gyldige node og å vurdere hele rutestrukturen samlet.
+
+**FS3 (sensitivitet)** viser at løsningens form avhenger sterkt av hvilken restriksjon som er bindende. Når kapasitetsbegrensningen tvinger frem tre kjøretøy (Q = 120), sammenfaller NN og MILP fullstendig (0 % gap). Når tidsvinduene strammes inn (50 %), øker kjørelengden for begge, men NN må til og med ta i bruk et fjerde kjøretøy. Økt kjøretøytilgjengelighet (K_max = 5) endrer ingenting, fordi antall biler ikke er den bindende begrensningen i baselinen.
+
+**Forventet funn:** At MILP gir kortere kjørelengde enn NN var ventet, gitt at MILP er en eksakt metode og NN er grådig (Toth & Vigo, 2014). Tidsvindueffekten samsvarer med Solomon (1987).
+
+**Uventet funn:** At NN ikke klarte å betjene alle lokaliteter med to kjøretøy, til tross for at teoretisk minimum (sum etterspørsel / kapasitet ≈ 1,73) tillater det. Heuristikkens grådighet bandt opp tid og kapasitet på en måte som låste ute lokalitetene med stramme tidsvinduer (L1, L3). Dette er ikke bare en kvalitetssvakhet ved NN – det er et reelt operasjonelt funn: en virksomhet som baserer seg på en enkel heuristikk vil i praksis trenge flere kjøretøy enn nødvendig. Et tilsvarende fenomen, der grådige metoder gir både dårligere kvalitet og høyere ressursforbruk, beskrives av Cormen et al. (2009) som en typisk svakhet ved konstruksjonsheuristikker når problemet har stramme bibetingelser.
 
 ## **9.2 Kobling til tidligere forskning**
 
-Resultatene knytter seg til flere sentrale trekk i litteraturen. Solomon (1987) beskrev VRPTW som et NP-hardt problem der tidsvinduene vesentlig øker kompleksiteten sammenlignet med klassisk VRP. Scenarioet med strammere tidsvinduer (50 %) bekrefter dette empirisk: både total kjørelengde og antall kjøretøy øker, og NN-heuristikken rammes hardest ved at den må ta i bruk et fjerde kjøretøy. Dette samsvarer med Adamo et al. (2024), som påpeker at tidsdimensjonen er en av de mest krevende aspektene ved moderne ruteplanlegging.
+Resultatene knytter seg til flere sentrale trekk i litteraturen. Dantzig og Ramser (1959) sin opprinnelige formulering av problemet la vekt på distanseminimering som mål. Studien viser at distanse alene ikke fanger opp den operasjonelle virkeligheten i fortransport av ferskvarer, der tidsvinduer ofte er den reelle flaskehalsen. Dette er i tråd med Laporte (2009) sin oppsummering av femti år med VRP-forskning, hvor forfatteren peker på at praktiske VRP-anvendelser i økende grad krever modeller med flere samtidige restriksjoner.
 
-Archetti et al. (2026) argumenterer for at moderne VRP-forskning bør bevege seg bort fra den klassiske basisversjonen og mot anvendte varianter med realistiske restriksjoner. Studiens funn støtter dette perspektivet: inkludering av tidsvinduer, kapasitet og maksimal rutevarighet gir et mer operasjonelt relevant bilde enn en ren distanseminimering ville gjort.
+Solomon (1987) beskrev VRPTW som et NP-hardt problem der tidsvinduene vesentlig øker kompleksiteten sammenlignet med klassisk VRP. Scenarioet med strammere tidsvinduer (50 %) bekrefter dette empirisk: både total kjørelengde og antall kjøretøy øker, og NN-heuristikken rammes hardest ved at den må ta i bruk et fjerde kjøretøy. Dette samsvarer med Adamo et al. (2024), som påpeker at tidsdimensjonen er en av de mest krevende aspektene ved moderne ruteplanlegging.
 
-Studien bekrefter også Liu et al. (2023) sin observasjon om at greedy-heuristikker fortsatt har verdi som raske baseline-metoder, selv når de ikke garanterer optimalitet. NN-løsningen i baselinen er gjennomførbar og kan produseres på millisekunder, mens MILP-løsningen krever en eksakt løser. For en liten instans (n = 8) er MILP fortsatt rask, men for større problemer vil forskjellen i beregningstid kunne snu preferansen. Bogyrbayeva et al. (2024) peker på at hybridmetoder mellom læringsbaserte og tradisjonelle tilnærminger er en lovende retning, noe studien ikke undersøker direkte, men som er en naturlig videreføring.
+Archetti et al. (2026) argumenterer for at moderne VRP-forskning bør bevege seg bort fra den klassiske basisversjonen og mot anvendte varianter med realistiske restriksjoner. Studiens funn støtter dette perspektivet: inkludering av tidsvinduer, kapasitet og maksimal rutevarighet gir et mer operasjonelt relevant bilde enn en ren distanseminimering ville gjort. Funnet om at antall kjøretøy ikke er den bindende begrensningen, men at samspillet mellom kapasitet og tid er det, illustrerer denne dreiningen mot operasjonell relevans.
+
+Toth og Vigo (2014) beskriver to grunnleggende familier av løsningsmetoder, eksakte og heuristiske, og advarer mot å vurdere dem som gjensidig utelukkende. Studiens dual-method-tilnærming støtter denne avveiningen: NN gir hurtige, transparente løsninger, mens MILP gir en kvantifiserbar referanse for kvalitetstap. Liu et al. (2023) sin observasjon om at greedy-heuristikker fortsatt har verdi som raske baseline-metoder, selv når de ikke garanterer optimalitet, er konsistent med våre funn for scenariet der kapasiteten er bindende (gap = 0 %). Bogyrbayeva et al. (2024) peker på at hybridmetoder mellom læringsbaserte og tradisjonelle tilnærminger er en lovende retning, noe studien ikke undersøker direkte, men som er en naturlig videreføring.
 
 ## **9.3 Styrker og svakheter ved data, metode og modell**
 
@@ -799,7 +807,19 @@ For en virksomhet med transportstruktur tilsvarende caset gir studien tre prakti
 
 3. **Å legge til kjøretøy er sjelden svaret.** Når tids- og kapasitetsbegrensninger ikke er bindende, gir flere biler ingen besparelser – bare overkapasitet. Investeringsbeslutninger bør baseres på hvilken restriksjon som faktisk begrenser løsningen i et gitt datasett.
 
-## **9.6 Refleksjon om bruk av kunstig intelligens i prosjektet**
+## **9.6 Teoretiske og metodiske implikasjoner**
+
+Utover de praktiske poengene i 9.5 har funnene tre bidrag som er relevante for forskningsfeltet:
+
+**Empirisk dokumentasjon av et problemavhengig optimalitetsgap.** Studien viser at gapet mellom NN-heuristikk og MILP-optimum varierer fra 0 % til 36,2 % avhengig av hvilken restriksjon som er bindende. Dette nyanserer den ofte siterte tommelfingerregelen om at greedy-heuristikker gir 10–30 % over optimum (Liu et al., 2023): ved bindende kapasitet kan gapet være null, ved bindende tidsvinduer kan det være betydelig høyere. For metodevalg betyr dette at en heuristisk tilnærming bør evalueres mot problemets restriksjonsstruktur, ikke bare mot problemstørrelsen.
+
+**Argument for dual-method-validering.** Studien viser hvordan en transparent heuristikk og en eksakt løser kan brukes komplementært, hvor hver tjener et bestemt formål: NN for operasjonell forklarbarhet, MILP for kvalitetsreferanse. Dette er en metodisk tilnærming som kan generaliseres til andre logistikkstudier på bachelornivå, der ressursene typisk ikke tillater utvikling av fullskala metaheuristikker.
+
+**Operasjonell tolkning av kapasitetsutnyttelse som signal.** Det at NN i baselinen ender med en bil på 36 % utnyttelse, mens MILP fyller alle biler over 75 %, gir et generaliserbart diagnostisk signal: lav kapasitetsutnyttelse i en enkelt rute kan indikere at heuristikken har bundet seg til en lokalt grådig sekvens som kunne vært unngått. Dette er nyttig informasjon for praktikere som bruker enkle heuristikker uten tilgang til en eksakt referanse.
+
+For policy- og næringsperspektiv er studien avgrenset – den syntetiske naturen til dataene gjør at konkrete tall ikke skal overføres direkte. Strukturen i funnene er likevel overførbar, og kan informere diskusjoner om infrastrukturinvesteringer (f.eks. kan koordinerte tidsvinduer ofte gi mer enn flere kjøretøy).
+
+## **9.7 Refleksjon om bruk av kunstig intelligens i prosjektet**
 
 Prosjektet har benyttet generative KI-verktøy i alle faser, fra litteratursøk til kode og språkvask (se kap. 5.4). Erfaringen er todelt. På den ene siden har KI redusert tid brukt på rutineoppgaver betydelig – strukturering av datasett, oppsett av MILP-modell, generering av figurer og systematisk rettskriving. På den andre siden oppsto det flere tilfeller der KI produserte tekst som så faglig korrekt ut, men inneholdt feilaktige referanser eller subtile unøyaktigheter, som måtte fanges opp av manuell kontroll.
 
