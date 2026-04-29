@@ -1,136 +1,39 @@
-## **Prosjektoppgave** 
+---
+title: "Prosjektoppgave – LOG650"
+subtitle: "Forskningsprosjekt: Logistikk og KI"
+author: "Gruppe 1"
+date: "Mai 2026"
+toc: true
+toc-depth: 3
+---
 
-**LOG650 Forskningsprosjekt: Logistikk og KI** 
+# Sammendrag
 
-**Tittel (norsk og/eller engelsk)** 
+*[Skrives etter peer-review.]*
 
-Forfatter(e) 
+# Abstract
 
-Totalt antall sider inkludert forsiden: 
-
-Molde, Innleveringsdato 
-
-**==> picture [145 x 90] intentionally omitted <==**
-
-## **Obligatorisk egenerklæring/gruppeerklæring** 
-
-Den enkelte student er selv ansvarlig for å sette seg inn i hva som er lovlige hjelpemidler, retningslinjer for bruk av disse og regler om kildebruk. Erklæringen skal bevisstgjøre studentene på deres ansvar og hvilke konsekvenser fusk kan medføre. Manglende erklæring fritar ikke studentene fra sitt ansvar. 
-
-_Du/dere fyller ut erklæringen ved å klikke i ruten til høyre for den enkelte del 1-6:_ 
-
-**==> picture [451 x 427] intentionally omitted <==**
-
-**----- Start of picture text -----**<br>
-1.  Jeg/vi erklærer herved at min/vår besvarelse er mitt/vårt eget arbeid,<br>og at jeg/vi ikke har brukt andre kilder eller har mottatt annen hjelp<br>enn det som er nevnt i besvarelsen.<br>2.  Jeg/vi erklærer videre at denne besvarelsen:<br>• ikke har vært brukt til annen eksamen ved annen<br>avdeling/universitet/høgskole innenlands eller utenlands.<br>• ikke refererer til andres arbeid uten at det er oppgitt.<br>• ikke refererer til eget tidligere arbeid uten at det er oppgitt.<br>• har alle referansene oppgitt i litteraturlisten.<br>• ikke er en kopi, duplikat eller avskrift av andres arbeid eller<br>besvarelse.<br>3.  Jeg/vi er kjent med at brudd på ovennevnte er å betrakte som fusk og<br>kan medføre annullering av eksamen og utestengelse fra universiteter<br>og høgskoler i Norge, jf. Universitets- og høgskoleloven §§4-7 og 4-8 og<br>Forskrift om eksamen §§14 og 15.<br>4.  Jeg/vi er kjent med at alle innleverte oppgaver kan bli plagiatkontrollert<br>i URKUND, se Retningslinjer for elektronisk innlevering og publisering av<br>studiepoenggivende studentoppgaver<br>5.  Jeg/vi er kjent med at høgskolen vil behandle alle saker hvor det<br>forligger mistanke om fusk etter høgskolens retningslinjer for<br>behandling av saker om fusk<br>6.  Jeg/vi har satt oss inn i regler og retningslinjer i bruk av kilder og<br>referanser på biblioteket sine nettsider<br>**----- End of picture text -----**<br>
+*[To be written after peer review.]*
 
 
-## **Personvern** 
+ewpage
 
-## **Personopplysningsloven** 
-
-|**Personopplysningsloven**|||||
-|---|---|---|---|---|
-|Forskningsprosjekt som innebærer behandling av personopplysninger iht.|||||
-|Personopplysningsloven skal meldes til Norsk senter for forskningsdata, NSD, for|||vurdering.||
-|**Har oppgaven vært vurdert av NSD?**||**ja**||**nei**|
-|- Hvis ja:|||||
-|**Referansenummer:**|||||
-|- Hvis nei:|||||
-|**Jeg/vi erklærer at oppgaven ikke omfattes av Personopplysningsloven:**|||||
-|**Helseforskningsloven**|||||
-|Dersom prosjektet faller inn under Helseforskningsloven, skal det også søkes om|||||
-|forhåndsgodkjenning fra Regionale komiteer for medisinsk og helsefaglig forskningsetikk,|||||
-|REK, i din region.|||||
-|**Har oppgaven vært til behandling hos REK?**||**ja**||**nei**|
-|- Hvis ja:|||||
-|**Referansenummer:**|||||
-
-
-
-## **Publiseringsavtale** 
-
-**Studiepoeng:** 
-
-## **Veileder:** 
-
-|**Fullmakt til elektronisk publisering av oppgaven**|||||
-|---|---|---|---|---|
-|Forfatter(ne) har opphavsrett til oppgaven. Det betyr blant annet enerett til å gjøre verket|||||
-|tilgjengelig for allmennheten (Åndsverkloven. §2).|||||
-|Alle oppgaver som fyller kriteriene vil bli registrert og publisert i Brage HiM med|||||
-|forfatter(ne)s godkjennelse.|||||
-|Oppgaver som er unntatt offentlighet eller båndlagt vil ikke bli publisert.|||||
-|**Jeg/vi gir herved Høgskolen i Molde en vederlagsfri rett til å**|||||
-|**gjøre oppgaven tilgjengelig for elektronisk publisering:**||**ja**||**nei**|
-|**Er oppgaven båndlagt (konfidensiell)?**||**ja**||**nei**|
-|**(**Båndleggingsavtale må fylles ut)|||||
-|- Hvis ja:|||||
-|**Kan oppgaven publiseres når båndleggingsperioden er over?**||**ja**||**nei**|
-|**Dato:**|||||
-
-
-
-**Antall ord:** Marker denne setningen, og skriv inn antall ord dersom det er et krav at antall ord skal oppgis. Hvis det ikke er et krav at antall ord skal oppgis slettes hele dette avsnittet, og i begge tilfeller slettes denne setning. 
-
-**Forfattererklæring** : Marker denne setningen, og skriv inn forfattererklæring dersom det er et krav til oppgaven. Hvis det ikke er krav om forfattererklæring slettes hele dette avsnitt, og i begge tilfeller slettes denne setning. 
-
-# **Sammendrag** 
-
-## **Abstract** 
-
-7 
-
-8 
-
-## Innhold 
-
-|**1.0**|**Innledning .................................................................................................................1**|
-|---|---|
-|1.1|Problemstilling ...................................................................................................... 2|
-|1.2|Avgrensinger ......................................................................................................... 2|
-|1.3|Antagelser ............................................................................................................. 3|
-|**2.0**|**Litteratur ..................................................................................................................3**|
-|**3.0**|**Teori ..........................................................................................................................3**|
-|**4.0**|**Casebeskrivelse .........................................................................................................4**|
-|**5.0**|**Metode og data .........................................................................................................4**|
-|5.1|Metode .................................................................................................................. 4|
-|5.2|Data ....................................................................................................................... 5|
-|5.3|Genererte transportdata ...................................................................................... 5|
-|5.4|Bruk av KI i metodeprosessen ............................................................................. 6|
-|**6.0**|**Modellering ...............................................................................................................6**|
-|6.1|Modellformulering ............................................................................................... 6|
-|6.2|Implementering av modell i Python ................................................................... 6|
-|6.3|Testing og validering ........................................................................................... 6|
-|6.4|Modellvarianter og scenarier .............................................................................. 6|
-|**7.0**|**Analyse ......................................................................................................................6**|
-|**8.0**|**Resultat .....................................................................................................................6**|
-|**9.0**|**Diskusjon ...................................................................................................................7**|
-|**10.0**|**Konklusjon ................................................................................................................8**|
-|**11.0**|**Bibliografi .................................................................................................................8**|
-|**12.0**|**Vedlegg ......................................................................................................................8**|
-
-
-
-## **1.0 Innledning** 
-
+## 1.0 Innledning
 Fortransport av slakteklar fisk fra oppdrettslokaliteter til slakteri er en sentral logistikkaktivitet i oppdrettsnæringen. Effektiv ruteplanlegging har stor betydning for transportkostnader, kjøretid, kapasitetsutnyttelse og miljøpåvirkning. Små forbedringer i rutevalg og planlegging kan gi betydelige gevinster, særlig i regioner med mange lokaliteter og varierende transportavstander. Samtidig er ruteplanlegging et komplekst beslutningsproblem som egner seg godt for kvantitative modeller og KI-støttet analyse. 
 
 Denne oppgaven tar utgangspunkt i fortransport i én region hos Lerøy og undersøker hvordan ruteplanlegging kan modelleres og analyseres ved hjelp av kvantitative metoder. Studien er avgrenset til transport fra 7 oppdrettslokaliteter til ett slakteri og fokuserer på kostnadsminimering som beslutningskriterium. 
 
-## **1.1 Problemstilling** 
-
+## 1.1 Problemstilling
 Hvordan kan kvantitative ruteplanleggingsmodeller, støttet av kunstig intelligens, bidra til mer effektiv fortransport av slakteklar fisk i én region hos Lerøy? 
 
-## **Forskningsspørsmål:** 
-
+**Forskningsspørsmål:**
 1. Hvordan kan fortransporten modelleres som et ruteplanleggingsproblem (Vehicle Routing Problem) basert på tilgjengelige data om lokasjoner, avstander og transportvolumer? 
 
 2. Hvilke ruter gir lavest samlet transportkostnad sammenlignet med en enkel referanseløsning (baseline)? 
 
 3. Hvordan påvirkes den optimale ruten av endringer i transportvolum og antall oppdrettslokaliteter innenfor gitte rammebetingelser?
 
-## **1.2 Avgrensinger** 
-
+## 1.2 Avgrensinger
 For å gjøre problemstillingen håndterbar er oppgaven avgrenset på flere områder. For det første er analysen begrenset til én region og ett slakteri (depot), med tilhørende syv oppdrettslokaliteter. Dette innebærer at problemstillingen ikke tar hensyn til samspill mellom flere depoter eller større geografiske nettverk. Avgrensningen er gjort for å isolere effekten av rutevalg og gjøre modellen håndterbar. 
 
 For det andre fokuserer oppgaven på et statisk ruteplanleggingsproblem. Det innebærer at alle data, som etterspørsel, avstander og tidsvinduer antas å forholde seg uendret over tid. Dynamiske forhold som trafikk, vær eller uforutsette hendelser er ikke inkludert. Dette er gjort for å kunne analysere problemet innenfor VRP-ramme. 
@@ -140,8 +43,7 @@ Oppgaven er også avgrenset til én type kjøretøy med fast kapasitet. Variasjo
 Når det gjelder løsningsmetode benytter oppgaven to komplementære tilnærminger: en eksakt MILP-formulering som gir en referanseoptimal løsning, og en greedy nearest-neighbor-heuristikk som representerer en operasjonelt enkel og transparent metode. Sammenligningen mellom de to gjør det mulig å kvantifisere heuristikkens kvalitet opp mot det matematiske optimum. Mer avanserte metaheuristikker (f.eks. tabu search, genetiske algoritmer eller læringsbaserte metoder) er utenfor prosjektets omfang. 
 
 
-## **1.3 Antagelser** 
-
+## 1.3 Antagelser
 For å gjøre ruteplanleggingsproblemet håndterbart er det gjort flere forenklede antakelser. Vi erkjenner at dette påvirker hvor realistiske resultatene blir. 
 
 1. Det antas at avstanden mellom lokasjoner er oppgitt euklidisk basert på koordinater, som i praksis betyr at transporten går gjennom en rett linje i terrenget mellom to punkter, og ikke et faktisk veinett. Konsekvensen av dette er at modellen ikke representerer reell kjørelengde og reisetid. 
@@ -158,8 +60,7 @@ virkeligheten, men det gjør det mulig for oss å analysere strukturen i
 
 ruteplanleggingsproblemet. Resultatet av denne analysen kan dermed ikke overføres til reelle operasjoner. 
 
-## **2.0 Litteratur (Marte)** 
-
+## 2.0 Litteratur
 De siste fem årene har litteraturen om Vehicle Routing Problem (VRP) vært preget av tre tydelige utviklingstrekk: økt vekt på mer realistiske problemvarianter, fortsatt sterk bruk av heuristikker, og økende interesse for maskinlæring og KI-baserte løsningsmetoder. Samtidig viser nyere oversiktsartikler at det klassiske kapasitetsbegrensede VRP fortsatt er et sentralt utgangspunkt, men at forskningen i økende grad retter seg mot varianter med tidsvinduer, dynamiske forhold og bærekraftshensyn. Archetti et al. (2026) beskriver hvordan nyere VRP-forskning i større grad fokuserer på varianter og utvidelser som gjør modellene mer anvendelige i praksis, fremfor kun å studere den klassiske basisversjonen. Dette er relevant for denne oppgaven, siden fortransport av slakteklar fisk ikke bare handler om å minimere avstand, men også om å håndtere operative begrensninger som kapasitet og tid. 
 
 Et sentralt bidrag i nyere litteratur er derfor studier av tidsavhengige og tidsbegrensede ruteproblemer. Adamo et al. (2024) viser at feltet de siste årene har hatt viktige metodiske fremskritt innen tidsavhengig VRP, blant annet gjennom bedre håndtering av reisetid, sanntidsreoptimalisering og mer avanserte løsningsmetoder. Selv om denne oppgaven ikke modellerer sanntidsendringer i veinett eller trafikk, er litteraturen likevel relevant fordi den understreker at tid er en kritisk dimensjon i moderne ruteplanlegging. Vår oppgave ligger dermed nærmere denne forskningsretningen enn en ren, klassisk CVRP-modell, ettersom tidsmatrise, tidsvinduer og maksimal rutevarighet inngår som sentrale begrensninger. 
@@ -176,10 +77,8 @@ En tredje utvikling i nyere VRP-litteratur er koblingen til bærekraft og breder
 
 Samlet viser litteraturen de siste fem årene at VRP-forskningen beveger seg mot mer realistiske, sammensatte og anvendte problemstillinger. Denne rapporten forholder seg til denne utviklingen ved å modellere et kapasitets- og tidsbegrenset ruteproblem inspirert av fortransport i havbruksnæringen. Samtidig avgrenser oppgaven seg bevisst fra de mest avanserte metodene i nyere forskning, som dype læringsmodeller og komplekse metaheuristikker, og velger i stedet en enklere heuristisk tilnærming. Dette gjør analysen mindre avansert metodisk, men til gjengjeld mer transparent, etterprøvbar og godt tilpasset prosjektets omfang og formål. 
 
-## **3.0 Teori (Marte)** 
-
-## **3.1 Vehicle Routing Problem (VRP)** 
-
+## 3.0 Teori
+## 3.1 Vehicle Routing Problem (VRP)
 Vehicle Routing Problem (VRP) er et sentralt optimaliseringsproblem innen logistikk og transportplanlegging, først formulert av Dantzig og Ramser (1959). Problemet omhandler hvordan en flåte av kjøretøy kan planlegges slik at et sett av lokasjoner betjenes med lavest mulig kostnad, ofte uttrykt som total kjørelengde eller transporttid (Toth & Vigo, 2014). 
 
 VRP er klassifisert som et NP-hard problem, noe som innebærer at beregningskompleksiteten øker raskt med antall lokasjoner (Laporte, 2009). Dette gjør at eksakte løsninger ofte er upraktiske i realistiske anvendelser. 
@@ -190,8 +89,7 @@ Dette er direkte relevant for denne oppgaven, hvor ruteplanlegging ikke kun hand
 
 7 
 
-## **3.2 VRP med tidsvinduer (VRPTW)** 
-
+## 3.2 VRP med tidsvinduer (VRPTW)
 Vehicle Routing Problem with Time Windows (VRPTW) er en utvidelse av VRP hvor hver lokasjon må betjenes innenfor et gitt tidsintervall (Solomon, 1987). Dette gjør modellen mer realistisk, men også betydelig mer kompleks. 
 
 Nyere studier understreker at tidsdimensjonen har blitt en av de viktigste faktorene i 
@@ -206,8 +104,7 @@ I denne oppgaven modelleres tidsvinduer og maksimal rutevarighet eksplisitt, noe
 
 - tidsmessig gjennomførbarhet 
 
-## **3.3 Eksakte metoder og heuristikker** 
-
+## 3.3 Eksakte metoder og heuristikker
 Løsningsmetoder for VRP kan deles inn i eksakte metoder og heuristikker (Toth & Vigo, 2014). 
 
 Eksakte metoder gir optimale løsninger, men er beregningstunge og lite skalerbare. Dette gjør dem ofte uegnet for praktiske problemstillinger med mange lokasjoner eller komplekse restriksjoner. 
@@ -230,8 +127,7 @@ finne en global optimal løsning, men en praktisk gjennomførbar og kostnadseffe
 
 løsning innenfor gitte rammebetingelser. 
 
-## **3.4 Greedy heuristikk og nearest neighbor** 
-
+## 3.4 Greedy heuristikk og nearest neighbor
 8 
 
 Greedy heuristikker bygger løsninger stegvis ved å velge det til enhver tid beste 
@@ -254,8 +150,7 @@ Likevel viser litteraturen at slike enkle heuristikker fortsatt har en viktig ro
 
 I denne oppgaven benyttes en greedy nearest neighbor-heuristikk kombinert med kapasitets- og tidsrestriksjoner. Dette representerer en balansert tilnærming mellom modellens kompleksitet og praktisk anvendbarhet. 
 
-## **3.5 Kunstig intelligens i ruteplanlegging** 
-
+## 3.5 Kunstig intelligens i ruteplanlegging
 De siste årene har det vært økende interesse for bruk av kunstig intelligens i 
 
 ruteplanlegging. Maskinlæring og læringsbaserte metoder brukes blant annet til: 
@@ -284,14 +179,12 @@ Dermed plasserer oppgaven seg i skjæringspunktet mellom:
 
 9 
 
-## **3.6 Oppsummering og kobling til problemstilling** 
-
+## 3.6 Oppsummering og kobling til problemstilling
 Litteraturen viser at moderne VRP-forskning beveger seg mot mer realistiske og anvendte problemstillinger, hvor tidsvinduer, kapasitetsbegrensninger og operasjonelle hensyn er sentrale. 
 
 Samtidig understrekes det at heuristiske metoder fortsatt er avgjørende for å løse slike problemer i praksis, særlig når beregningstid og implementerbarhet er viktige faktorer. Denne oppgaven bygger på disse prinsippene ved å modellere fortransport som et kapasitets- og tidsbegrenset ruteproblem, løst ved hjelp av en greedy heuristikk. Valget av metode er i tråd med både klassisk teori og nyere forskning, og reflekterer en bevisst avveining mellom modellens realisme, kompleksitet og anvendbarhet. 
 
-## **4.0 Casebeskrivelse** 
-
+## 4.0 Casebeskrivelse
 Denne oppgaven tar utgangspunkt i en case knyttet til transportoptimalisering hos Lerøy Seafood Group, en sentral aktør innen norsk havbruksnæring. Lerøy har omfattende logistikk knyttet til transport av fisk mellom produksjonslokaliteter og videre til mottak eller slakteri, og fortransport av slakteklar fisk er en av flere logistikkaktiviteter der effektiv ruteplanlegging kan gi betydelige gevinster. 
 
 Caset setter søkelys på fortransporten fra oppdrettslokaliteter til slakteri. Fisken hentes ved lokalitetene etter avtalte tidsvinduer, og må leveres innenfor angitte tidsrammer for å ivareta kvalitet og driftsflyt på slakteriet. Denne delen av verdikjeden er kritisk fordi forsinkelser eller ubalansert kapasitetsbruk direkte påvirker transportkostnader, dyrevelferd og produktets ferskhet. 
@@ -302,20 +195,16 @@ Caset er avgrenset til én region og omfatter syv oppdrettslokaliteter og ett sl
 
 Kombinasjonen av geografisk spredte lokaliteter, kapasitetsbegrensninger og tidsvinduer gjør caset godt egnet for modellering som et ruteplanleggingsproblem med tidsvinduer (VRPTW). Problemet er tilstrekkelig komplekst til å gi analytisk interesse, men samtidig avgrenset nok til å gi oversiktlige og etterprøvbare resultater innenfor oppgavens rammer. I denne rapporten benyttes et syntetisk datasett utviklet for analyseformål, mens Lerøy Seafood Group fungerer som casegrunnlag for problemstillingen.
 
-## **5.0 Metode og data** 
-
-## **5.1 Metode** 
-
-## **5.1.1 Datagrunnlag** 
-
+## 5.0 Metode og data
+## 5.1 Metode
+## 5.1.1 Datagrunnlag
 Datagrunnlaget i prosjektet er basert på et syntetisk, men konsistent datasett generert av faglærer. Datasettet representerer ett slakteri (depot) og sju oppdrettslokaliteter, og er utviklet for å gi et realistisk grunnlag for modellering av ruteplanlegging med kapasitetsog tidsbegrensninger. 
 
 Datasettet består av koordinater for slakteri og lokaliteter, etterspørsel per lokalitet, lastetid per lokalitet, tidsvinduer for henting, avstandsmatrise, tidsmatrise og kapasitet på kjøretøy. Dette gir et samlet grunnlag for å analysere hvordan fortransporten kan organiseres mer effektivt. 
 
 Bruken av syntetiske data gjør det mulig å utvikle og teste modellen i en kontrollert case, samtidig som dataene er tilstrekkelig realistiske til å belyse logistiske utfordringer knyttet til transport, kapasitet og tidsstyring. 
 
-## **5.1.2 Lokasjoner og koordinater** 
-
+## 5.1.2 Lokasjoner og koordinater
 Caset består av åtte noder totalt: ett slakteri og sju oppdrettslokaliteter. Slakteriet fungerer som depot, og alle ruter starter og avsluttes her. 
 
 11 
@@ -335,82 +224,69 @@ Caset består av åtte noder totalt: ett slakteri og sju oppdrettslokaliteter. S
 
 Koordinatene er oppgitt i et todimensjonalt koordinatsystem og brukes som grunnlag for beregning av avstander mellom lokasjonene. 
 
-## **5.1.3 Avstandsmetode** 
-
+## 5.1.3 Avstandsmetode
 Avstandene mellom slakteriet og lokalitetene ble beregnet som luftlinjeavstander basert på oppgitte x- og y-koordinater. Det ble brukt euklidsk avstand, som betyr den rette linjen mellom to punkter i et koordinatsystem. Dette er en vanlig og enkel forenkling i ruteplanleggingsmodeller når faktiske veidata ikke er tilgjengelige. 
 
 I prosjektet forutsettes det at én enhet i koordinatsystemet tilsvarer én kilometer. Avstandene brukes videre som grunnlag for beregning av transportkostnader og som input til den heuristiske modellen. 
 
-## **5.1.4 Avstandsmatrise** 
-
+## 5.1.4 Avstandsmatrise
 På bakgrunn av koordinatene ble det utarbeidet en avstandsmatrise som viser avstanden mellom alle lokasjoner i caset. Matrisen er symmetrisk, noe som betyr at avstanden fra node A til node B er den samme som fra node B til node A. Diagonalen i matrisen er lik 0, siden avstanden fra en lokasjon til seg selv er null. 
 
 Avstandsmatrisen brukes i modellen for å beregne total kjørelengde og sammenligne alternative ruter. Full avstandsmatrise er lagt ved i vedlegg A. 
 
 12 
 
-## **5.1.5 Tidsmatrise** 
-
+## 5.1.5 Tidsmatrise
 I tillegg til avstandsmatrisen ble det etablert en tidsmatrise. Tidsmatrisen er avledet fra avstandene og angir reisetid mellom lokasjonene i minutter. I dette prosjektet er tidsmatrisen basert på en forenkling der avstandene er omgjort til hele minutter. 
 
 Tidsmatrisen brukes i modellen for å kontrollere om en rute er gjennomførbar innenfor gitte tidsvinduer, og om kjøretøyet rekker å returnere til depot innen maksimal tillatt tid. Full tidsmatrise er lagt ved i vedlegg B. 
 
-## **5.1.6 Validering av avstander** 
-
+## 5.1.6 Validering av avstander
 For å sikre at avstandsmatrisen var korrekt, ble beregningene kontrollert på flere måter. For det første ble det kontrollert at diagonalen i matrisen er lik 0, og at matrisen er symmetrisk. For det andre ble utvalgte avstander kontrollregnet manuelt ved bruk av formelen for euklidsk avstand. 
 
 Det var i utgangspunktet ønskelig å sammenligne avstandene med kart, men dette ble ikke gjennomført direkte. Årsaken er at prosjektet benytter syntetiske koordinater og ikke reelle geografiske lokasjoner eller veinett. En direkte sammenligning med faktiske kartdata ville derfor ikke vært faglig presis. I stedet er den valgte avstandsmetoden vurdert som en hensiktsmessig og konsistent forenkling for analyseformålet. 
 
-## **5.1.7 Øvrige inputdata** 
-
+## 5.1.7 Øvrige inputdata
 Modellen bygger også på flere andre inputdata enn koordinater og avstander. For hver lokalitet er det definert etterspørsel, lastetid og tidsvindu. Kjøretøykapasiteten er satt til 180 enheter. Samlet etterspørsel i datasettet er større enn kapasiteten til ett kjøretøy, noe som gjør det nødvendig å analysere flere ruter og flere biler. 
 
 Disse inputdataene er sentrale fordi de påvirker hvilke ruter som er mulige å gjennomføre. Selv om en rute kan være kort i avstand, kan den være urealistisk dersom kapasiteten overskrides eller tidsvinduene ikke kan overholdes. 
 
 13 
 
-## **5.2 Data** 
-
-## **5.2.1 Identifisere lokasjoner** 
-
+## 5.2 Data
+## 5.2.1 Identifisere lokasjoner
 Som grunnlag for modellutviklingen ble det først gjennomført en systematisk identifisering av relevante lokasjoner i transportnettverket. Dette omfatter både oppdrettslokaliteter og slakteri, som til sammen utgjør nodene i modellen. Utvalget av lokasjoner er gjort med hensikt å representere et realistisk, men avgrenset transportproblem, tilpasset prosjektets omfang og tilgjengelige ressurser. 
 
-## **5.2.2 Velge region** 
-
+## 5.2.2 Velge region
 Datasettet representerer ikke en spesifikk geografisk region, men er konstruert for å etterligne realistiske transportforhold i havbruksnæringen. Avstander og lokasjonsstruktur er valgt slik at lokalitetene gir variasjon i rutevalg og transportavstander innenfor et plausibelt geografisk område. 
 
 Denne tilnærmingen gir fleksibilitet i modellutviklingen og kontroll over sentrale variabler, men kan påvirke overførbarheten til reelle geografiske forhold. 
 
-## **5.2.3 Identifisere oppdrettslokaliteter** 
-
+## 5.2.3 Identifisere oppdrettslokaliteter
 Totalt inngår syv oppdrettslokaliteter i modellen, i tråd med prosjektets avgrensning. Hver lokalitet fungerer som en node med tilhørende transportbehov og tidsvindu. 
 
 Ved generering av lokalitetene er det lagt vekt på geografisk spredning, slik at datasettet gir variasjon i avstander og rutevalg. Dette balanserer realisme og gjennomførbarhet, og skaper et analytisk interessant ruteplanleggingsproblem. 
 
 14 
 
-## **5.2.4 Identifisere slakteri** 
-
+## 5.2.4 Identifisere slakteri
 Slakteriet i modellen er også syntetisk generert og representerer et sentralt mottakspunkt for transporten. 
 
 Slakteriet fungerer som depot i modellen, hvor alle ruter starter og avsluttes. Dette er i tråd med standard antagelser i Vehicle Routing Problem (VRP). 
 
 Valget av ett slakteri bidrar til å forenkle modellstrukturen, samtidig som det gir et realistisk utgangspunkt for analyse av transport mellom oppdrettslokaliteter og mottaksanlegg. 
 
-## **5.2.5 Finne koordinater** 
-
+## 5.2.5 Finne koordinater
 For hver node i datasettet er det definert x- og y-koordinater i et todimensjonalt koordinatsystem (se tabell i 5.1.2). Koordinatene er syntetisk generert og utgjør grunnlaget for beregning av avstander mellom alle noder i modellen. 
 
-## **5.2.6 Kontrollere lokasjoner** 
-
+## 5.2.6 Kontrollere lokasjoner
 For å sikre konsistens i datasettet ble lokasjonene kontrollert med hensyn til innbyrdes plassering og avstander. 
 
 15 
 
 Koordinatene er vurdert slik at de gir realistiske avstander mellom lokalitetene, og ingen lokasjoner er plassert på en måte som skaper urealistiske transportforhold. Kontrollen bidrar til å sikre at modellen opererer på et troverdig grunnlag. 
 
-## **5.2.7 Strukturere datasett** 
-
+## 5.2.7 Strukturere datasett
 De geografiske dataene ble strukturert i et tabellformat som er egnet for videre bruk i modellen. Datasettet inneholder følgende variabler: 
 
 - node-ID 
@@ -423,14 +299,12 @@ De geografiske dataene ble strukturert i et tabellformat som er egnet for videre
 
 Datastrukturen er utformet slik at den enkelt kan benyttes i Python for beregning av avstandsmatrise og videre modellimplementering. 
 
-## **5.3 Genererte transportdata** 
-
+## 5.3 Genererte transportdata
 For å kunne gjennomføre analysen ble det generert transportrelaterte data som beskriver etterspørsel og kostnadsstruktur i modellen. 
 
 Disse dataene utgjør grunnlaget for hvordan transportproblemet modelleres, og påvirker både rutevalg og totale transportkostnader. 
 
-## **5.3.1 Definere transportvolum** 
-
+## 5.3.1 Definere transportvolum
 For hver oppdrettslokalitet ble det definert et transportvolum som representerer mengden fisk som skal transporteres til slakteriet. 
 
 Transportvolumet er syntetisk generert, men tilpasset slik at det gir realistiske variasjoner mellom lokalitetene. Dette bidrar til å skape et mer representativt transportproblem, hvor kapasitet og rutevalg får betydning for løsningen. 
@@ -441,16 +315,14 @@ kapasitetsbegrensningene knyttet til hvert kjøretøy.
 
 16 
 
-## **5.3.2 Definere kostnadsparametere** 
-
+## 5.3.2 Definere kostnadsparametere
 For å kunne evaluere ulike ruter er det definert en forenklet kostnadsstruktur i modellen. Transportkostnaden antas å være proporsjonal med kjørelengde mellom lokalitetene. Dette innebærer at lengre ruter gir høyere kostnad, uten at det gjennomføres detaljerte økonomiske beregninger. 
 
 Denne forenklingen er vanlig i ruteplanleggingsproblemer og gjør det mulig å fokusere på optimalisering av rutestruktur fremfor komplekse kostnadsmodeller. 
 
 Det er også definert en kapasitet for kjøretøyene, som begrenser hvor mye volum som kan transporteres per rute. 
 
-## **5.4 Bruk av KI i metodeprosessen** 
-
+## 5.4 Bruk av KI i metodeprosessen
 I henhold til gjeldende retningslinjer for bruk av kunstig intelligens i studentarbeider dokumenteres det her hvordan generative språkmodeller er benyttet i prosjektet. 
 
 Gruppen har brukt ChatGPT, Claude og Gemini som støtteverktøy gjennom metodeprosessen. Verktøyene er i hovedsak benyttet til idémyldring og strukturering av kapittelinndeling og argumentflyt, litteratursøk og utarbeiding av teoretisk rammeverk, språkvask og datastrukturering, kodegenerering og feilsøking i Python-implementasjonen av rutemodellen, samt forslag til oppsett av tabeller og figurer for presentasjon av data og resultater. 
@@ -460,10 +332,8 @@ All bruk av KI er verifisert gjennom akademiske kilder og manuell gjennomgang. K
 For å sikre reproduserbarhet er all kildekode, det syntetiske datasettet og skript for nettverksvisualisering publisert i prosjektets GitHub-repositorium (github.com/LOG650/G01-g1). For å sikre sporbarhet og etterprøvbarhet er all vesentlig KI-bruk dokumentert fortløpende i prosjektloggen ([logg.md](../logg.md)), som er lagt ved rapporten som Vedlegg C. Dette gjør det mulig for andre å kjøre modellen på nytt og etterprøve resultatene. 
 
 
-## **6.0 Modellering** 
-
-## **6.1 Modellformulering** 
-
+## 6.0 Modellering
+## 6.1 Modellformulering
 Modellen formuleres som et kapasitets- og tidsbegrenset Vehicle Routing Problem with Time Windows (CVRPTW), basert på klassisk formulering i Toth og Vigo (2014). Formuleringen består av mengder, parametere, beslutningsvariabler, en målfunksjon og et sett av operasjonelle begrensninger. 
 
 **Mengder** 
@@ -486,8 +356,7 @@ Modellen formuleres som et kapasitets- og tidsbegrenset Vehicle Routing Problem 
 |Q|Kapasitet per kjøretøy|180 enheter|
 |T_max|Maksimal tillatt rutevarighet|480 min|
 
-## **6.1.1 Beslutningsvariabler** 
-
+## 6.1.1 Beslutningsvariabler
 For å modellere ruteplanleggingsproblemet defineres en binær beslutningsvariabel: 
 
 xᵢⱼ = 1 hvis et kjøretøy kjører direkte fra node i til node j, ellers 0, for i, j ∈ N, i ≠ j. 
@@ -496,16 +365,14 @@ I tillegg defineres en hjelpevariabel aᵢ som angir ankomsttid ved node i, og e
 
 Disse variablene bestemmer rutestrukturen og hvilke forbindelser som inngår i løsningen. 
 
-## **6.1.2 Målsetting** 
-
+## 6.1.2 Målsetting
 Målsettingen er å minimere total transportkostnad, representert ved samlet kjørt distanse: 
 
 min Σᵢ∈N Σⱼ∈N dᵢⱼ · xᵢⱼ 
 
 Denne formuleringen er i tråd med klassisk VRP-litteratur (Toth og Vigo, 2014) og gir et direkte mål på logistisk effektivitet. 
 
-## **6.1.3 Begrensninger** 
-
+## 6.1.3 Begrensninger
 Modellen er underlagt følgende operasjonelle begrensninger: 
 
 - **Besøksbegrensning** – hver lokalitet besøkes nøyaktig én gang: 
@@ -540,10 +407,8 @@ Modellen er underlagt følgende operasjonelle begrensninger:
 
 Disse begrensningene sikrer at løsningen er operasjonelt gjennomførbar og realistisk. 
 
-## **6.2 Implementering av modell i Python** 
-
-## **6.2.1 Lage datastruktur** 
-
+## 6.2 Implementering av modell i Python
+## 6.2.1 Lage datastruktur
 Modellen er implementert i Python ved bruk av følgende datastrukturer: 
 
 - Liste over lokasjoner med koordinater 
@@ -566,8 +431,7 @@ muliggjør effektiv oppslag og kontroll av kapasitets- og tidsbegrensninger unde
 
 ruteplanleggingen. Denne strukturen muliggjør effektiv tilgang til data og rask evaluering av rutevalg underveis i algoritmen. 
 
-## **6.2.2 Implementere heuristikk** 
-
+## 6.2.2 Implementere heuristikk
 For å løse problemet benyttes en greedy heuristikk basert på nærmeste-nabo-prinsippet. Algoritmen fungerer som følger: 
 
 1. Start ved depot 
@@ -590,8 +454,7 @@ For å løse problemet benyttes en greedy heuristikk basert på nærmeste-nabo-p
 
 Denne fremgangsmåten gir en beregningseffektiv løsning, men garanterer ikke global optimalitet. 
 
-## **6.2.3 Implementere kostnadsmodell** 
-
+## 6.2.3 Implementere kostnadsmodell
 Kostnadsmodellen er basert på total kjørt distanse: 
 
 Total kostnad = ∑𝑑𝑖𝑗 
@@ -604,8 +467,7 @@ I tillegg beregnes:
 
 Dette gjør det mulig å evaluere både effektivitet og gjennomførbarhet. 
 
-## **6.2.4 Eksakt løsning (MILP)**
-
+## 6.2.4 Eksakt løsning (MILP)
 Parallelt med heuristikken implementeres modellen som formulert i kap. 6.1 som et blandet heltallsproblem (MILP) i Python ved hjelp av biblioteket **PuLP** med den åpne løseren **CBC** (Coin-or Branch and Cut). Alle restriksjoner fra kap. 6.1.3 – inkludert besøksbegrensning, flytkonservering, kapasitet, tidsvinduer, retur til depot og MTZ-subtour-eliminering – implementeres direkte som lineære uttrykk.
 
 Den eksakte løsningen fungerer som referanseoptimum og gir et øvre tak på heuristikkens kvalitet. Forskjellen mellom MILP-løsningen og nearest-neighbor-løsningen uttrykkes som et optimalitetsgap:
@@ -614,16 +476,13 @@ gap = (z_NN − z_MILP) / z_MILP
 
 der z betegner målfunksjonsverdien (total kjørelengde). Siden problemstørrelsen er liten (8 noder), kan CBC løse MILP-instansene eksakt innenfor sekunder, noe som gjør det realistisk å bruke løsningen som referanseverdi i analysen.
 
-## **6.3 Testing og validering** 
-
-## **6.3.1 Kjøring av testscenario** 
-
+## 6.3 Testing og validering
+## 6.3.1 Kjøring av testscenario
 Modellen testes på et datasett bestående av 7 oppdrettslokaliteter og ett depot. Parametere som kapasitet, tidsvinduer og maksimal arbeidstid er realistiske verdier. 
 
 19 
 
-## **6.3.2 Validering av ruter** 
-
+## 6.3.2 Validering av ruter
 For hver generert rute – fra både heuristikken og den eksakte MILP-løsningen – kontrolleres følgende: 
 
 - Alle lokaliteter er besøkt nøyaktig én gang 
@@ -636,8 +495,7 @@ For hver generert rute – fra både heuristikken og den eksakte MILP-løsningen
 
 I tillegg sammenlignes de to metodene opp mot hverandre: heuristikkens totale kjørelengde måles relativt til MILP-optimum (optimalitetsgap), og antall kjøretøy brukt i begge løsninger dokumenteres. Denne doble valideringen sikrer at løsningene er logisk gyldige, praktisk gjennomførbare og faglig etterprøvbare. 
 
-## **6.3.3 Justering av modell** 
-
+## 6.3.3 Justering av modell
 Basert på testresultatene er modellen iterativt (gjentagende) forbedret: 
 
 - Implementering av eksplisitt sjekk for retur til depot 
@@ -648,8 +506,7 @@ Basert på testresultatene er modellen iterativt (gjentagende) forbedret:
 
 Denne iterative prosessen bidrar til å forbedre både kvaliteten og realismen i løsningene. 
 
-## **6.4 Modellvarianter og scenarier** 
-
+## 6.4 Modellvarianter og scenarier
 For å undersøke hvordan løsningen responderer på endringer i forutsetninger, testes modellen i flere scenarier: 
 
 - **Baseline** – original etterspørsel (312 enheter), 180 enheters kapasitet og standard tidsvinduer, som beskrevet i kap. 5. 
@@ -664,12 +521,10 @@ For å undersøke hvordan løsningen responderer på endringer i forutsetninger,
 
 Scenariene analyseres i kap. 7 og danner grunnlag for sensitivitetsanalysen i kap. 9. 
 
-## **7.0 Analyse**
-
+## 7.0 Analyse
 Analysen gjennomføres ved å løse ruteplanleggingsproblemet med begge metodene beskrevet i kap. 6 (NN-heuristikk og MILP) på baselinedatasettet, og deretter på de fem scenariene fra kap. 6.4. Alle kjøringer er utført i Python med data fra [004 data/data.json](../004 data/data.json). MILP er løst eksakt med PuLP/CBC, og NN-heuristikken er implementert iterativt med 1, 2, 3 … kjøretøy til alle lokaliteter kan betjenes innenfor gitte restriksjoner.
 
-## **7.1 Baseline – NN-heuristikk iterativt**
-
+## 7.1 Baseline – NN-heuristikk iterativt
 NN-heuristikken kjøres først med K = 1 og økes med ett kjøretøy av gangen. For hver iterasjon registreres antall betjente lokaliteter, samlet kjørelengde og kapasitetsutnyttelse.
 
 | K | Feasible | Total kjørelengde | Kommentar |
@@ -681,8 +536,7 @@ NN-heuristikken kjøres først med K = 1 og økes med ett kjøretøy av gangen. 
 
 Første feasible NN-løsning finnes ved K = 3, og ytterligere kjøretøy reduserer ikke total kjørelengde.
 
-## **7.2 Baseline – MILP-optimum**
-
+## 7.2 Baseline – MILP-optimum
 Samme datasett løses eksakt med K_max = 4 som øvre grense. Løseren finner en feasible løsning med to kjøretøy og total kjørelengde 392,09 km. Ruter og utnyttelse er vist i tabell 7.1.
 
 **Tabell 7.1 – MILP-løsning for baseline**
@@ -693,8 +547,7 @@ Samme datasett løses eksakt med K_max = 4 som øvre grense. Løseren finner en 
 | 2 | D → L6 → L3 → L7 → D | 177,55 km | 175/180 | 97 % | 480 |
 | **Total** | | **392,09 km** | **312/360** | **87 %** | |
 
-## **7.3 Scenarioanalyse**
-
+## 7.3 Scenarioanalyse
 Hvert scenario fra kap. 6.4 kjøres separat med begge metoder. Parameterendringene er:
 
 | Scenario | Endring |
@@ -704,12 +557,10 @@ Hvert scenario fra kap. 6.4 kjøres separat med begge metoder. Parameterendringe
 | Flere kjøretøy | K_max = 5 |
 | Strammere tidsvinduer | Bredden av hvert tidsvindu halveres (senteret beholdes) |
 
-## **8.0 Resultat**
-
+## 8.0 Resultat
 Dette kapittelet presenterer samlet resultater fra alle kjøringer, uten tolkning. Vurdering og implikasjoner behandles i kap. 9.
 
-## **8.1 Sammenligning mellom NN og MILP (baseline)**
-
+## 8.1 Sammenligning mellom NN og MILP (baseline)
 Tabell 8.1 sammenstiller de to metodene for baselinedatasettet. MILP gir referanseoptimum, og NN evalueres mot dette via optimalitetsgap.
 
 **Tabell 8.1 – NN-heuristikk og MILP-optimum på baseline**
@@ -729,8 +580,7 @@ Figur 8.1 viser de to løsningene som rutekart, og figur 8.2 viser samlet kjøre
 
 ![Total kjørelengde sammenligning](../004 data/total_distanse_sammenligning.png)
 
-## **8.2 Scenarioanalyse**
-
+## 8.2 Scenarioanalyse
 Tabell 8.2 sammenstiller resultater for alle fem scenarier. For hvert scenario rapporteres total kjørelengde og antall kjøretøy for begge metoder, samt optimalitetsgap.
 
 **Tabell 8.2 – Resultater fra scenarioanalysen**
@@ -747,20 +597,17 @@ Tabell 8.2 sammenstiller resultater for alle fem scenarier. For hvert scenario r
 
 ![Scenarioanalyse](../004 data/scenarioanalyse.png)
 
-## **8.3 Nøkkeltall**
-
+## 8.3 Nøkkeltall
 Samlet viser kjøringene følgende verdier som besvarer forskningsspørsmålene:
 
 - **FS1 (modellering):** Problemet kan representeres som et CVRPTW med 8 noder, Q = 180, T_max = 480 og oppgitte tidsvinduer. Modellen er implementert i to varianter (NN og MILP) og løser baselinedatasettet innenfor sekunder for MILP.
 - **FS2 (baseline-sammenligning):** MILP gir 392,09 km mot NN sin 534,00 km. Optimalitetsgap = 36,2 %. Antall kjøretøy reduseres fra 3 (NN) til 2 (MILP).
 - **FS3 (sensitivitet):** Endring i etterspørsel og kapasitet påvirker både antall kjøretøy og total kjørelengde. Strammere tidsvinduer øker både antall ruter og samlet distanse, særlig for NN. Økt kjøretøytilgjengelighet (K_max) endrer ikke løsningen, siden tid og kapasitet er de reelle bindende begrensningene.
 
-## **9.0 Diskusjon**
-
+## 9.0 Diskusjon
 I dette kapittelet tolkes resultatene fra kap. 7 og 8 i lys av problemstillingen, teorien og kontekst. Drøftingen integrerer litteraturgrunnlaget fra kap. 2 og 3, vurderer styrker og svakheter ved data og metode, og ser på praktiske implikasjoner. Kapittelet avsluttes med en refleksjon over bruk av kunstig intelligens i prosjektet.
 
-## **9.1 Tolkning av hovedfunn**
-
+## 9.1 Tolkning av hovedfunn
 Resultatene besvarer hver av de tre forskningsspørsmålene direkte:
 
 **FS1 (modellering)** viser at fortransporten lar seg representere som et kapasitets- og tidsbegrenset Vehicle Routing Problem (CVRPTW) med åtte noder. Modellen i kap. 6 er gjennomførbar både som eksakt MILP-formulering og som greedy nearest-neighbor-heuristikk, og begge metodene gir gyldige løsninger på det syntetiske datasettet.
@@ -773,8 +620,7 @@ Resultatene besvarer hver av de tre forskningsspørsmålene direkte:
 
 **Uventet funn:** At NN ikke klarte å betjene alle lokaliteter med to kjøretøy, til tross for at teoretisk minimum (sum etterspørsel / kapasitet ≈ 1,73) tillater det. Heuristikkens grådighet bandt opp tid og kapasitet på en måte som låste ute lokalitetene med stramme tidsvinduer (L1, L3). Dette er ikke bare en kvalitetssvakhet ved NN – det er et reelt operasjonelt funn: en virksomhet som baserer seg på en enkel heuristikk vil i praksis trenge flere kjøretøy enn nødvendig. Et tilsvarende fenomen, der grådige metoder gir både dårligere kvalitet og høyere ressursforbruk, beskrives av Cormen et al. (2009) som en typisk svakhet ved konstruksjonsheuristikker når problemet har stramme bibetingelser.
 
-## **9.2 Kobling til tidligere forskning**
-
+## 9.2 Kobling til tidligere forskning
 Resultatene knytter seg til flere sentrale trekk i litteraturen. Dantzig og Ramser (1959) sin opprinnelige formulering av problemet la vekt på distanseminimering som mål. Studien viser at distanse alene ikke fanger opp den operasjonelle virkeligheten i fortransport av ferskvarer, der tidsvinduer ofte er den reelle flaskehalsen. Dette er i tråd med Laporte (2009) sin oppsummering av femti år med VRP-forskning, hvor forfatteren peker på at praktiske VRP-anvendelser i økende grad krever modeller med flere samtidige restriksjoner.
 
 Solomon (1987) beskrev VRPTW som et NP-hardt problem der tidsvinduene vesentlig øker kompleksiteten sammenlignet med klassisk VRP. Scenarioet med strammere tidsvinduer (50 %) bekrefter dette empirisk: både total kjørelengde og antall kjøretøy øker, og NN-heuristikken rammes hardest ved at den må ta i bruk et fjerde kjøretøy. Dette samsvarer med Adamo et al. (2024), som påpeker at tidsdimensjonen er en av de mest krevende aspektene ved moderne ruteplanlegging.
@@ -783,22 +629,19 @@ Archetti et al. (2026) argumenterer for at moderne VRP-forskning bør bevege seg
 
 Toth og Vigo (2014) beskriver to grunnleggende familier av løsningsmetoder, eksakte og heuristiske, og advarer mot å vurdere dem som gjensidig utelukkende. Studiens dual-method-tilnærming støtter denne avveiningen: NN gir hurtige, transparente løsninger, mens MILP gir en kvantifiserbar referanse for kvalitetstap. Liu et al. (2023) sin observasjon om at greedy-heuristikker fortsatt har verdi som raske baseline-metoder, selv når de ikke garanterer optimalitet, er konsistent med våre funn for scenariet der kapasiteten er bindende (gap = 0 %). Bogyrbayeva et al. (2024) peker på at hybridmetoder mellom læringsbaserte og tradisjonelle tilnærminger er en lovende retning, noe studien ikke undersøker direkte, men som er en naturlig videreføring.
 
-## **9.3 Styrker og svakheter ved data, metode og modell**
-
+## 9.3 Styrker og svakheter ved data, metode og modell
 **Datagrunnlaget** er syntetisk og bevisst utformet for å representere et plausibelt fortransportcase. Dette gir full kontroll over variabler og eliminerer støy fra reelle operative data, men begrenser samtidig generaliserbarheten. Euklidsk avstand er en vesentlig forenkling i forhold til faktiske veinett, og kan overvurdere hvor kort ruten faktisk er i topografien rundt oppdrettslokaliteter langs kysten. Konstant reisehastighet og deterministiske tidsvinduer ignorerer operasjonell usikkerhet knyttet til vær, trafikk og tekniske forsinkelser.
 
 **Heuristikken** er transparent og etterprøvbar, men grådig. Metoden gjør ingen forsøk på å unngå lokalt uheldige valg som begrenser fremtidige muligheter. Mer avanserte konstruksjonsheuristikker, for eksempel Clarke og Wright (1964) sin savings-algoritme, kunne redusert gapet uten å gå veien om eksakt optimering.
 
 **MILP-modellen** gir referanseoptimum innenfor sekunder for den gitte problemstørrelsen, men skalerer dårlig. Med flere noder eller flere scenarioer samtidig ville løsningstiden raskt øke. Subtour-eliminering er implementert implisitt gjennom monoton propagering av ankomsttid og last, en formulering som fungerer godt når tid og kapasitet gir gyldig monotoni. I et bredere praktisk system med flere depoter eller refueling ville det vært behov for eksplisitte MTZ-restriksjoner (Miller et al., 1960).
 
-## **9.4 Generaliserbarhet**
-
+## 9.4 Generaliserbarhet
 Studiens funn om et betydelig gap mellom greedy-heuristikk og eksakt optimum kan være avhengig av den konkrete etterspørsels- og tidsvindustrukturen. En annen instans med mer homogene tidsvinduer, jevnt fordelt etterspørsel og færre kapasitetskollisjoner ville trolig gi et mindre gap. Resultatet om at bindende kapasitet konvergerer metodene er derimot mer generelt: når problemet har få fornuftige løsninger, reduseres betydningen av sofistikert søk.
 
 Funnene kan ikke overføres direkte til Lerøys faktiske virksomhet, da de baseres på syntetisk data. Strukturen i modellen – et begrenset antall lokaliteter til ett slakteri med stramme tidsvinduer – er imidlertid en rimelig tilnærming til reell fortransport i havbruksnæringen, og gir dermed en overførbar innsikt i hvilke typer tiltak som kan gi gevinst.
 
-## **9.5 Praktiske implikasjoner**
-
+## 9.5 Praktiske implikasjoner
 For en virksomhet med transportstruktur tilsvarende caset gir studien tre praktiske poenger:
 
 1. **Optimaliserte ruter kan redusere både kjørte kilometer og antall kjøretøy betydelig.** I baselinedatasettet tilsvarer forskjellen 142 km og ett kjøretøy per dag. Selv uten eksplisitt kostnadsmodell utgjør dette en vesentlig reduksjon i drivstoff, arbeidstid og karbonavtrykk.
@@ -807,8 +650,7 @@ For en virksomhet med transportstruktur tilsvarende caset gir studien tre prakti
 
 3. **Å legge til kjøretøy er sjelden svaret.** Når tids- og kapasitetsbegrensninger ikke er bindende, gir flere biler ingen besparelser – bare overkapasitet. Investeringsbeslutninger bør baseres på hvilken restriksjon som faktisk begrenser løsningen i et gitt datasett.
 
-## **9.6 Teoretiske og metodiske implikasjoner**
-
+## 9.6 Teoretiske og metodiske implikasjoner
 Utover de praktiske poengene i 9.5 har funnene tre bidrag som er relevante for forskningsfeltet:
 
 **Empirisk dokumentasjon av et problemavhengig optimalitetsgap.** Studien viser at gapet mellom NN-heuristikk og MILP-optimum varierer fra 0 % til 36,2 % avhengig av hvilken restriksjon som er bindende. Dette nyanserer den ofte siterte tommelfingerregelen om at greedy-heuristikker gir 10–30 % over optimum (Liu et al., 2023): ved bindende kapasitet kan gapet være null, ved bindende tidsvinduer kan det være betydelig høyere. For metodevalg betyr dette at en heuristisk tilnærming bør evalueres mot problemets restriksjonsstruktur, ikke bare mot problemstørrelsen.
@@ -819,18 +661,15 @@ Utover de praktiske poengene i 9.5 har funnene tre bidrag som er relevante for f
 
 For policy- og næringsperspektiv er studien avgrenset – den syntetiske naturen til dataene gjør at konkrete tall ikke skal overføres direkte. Strukturen i funnene er likevel overførbar, og kan informere diskusjoner om infrastrukturinvesteringer (f.eks. kan koordinerte tidsvinduer ofte gi mer enn flere kjøretøy).
 
-## **9.7 Refleksjon om bruk av kunstig intelligens i prosjektet**
-
+## 9.7 Refleksjon om bruk av kunstig intelligens i prosjektet
 Prosjektet har benyttet generative KI-verktøy i alle faser, fra litteratursøk til kode og språkvask (se kap. 5.4). Erfaringen er todelt. På den ene siden har KI redusert tid brukt på rutineoppgaver betydelig – strukturering av datasett, oppsett av MILP-modell, generering av figurer og systematisk rettskriving. På den andre siden oppsto det flere tilfeller der KI produserte tekst som så faglig korrekt ut, men inneholdt feilaktige referanser eller subtile unøyaktigheter, som måtte fanges opp av manuell kontroll.
 
 Vår vurdering er at KI egner seg best som en *akselerator for kjente oppgaver*, ikke som en kilde til ny faglig innsikt. Den største gevinsten oppstår når brukeren har nok domenekunnskap til å stille presise spørsmål, evaluere forslag kritisk og bryte arbeidet ned i håndterbare biter. For et prosjekt som dette, der kravene til etterprøvbarhet er høye, ble KI-bruken dokumentert fortløpende i prosjektloggen (vedlegg C) for å sikre åpenhet.
 
 Bogyrbayeva et al. (2024) argumenterer for at læringsbaserte metoder får en stadig større rolle i VRP-litteraturen. Vår erfaring støtter en mer nyansert konklusjon: KI som skriveassistent og kodeakselerator er allerede i dag en vesentlig produktivitetsgevinst, mens KI som selvstendig metode for å løse logistikkproblemer fortsatt krever betydelig menneskelig validering for å være forsvarlig.
 
-## **10.0 Konklusjon** 
-
-## **11.0 Bibliografi** 
-
+## 10.0 Konklusjon
+## 11.0 Bibliografi
 Adamo, T., Gendreau, M., Ghiani, G., & Guerriero, E. (2024). _A review of recent advances in time-dependent vehicle routing_. _European Journal of Operational Research, 319_(1), 1–15. https://doi.org/10.1016/j.ejor.2024.06.016 
 
 Anthropic. (2026). _Claude_ [stor språkmodell]. https://claude.ai 
@@ -863,10 +702,8 @@ Tan, S.-Y., & Yeh, W.-C. (2021). _The vehicle routing problem: State-of-the-art 
 
 Toth, P., & Vigo, D. (2014). _Vehicle routing: Problems, methods, and applications_ (2. utg.). MOS-SIAM Series on Optimization. https://doi.org/10.1137/1.9781611973594 
 
-## **12.0 Vedlegg** 
-
-## **12.1 Vedlegg A – Avstandsmatrise (km)** 
-
+## 12.0 Vedlegg
+## 12.1 Vedlegg A – Avstandsmatrise (km)
 |**Fra / til**|**Slakteri**|**Lok. 1**|**Lok. 2**|**Lok. 3**|**Lok. 4**|**Lok. 5**|**Lok. 6**|**Lok. 7**|
 |---|---|---|---|---|---|---|---|---|
 |**Slakteri**|0.0|65.5|64.2|74.2|60.0|58.7|25.9|71.2|
@@ -882,8 +719,7 @@ Toth, P., & Vigo, D. (2014). _Vehicle routing: Problems, methods, and applicatio
 
 24 
 
-## **12.2 Vedlegg B – Tidsmatrise (minutter)** 
-
+## 12.2 Vedlegg B – Tidsmatrise (minutter)
 |**Fra / til**|**Slakteri**|**Lok. 1**|**Lok. 2**|**Lok. 3**|**Lok. 4**|**Lok. 5**|**Lok. 6**|**Lok. 7**|
 |---|---|---|---|---|---|---|---|---|
 |**Slakteri**|0|65|64|74|60|58|25|71|
@@ -895,8 +731,7 @@ Toth, P., & Vigo, D. (2014). _Vehicle routing: Problems, methods, and applicatio
 |**Lokalitet 6**|25|51|80|54|79|77|0|46|
 |**Lokalitet 7**|71|42|112|27|112|110|46|0|
 
-## **12.3 Vedlegg C – Prosjektlogg og dokumentasjon av KI-bruk**
-
+## 12.3 Vedlegg C – Prosjektlogg og dokumentasjon av KI-bruk
 Prosjektloggen [logg.md](../logg.md) dokumenterer prosjektets utvikling kronologisk, inkludert hvilke KI-verktøy som har vært brukt, til hvilke formål, og hvordan resultatene er kvalitetssikret. Loggen oppdateres fortløpende gjennom prosjektperioden og er lagt ved i sin helhet.
 
 
