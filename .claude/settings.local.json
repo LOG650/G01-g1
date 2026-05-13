@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python vrp_model.py)"
+      "Bash(python vrp_model.py)",
+      "Bash(pip install *)",
+      "Bash(python)"
     ]
   }
 }
