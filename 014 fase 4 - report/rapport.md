@@ -33,7 +33,7 @@ Hvordan kan kvantitative ruteplanleggingsmodeller, støttet av kunstig intellige
 ## 1.2 Avgrensinger
 For å gjøre problemstillingen håndterbar er oppgaven avgrenset på flere områder. For det første er analysen begrenset til én region og ett slakteri (depot), med tilhørende syv oppdrettslokaliteter. Dette innebærer at problemstillingen ikke tar hensyn til samspill mellom flere depoter eller større geografiske nettverk. Avgrensningen er gjort for å isolere effekten av rutevalg og gjøre modellen håndterbar. 
 
-For det andre fokuserer oppgaven på et statisk ruteplanleggingsproblem. Det innebærer at alle data, som etterspørsel, avstander og tidsvinduer antas å forholde seg uendret over tid. Dynamiske forhold som trafikk, vær eller uforutsette hendelser er ikke inkludert. Dette er gjort for å kunne analysere problemet innenfor VRP-ramme. 
+For det andre fokuserer oppgaven på et statisk ruteplanleggingsproblem. Det innebærer at planleggingen gjøres én gang ut fra kjente inputdata, uten sanntidsoppdatering eller reoptimalisering underveis i et oppdrag. Dette er gjort for å kunne analysere problemet innenfor VRP-rammen. 
 
 Oppgaven er også avgrenset til én type kjøretøy med fast kapasitet. Variasjoner i kjøretøystyper, kostnadsstrukturer eller bemanning er ikke inkludert. Dette forenkler modelleringen og gjør det mulig å fokusere på selve rutestrukturen. 
 
@@ -41,15 +41,13 @@ Når det gjelder løsningsmetode benytter oppgaven to komplementære tilnærming
 
 
 ## 1.3 Antagelser
-For å gjøre ruteplanleggingsproblemet håndterbart er det gjort flere forenklede antakelser. Vi erkjenner at dette påvirker hvor realistiske resultatene blir. 
+Avgrensingene over beskriver hva som er valgt inn og ut av modellen. I tillegg er det gjort flere forenklede antagelser om forhold som faktisk inngår i modellen, men som er representert på en forenklet måte. Vi erkjenner at dette påvirker hvor realistiske resultatene blir. 
 
 1. Det antas at avstanden mellom lokasjoner er oppgitt euklidisk basert på koordinater, som i praksis betyr at transporten går gjennom en rett linje i terrenget mellom to punkter, og ikke et faktisk veinett. Konsekvensen av dette er at modellen ikke representerer reell kjørelengde og reisetid. 
 
 2. Det antas at kjørehastigheten mellom to lokasjoner er konstant, slik at reisetid er direkte proporsjonal med avstand. Det innebærer at variasjoner i trafikkforhold, vær eller infrastruktur ikke tas hensyn til, som vil påvirke modellens realisme. 
 
 3. Det forutsettes at alle data er deterministiske og kjente på forhånd. Etterspørsel, tidsvinduer og lastetider er dermed faste vinduer uten usikkerhet. I en virkelig verden endrer slike parameter seg kontinuerlig, noe som betyr at modellen ikke kommer til å vise operasjonell usikkerhet. 
-
-4. Det antas at kjøretøyets kapasitet er fast og kjent, og at denne ikke kan overskrides. Det betyr at de konstruerte rutene må forholde seg til denne begrensningen. 
 
 Disse antakelsene innebærer at modellen representerer en forenklet versjon av 
 
@@ -331,7 +329,7 @@ For å sikre reproduserbarhet er all kildekode, det syntetiske datasettet og skr
 
 ## 6.0 Modellering
 ## 6.1 Modellformulering
-Modellen formuleres som et kapasitets- og tidsbegrenset Vehicle Routing Problem with Time Windows (CVRPTW), basert på klassisk formulering i Toth og Vigo (2014). Formuleringen består av mengder, parametere, beslutningsvariabler, en målfunksjon og et sett av operasjonelle begrensninger. 
+Modellen formuleres som et Capacitated Vehicle Routing Problem with Time Windows (CVRPTW), altså et kapasitets- og tidsbegrenset VRPTW, basert på klassisk formulering i Toth og Vigo (2014). Formuleringen består av mengder, parametere, beslutningsvariabler, en målfunksjon og et sett av operasjonelle begrensninger. 
 
 **Mengder** 
 
@@ -691,11 +689,7 @@ Miller, C. E., Tucker, A. W., & Zemlin, R. A. (1960). _Integer programming formu
 
 OpenAI. (2026). _ChatGPT_ [stor språkmodell]. https://chat.openai.com 
 
-Pangaribuan, M. A., Hidayati, J., & Nasution, H. (2025). _Literature review on vehicle routing problem: Approaches, algorithms and current challenges_. _Journal La Multiapp, 6_(6), 1397–1409. https://doi.org/10.37899/journallamultiapp.v6i6.2382 
-
 Solomon, M. M. (1987). _Algorithms for the vehicle routing and scheduling problems with time window constraints_. _Operations Research, 35_(2), 254–265. https://doi.org/10.1287/opre.35.2.254 
-
-Tan, S.-Y., & Yeh, W.-C. (2021). _The vehicle routing problem: State-of-the-art classification and review_. _Applied Sciences, 11_(21), 10295. https://doi.org/10.3390/app112110295 
 
 Toth, P., & Vigo, D. (2014). _Vehicle routing: Problems, methods, and applications_ (2. utg.). MOS-SIAM Series on Optimization. https://doi.org/10.1137/1.9781611973594 
 
