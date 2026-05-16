@@ -18,7 +18,7 @@ toc-depth: 3
 ## 1.0 Innledning
 Fortransport av slakteklar fisk fra oppdrettslokaliteter til slakteri er en sentral logistikkaktivitet i oppdrettsnæringen. Effektiv ruteplanlegging har stor betydning for transportkostnader, kjøretid, kapasitetsutnyttelse og miljøpåvirkning. Små forbedringer i rutevalg og planlegging kan gi betydelige gevinster, særlig i regioner med mange lokaliteter og varierende transportavstander. Samtidig er ruteplanlegging et komplekst beslutningsproblem som egner seg godt for kvantitative modeller og KI-støttet analyse. 
 
-Denne oppgaven tar utgangspunkt i fortransport i én region hos Lerøy og undersøker hvordan ruteplanlegging kan modelleres og analyseres ved hjelp av kvantitative metoder. Studien er avgrenset til transport fra 7 oppdrettslokaliteter til ett slakteri og fokuserer på kostnadsminimering som beslutningskriterium. 
+Denne oppgaven tar utgangspunkt i fortransport i én region hos Lerøy og undersøker hvordan ruteplanlegging kan modelleres og analyseres ved hjelp av kvantitative metoder. Studien er basert på et Lerøy-inspirert case med bruk av syntetiske data, og er avgrenset til transport fra 7 oppdrettslokaliteter til ett slakteri med fokus på kostnadsminimering som beslutningskriterium. 
 
 ## 1.1 Problemstilling
 Hvordan kan kvantitative ruteplanleggingsmodeller, støttet av kunstig intelligens, bidra til mer effektiv fortransport av slakteklar fisk i én region hos Lerøy? 
@@ -28,7 +28,7 @@ Hvordan kan kvantitative ruteplanleggingsmodeller, støttet av kunstig intellige
 
 2. Hvilke ruter gir lavest samlet transportkostnad sammenlignet med en enkel referanseløsning (baseline)? 
 
-3. Hvordan påvirkes den optimale ruten av endringer i transportvolum og antall oppdrettslokaliteter innenfor gitte rammebetingelser?
+3. Hvordan påvirkes den optimale ruten av endringer i operasjonelle rammebetingelser som transportvolum, kapasitet, tidsvinduer og kjøretøytilgjengelighet?
 
 ## 1.2 Avgrensinger
 For å gjøre problemstillingen håndterbar er oppgaven avgrenset på flere områder. For det første er analysen begrenset til én region og ett slakteri (depot), med tilhørende syv oppdrettslokaliteter. Dette innebærer at problemstillingen ikke tar hensyn til samspill mellom flere depoter eller større geografiske nettverk. Avgrensningen er gjort for å isolere effekten av rutevalg og gjøre modellen håndterbar. 

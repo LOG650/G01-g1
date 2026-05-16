@@ -39,15 +39,15 @@ G2 sin samlede vurdering: faglig solid, sterk diskusjon, dual-metoden er en klar
 - **Estimert tid:** 30–45 min
 
 ### 5. Avklar FS3 vs scenarier
-- **Status:** FS3 sier "endringer i transportvolum og antall oppdrettslokaliteter", men scenariene i kap. 6.4/8.2 dekker også kapasitet, kjøretøytilgjengelighet og tidsvinduer
+- **Status:** Ferdig
 - **Hva trengs:** Enten omformuler FS3 til å dekke alle fem scenariene, eller kutt scenarier ned til det FS3 lover
-- **Eier:**
+- **Eier:** Hanne
 - **Estimert tid:** 15 min
 
 ### 6. Avklar syntetiske data tidligere
-- **Status:** Kommer først frem i kap. 5.1.1
+- **Status:** Ferdig
 - **Hva trengs:** Kort setning i innledningen eller casebeskrivelsen: caset er Lerøy-inspirert, men dataene er syntetiske
-- **Eier:**
+- **Eier:** Hanne
 - **Estimert tid:** 10 min
 
 ---
